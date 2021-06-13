@@ -3,6 +3,7 @@ module.exports = {
     title: `Tim Smith`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@iam_timsmith`,
+    authorDescription: `I'm a guy with stuff and things.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,6 +11,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,7 +31,7 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve("./src/components/layout.jsx"),
+          default: require.resolve('./src/components/layout.jsx'),
         },
         gatsbyRemarkPlugins: [
           `gatsby-remark-prismjs`,
@@ -40,6 +42,18 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'GitHub',
+        fieldName: 'github',
+        url: 'https://api.github.com/graphql',
+        headers: {
+          Authorization: `bearer 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`,
+        },
+        fetchOptions: {},
       },
     },
     {

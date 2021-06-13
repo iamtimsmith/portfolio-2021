@@ -1,0 +1,17 @@
+@import './normalize';
+@import './utils';
+@import './variables';
+@import './themes';
+@import './elements';
+@import './header';
+@import './projects';
+@import './posts';
+@import './bio';
+
+
+/** CUSTOM CLASSES **/
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}

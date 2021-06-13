@@ -1,0 +1,15 @@
+.posts {
+	list-style: none;
+
+	&__post {
+		margin: var(--spacing-0) var(--spacing-0) var(--spacing-6);
+	}
+
+	&__post-title {
+		font-size: var(--font-size-lg);
+
+		a {
+			color: var(--color-dark);
+		}
+	}
+}

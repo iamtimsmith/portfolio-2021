@@ -1,12 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {useStaticQuery, graphql} from "gatsby";
-import {MDXProvider} from "@mdx-js/react";
-import Header from "./header";
-import Gif from "./gif";
-import "../normalize.css";
-import "prismjs/themes/prism.css";
-import "../style.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {useStaticQuery, graphql} from 'gatsby';
+import {MDXProvider} from '@mdx-js/react';
+import Header from './header';
+import Gif from './gif';
+import Bio from './bio';
+import Seo from './seo';
+import 'prismjs/themes/prism.css';
+import '../scss/style.scss';
 
 const Layout = ({children}) => {
   const data = useStaticQuery(graphql`
@@ -20,7 +21,7 @@ const Layout = ({children}) => {
   `);
 
   return (
-    <MDXProvider components={{Gif}}>
+    <MDXProvider components={{Gif, Bio, Seo}}>
       <div className='container'>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <main>{children}</main>

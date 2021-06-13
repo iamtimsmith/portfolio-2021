@@ -1,0 +1,25 @@
+import {graphql} from 'gatsby';
+import Posts from '../../components/posts';
+
+# Blog
+
+<Posts posts={props.data.allMdx.nodes} />
+
+export const pageQuery = graphql`
+  query BlogPageQuery {
+    allMdx(
+      filter: {slug: {regex: "/blog/./i"}}
+      sort: {fields: fileAbsolutePath, order: DESC}
+    ) {
+      nodes {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
+        excerpt
+      }
+    }
+  }
+`;

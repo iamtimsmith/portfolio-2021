@@ -1,0 +1,23 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-4) var(--spacing-0);
+
+	&__logo {
+		color: var(--color-dark);
+		font-weight: 700;
+		font-size: var(--font-size-xl);
+		text-decoration: none;
+		background: none;
+	}
+
+	&__nav {
+		a {
+			color: var(--color-text);
+			text-decoration: none;
+			margin: var(--spacing-2);
+			background: none;
+		}
+	}
+}
