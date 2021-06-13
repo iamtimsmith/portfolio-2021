@@ -25,7 +25,7 @@ export default IndexPage;
 export const query = graphql`
   query IndexPageQuery {
     allMdx(
-      filter: {slug: {regex: "/blog/./i"}}
+      filter: {slug: {regex: "/blog/./i"}, frontmatter: {published: {eq: true}}}
       sort: {fields: fileAbsolutePath, order: DESC}
       limit: 5
     ) {

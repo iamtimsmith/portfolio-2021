@@ -12,6 +12,12 @@
 	--color-primary-alt: #BDEFE5;
 }
 
-.dark {
-	--color-bg: #0d0d0d;
+:root.dark {
+	--color-bg: #182227;
+  --color-text: #E7E8E9;
+	--color-light: #2F383C;
+	--color-mid: #666666;
+	--color-dark: #efefef;
+  --color-primary: #298E7A;
+  --color-primary-alt: #1e6759;
 }

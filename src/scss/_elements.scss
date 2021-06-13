@@ -19,7 +19,7 @@ body {
   font-family: var(--font-family-sans);
   font-size: var(--font-size-md);
   color: var(--color-text);
-
+	background: var(--color-bg);
 }
 
 footer {
@@ -103,8 +103,8 @@ ul,
 ol {
   margin-left: var(--spacing-0);
   margin-right: var(--spacing-0);
-  padding: var(--spacing-0);
-  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
+  margin-bottom: var(--spacing-5);
   list-style-position: outside;
   list-style-image: none;
 
@@ -121,8 +121,8 @@ ol {
 		}
 
 		ul {
-			margin-left: var(--spacing-8);
-			margin-top: calc(var(--spacing-8) / 2);
+			margin-left: var(--spacing-1);
+			margin-top: var(--spacing-0);
 		}
 	}
 }

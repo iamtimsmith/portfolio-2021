@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
+import Toggle from './toggle';
 
 const Header = ({siteTitle}) => (
   <header className='header'>
@@ -10,6 +11,7 @@ const Header = ({siteTitle}) => (
     <nav className='header__nav'>
       {/* <Link to='/projects'>Projects</Link> */}
       <Link to='/blog'>Blog</Link>
+      <Toggle />
     </nav>
   </header>
 );

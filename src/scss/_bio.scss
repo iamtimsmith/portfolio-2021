@@ -3,14 +3,20 @@
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	border-top: 1px solid var(--color-light);
+	border-bottom: 1px solid var(--color-light);
 
 	&__image {
-
 		border-radius: 50%;
 		margin-right: var(--spacing-4);
 	}
 
-	p {
+	&__content {
 		flex: 1;
+	}
+
+	&__author {
+		font-weight: 700;
+		margin-bottom: var(--spacing-0);
 	}
 }
