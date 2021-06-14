@@ -6,7 +6,7 @@ const Posts = ({posts}) => {
   return (
     <ul className='posts'>
       {posts.map(node => (
-        <li className='posts__post'>
+        <li className='posts__post' key={node.id}>
           <strong className='posts__post-title'>
             <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
           </strong>

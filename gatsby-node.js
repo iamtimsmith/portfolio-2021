@@ -1,4 +1,4 @@
-const {createFilePath} = require("gatsby-source-filesystem");
+const {createFilePath} = require('gatsby-source-filesystem');
 
 exports.onCreatePage = ({page, actions}) => {
   const {createPage, deletePage} = actions;
@@ -13,14 +13,20 @@ exports.onCreatePage = ({page, actions}) => {
     deletePage(oldPage);
     createPage(page);
   }
+  if (
+    page.context.frontmatter &&
+    page.context.frontmatter.published === false
+  ) {
+    deletePage(page);
+  }
 };
 
 exports.onCreateNode = ({node, actions, getNode}) => {
   const {createNodeField} = actions;
-  if (node.internal.type === "Mdx") {
+  if (node.internal.type === 'Mdx') {
     const value = createFilePath({node, getNode});
     createNodeField({
-      name: "slug",
+      name: 'slug',
       node,
       value:
         value.indexOf(`---`) >= 0
