@@ -1,10 +1,12 @@
+const siteMetadata = {
+  title: `Tim Smith`,
+  description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+  author: `@iam_timsmith`,
+  authorDescription: `I'm a guy with stuff and things.`,
+};
+
 module.exports = {
-  siteMetadata: {
-    title: `Tim Smith`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@iam_timsmith`,
-    authorDescription: `I'm a guy with stuff and things.`,
-  },
+  siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -39,6 +41,19 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-twitter-cards`,
+            options: {
+              title: siteMetadata.title,
+              separator: '|',
+              author: siteMetadata.author,
+              background: `#182227`,
+              fontColor: '#E7E8E9',
+              titleFontSize: 96,
+              subtitleFontSize: 60,
+              fontStyle: `sans-serif`,
             },
           },
         ],

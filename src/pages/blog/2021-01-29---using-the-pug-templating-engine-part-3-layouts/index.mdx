@@ -1,15 +1,25 @@
 ---
-title: 'Using the Pug Templating Engine  Part 3 - Layouts'
-image: ./using-the-pug-templating-engine-part-3.jpg
-description: In this post, I cover inheritance, blocks, and layout in Pug
+title: Using the Pug Templating Engine  Part 3 - Layouts
 tags: [pug]
 published: true
 ---
 
+import {graphql} from 'gatsby';
+export const pageQuery = graphql`
+  {
+    file(name: {eq: "using-the-pug-templating-engine-part-3"}) {
+      publicURL
+    }
+  }
+`;
+
 <Seo
-  title={_frontmatter.title}
+  title={`Using the Pug Templating Engine  Part 3 - Layouts`}
   description={`Pug allows you to use inheritance to create a layout for the frontend and then insert blocks of data into the layout, causing a better developer experience.`}
+  image={props.data.file.publicURL}
 />
+
+# Using the Pug Templating Engine Part 3 - Layouts
 
 So far in this series, I have covered basic templating and how to use logic when creating a frontend with Pug. Those things are enough to get a frontend up and running, but there's still more to learn which can make your developer experience much better. That's what I will be talking about in today's post.
 
@@ -168,3 +178,5 @@ By adding a second block to the layout, you have the ability to add any script n
 Creating a layout can save lots of time and energy when building a website or application because it allows you to build it once and just extend it wherever needed. In addition, updates are a lot easier because you can simply update the layout file and it will change everywhere. In the next post, I will talk about how to use includes and mixins to further your ability to use a DRY approach to building things with Pug.
 
 Have questions? You can find me on Twitter [@iam_timsmith](https://www.twitter.com/iam_timsmith).
+
+<Bio author />

@@ -1,16 +1,12 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react";
-import PropTypes from "prop-types";
-import {Helmet} from "react-helmet";
-import {useStaticQuery, graphql} from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Helmet} from 'react-helmet';
+import {useStaticQuery, graphql} from 'gatsby';
+import {useLocation} from '@reach/router';
 
 function Seo({description, lang, meta, title}) {
+  const {pathname} = useLocation();
+  console.log(pathname);
   const {site} = useStaticQuery(
     graphql`
       query {
@@ -27,6 +23,10 @@ function Seo({description, lang, meta, title}) {
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
+  const baseUrl =
+    process.env.NODE_ENV === `production`
+      ? `https://www.iamtimsmith.com`
+      : `http://localhost:8000`;
 
   return (
     <Helmet
@@ -53,6 +53,10 @@ function Seo({description, lang, meta, title}) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `${baseUrl}${pathname}twitter-card.jpg`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -67,6 +71,10 @@ function Seo({description, lang, meta, title}) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: `${baseUrl}${pathname}twitter-card.jpg`,
         },
       ].concat(meta)}
     />

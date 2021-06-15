@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'gatsby';
 
-const Pagination = ({page, totalPages, paginate}) => {
+const Pagination = ({page, totalPages}) => {
   return (
     <nav className='pagination'>
-      <button onClick={() => paginate(true)} disabled={page === 1}>
-        &larr; Previous
-      </button>
+      {(page === 1 && <span>&larr; Previous</span>) || (
+        <Link to={`/blog/${page - 1 > 1 ? page - 1 : ``}`}>
+          &larr; Previous
+        </Link>
+      )}
       <p>
         Page {page} / {totalPages}
       </p>
-      <button onClick={() => paginate()} disabled={page === totalPages}>
-        Next &rarr;
-      </button>
+      {(page === totalPages && <span>&rarr; Next</span>) || (
+        <Link to={`/blog/${page + 1}`}>Next &rarr;</Link>
+      )}
     </nav>
   );
 };

@@ -8,14 +8,7 @@
 		margin: var(--spacing-0) var(--spacing-8);
 	}
 
-	button {
-		background: none;
-		border: none;
-		color: var(--color-mid);
-
-		&:not(:disabled) {
-			color: var(--color-text);
-			cursor: pointer;
-		}
+	span {
+		color: var(--color-bg);
 	}
 }

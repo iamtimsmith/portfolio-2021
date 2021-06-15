@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useStaticQuery, graphql} from 'gatsby';
 import {MDXProvider} from '@mdx-js/react';
+import {Location} from '@reach/router';
 import Header from './header';
 import Gif from './gif';
 import Bio from './bio';

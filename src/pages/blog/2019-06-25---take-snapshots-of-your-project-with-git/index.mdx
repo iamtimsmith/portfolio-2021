@@ -1,15 +1,15 @@
 ---
 title: Take Snapshots of Your Project with Git
 tags: [workflow]
-image: ./featured_image.jpg
-description: I'll show you how you can use Git for version control in your project
 published: true
 ---
 
 <Seo
-  title={_frontmatter.title}
+  title={`Take Snapshots of Your Project with Git`}
   description={`Git is a tool which allows you to take "snapshots" of your project. I'm going to show you how to get started with git so you can improve your worklow.`}
 />
+
+# Take Snapshots of Your Project with Git
 
 Git is a tool which allows you to take \"snapshots\" of your project. I'm going to show you how to get started with git so you can improve your worklow.
 
@@ -37,7 +37,8 @@ I like to use Homebrew on my mac, which allows me to install packages quickly an
 
 Once you have brew installed, you can run the command below to install git:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ brew install git
 ```
 
@@ -49,7 +50,8 @@ Installing git on a Windows machine can be accomplished by visiting [https://git
 
 If you're working on a Linux machine with apt-get, you can run the command below in your terminal and get all set up:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ sudo apt-get install git
 ```
 
@@ -57,7 +59,8 @@ $ sudo apt-get install git
 
 As a final check to make sure it was installed correctly, you can go to your terminal (regardless of operating system) and run the following command:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git --version
 ```
 
@@ -71,7 +74,8 @@ There are a few basic commands you'll use all the time in a git project. In this
 
 Before you can really start leveraging git in your project, you have to initialize it. Doing so is pretty simple since it only requires a 2-word command:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git init
 ```
 
@@ -81,7 +85,8 @@ Running this command will create a new directory called `.git` where our commit 
 
 Before you can actually commit your changes, you will need to "stage" them. This just means that the changes for a particular file are being added to a holding area before they actually get commited. This is beneficial because it allows you to choose what you want to commit instead of just doing everything. The command below illustrates two ways to do this:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git add example1.js example2.js
 
 $ git add .
@@ -93,7 +98,8 @@ The syntax for the command above is "git add" followed by the files you want to 
 
 To see what files are currently staged and unstaged, you can use the following command:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git status
 ```
 
@@ -103,7 +109,8 @@ The green text indicates files that are staged to be commited. The red text show
 
 Now that you have your changes staged, you are ready to commit them. The commit itself is the snapshot of your code at this point in time. Projects can have many commits over time and a log is kept of each one so previous commits can be revisited if necessary. To add a commit, take a look a the following code:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git commit -m "This is a message"
 ```
 
@@ -113,7 +120,8 @@ The command above begins with "git commit" followed by a flag, "-m". This flag t
 
 Now that you have a commit made in your project, let's take a look at your commit history. The command to do this is another 2-word phrase:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git log
 
 commit bb50464992dcd7ed2af724c17236c6d5eecc9315
@@ -125,13 +133,7 @@ Date:   Thu Jun 27 22:05:58 2019 -0500
 
 Upon running the command above, you should see some output that looks like the output below. It gives some basic information like a unique ID, the author, the date and time of the commit, and the commit message. As you add more commits, you will see more than just one. To exit the log, just type "q" and it will take you back to the normal editor.
 
-<video
-  src='https://media.giphy.com/media/kRmglZUDvDG/giphy.mp4'
-  playsinline
-  autoplay
-  loop
-  muted
-></video>
+<Gif src='https://media.giphy.com/media/kRmglZUDvDG/giphy.mp4' />
 
 ## Creating different versions
 
@@ -139,7 +141,8 @@ Upon running the command above, you should see some output that looks like the o
 
 In git, different versions of the project are called branches. The default branch is called `master` and is typically used as a production branch and generally isn't worked on directly. To get around this, different branches are created, modified, and merged back into master. It is common to have several different branches in a project with different changes being made. To see all of the branches in your project, just run the following command:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git branch
 ```
 
@@ -149,7 +152,8 @@ Running this command will return a list of branches, in this case only "master" 
 
 In the event that we aren't on the right branch, we can switch over to it pretty quickly. The command below will switch to a different branch:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git checkout master
 ```
 
@@ -159,7 +163,8 @@ In the command above, "git checkout" tells git we are switching to a different b
 
 I mentioned that you should create a new branch to avoid working on master directly, so I'll show you how to do that. The first step is to make sure you're on the branch you want to copy for the branch. Once you're on the correct branch (in our case "master"), use this code:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git checkout -b sample-branch
 ```
 
@@ -169,19 +174,14 @@ By running the code above, git makes a copy of our current branch (master) and c
 
 To delete a branch, you need to switch to a different one first. Then you can run the command below to delete it. Beware: This cannot be undone.
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git branch sample-branch -D
 ```
 
 The command above starts with "git branch" followed by the name of the branch you want to delete. The "-D" flag at the end is that tells git you want to delete the noted branch. Once a branch is deleted, you can reuse the branch name if desired.
 
-<video
-  src='https://media.giphy.com/media/zlLydol7ndM7C/giphy.mp4'
-  playsinline
-  autoplay
-  loop
-  muted
-></video>
+<Gif src='https://media.giphy.com/media/zlLydol7ndM7C/giphy.mp4' />
 
 ## Working with remote repositories
 
@@ -191,7 +191,8 @@ No, no, no... not that kind of remote. A git project is called a repository (or 
 
 Next, we'll talk about how to add one of these to your project. Before you can send your project to a remote location, a repo needs to exist at that remote location. The services I mentioned make it quick and easy to create an empty repository. Once the repo is created, grab the url for the repo (there's usually a dropdown or other method to get this). Then use the command below to add the remote location:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git remote add origin https://github.com/sampleuser/sample-remote-location.git
 ```
 
@@ -201,7 +202,8 @@ The first part of this command, "git remote" tells git we're doing something wit
 
 Once you have your changes committed and you're ready to send them to your remote location, you can use the following command:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git push origin master
 
 $ git push --set-upstream origin new-branch
@@ -219,7 +221,8 @@ A huge benefit to working with git repos in a remote location is the collaborati
 
 _Okay, cool. But how do I get their changes into what I'm working on so I know it doesn't break anything?_ I'm glad you asked. There's another command we can use to pull in any changes that have been made to the remote copy of the branch for this very reason. It's usually a good idea to do this daily or even more frequently if you'd like to make sure you always have an updated version of the project. To get any changes that have been made, you can use the following command:
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git pull origin master
 
 $ git pull --rebase origin master
@@ -233,7 +236,8 @@ If you get a new computer, start working on a new project, or even just find som
 
 You're in luck. There is. All you need is the url for the repo, which can be found in Github, Bitbucket, and Gitlab pretty easily. Navigate to the folder where you want the project to live, then run the command on the first line below replacing the URL with your repo's URL and watch it go!
 
-```bash:title=terminal
+```bash
+# Terminal
 $ git clone https://github.com/sampleuser/sample-remote-location.git
 
 $ git clone https://github.com/sampleuser/sample-remote-location.git folder-name
@@ -246,3 +250,5 @@ By default the repo will be put into a folder with the name of the remote repo, 
 Git is a tool I'd recommend both experienced and new developers to use. It has saved my ass many times and makes the developer experience much more enjoyable. In addition, projects become much more collaborative and even lets people on different contentinents work together! If there's one thing I'd suggest learning early on in your development career, it's git.
 
 If you have any questions or run into problems, feel free to reach out to me on Twitter at [@iam_timsmith](https://www.twitter.com/iam_timsmith).
+
+<Bio author />

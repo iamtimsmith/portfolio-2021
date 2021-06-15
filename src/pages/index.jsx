@@ -8,7 +8,7 @@ import Seo from '../components/seo';
 const IndexPage = ({data}) => (
   <Layout>
     <Seo title='Home' />
-    <section>
+    <section style={{margin: `var(--spacing-8) var(--spacing-0)`}}>
       <h1>
         Hi, my name is <strong>Tim Smith</strong> and I'm a{' '}
         <strong>Software Engineer</strong>.
@@ -17,6 +17,7 @@ const IndexPage = ({data}) => (
     <Bio />
     <h2>Recent Posts</h2>
     <Posts posts={data.allMdx.nodes} />
+    <Link to='/blog'>View more posts &rarr;</Link>
   </Layout>
 );
 
