@@ -1,0 +1,14 @@
+.footer {
+	text-align: center;
+
+	p {
+		margin: var(--spacing-0);
+		font-size: var(--font-size-sm);
+		color: var(--color-mid);
+	}
+
+	svg {
+		position: relative;
+		top: 3px;
+	}
+}

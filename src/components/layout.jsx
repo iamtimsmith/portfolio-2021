@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {useStaticQuery, graphql} from 'gatsby';
 import {MDXProvider} from '@mdx-js/react';
 import Header from './header';
+import Footer from './footer';
 import Bio from './bio';
 import Gif from './gif';
 import Seo from './seo';
@@ -36,11 +37,7 @@ const Layout = ({children, pageContext}) => {
             <PostFooter data={pageContext.frontmatter} />
           )}
         </main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href='https://www.gatsbyjs.com'>Gatsby</a>
-        </footer>
+        <Footer siteTitle={data.site.siteMetadata.title} />
       </div>
     </MDXProvider>
   );
