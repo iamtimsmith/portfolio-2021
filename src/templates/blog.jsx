@@ -5,8 +5,6 @@ import Posts from '../components/posts';
 import Pagination from '../components/pagination';
 
 const BlogTemplate = ({data, pageContext}) => {
-  console.log(pageContext);
-
   return (
     <Layout>
       <h1>Blog</h1>

@@ -1,15 +1,9 @@
 ---
 title: 'React: Class Components vs. Stateless Functional Components'
 tags: [react, javascript]
-image: ./featured_image.jpg
-description: What are the differences between class and functional components
+description: In this article, I'll explain the differences between class components and stateless functional components as well as when and why to use the different types.
 published: true
 ---
-
-<Seo
-  title={_frontmatter.title}
-  description={`In this article, I'll explain the differences between class components and stateless functional components as well as when and why to use the different types.`}
-/>
 
 When I first began to learn React, I didn't even realize there was a difference between class components and stateless functional components. I thought they were just different ways to write the same thing.
 
@@ -59,7 +53,8 @@ const HelloWorld = props => (
 );
 export default HelloWorld;
 
-~~~(<HelloWorld greeting='Hello World!' />);
+// Example use
+<HelloWorld greeting='Hello World!' />;
 ```
 
 ### The second way: export the function
@@ -74,7 +69,8 @@ export default props => (
   </div>
 );
 
-~~~(<HelloWorld greeting='Hello World!' />);
+// Example use
+<HelloWorld greeting='Hello World!' />;
 ```
 
 As you can see, these two functional components look almost identical and they do the same thing. It's really just a matter of personal preference.

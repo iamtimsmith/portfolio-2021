@@ -3,6 +3,7 @@ const {createFilePath} = require(`gatsby-source-filesystem`);
 
 exports.onCreatePage = ({page, actions}) => {
   const {createPage, deletePage} = actions;
+  const {frontmatter} = page.context;
   const oldPage = Object.assign({}, page);
   page.path =
     page.path.indexOf(`---`) >= 0
@@ -51,6 +52,9 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         sort: {fields: fileAbsolutePath, order: DESC}
       ) {
         nodes {
+          frontmatter {
+            tags
+          }
           fields {
             slug
           }
@@ -58,9 +62,11 @@ exports.createPages = async ({graphql, actions, reporter}) => {
       }
     }
   `);
+  // Get posts, and create number of pages
   const posts = data.posts.nodes;
   const postsPerPage = 6;
   const numPages = Math.ceil(posts.length / postsPerPage);
+  // Create pages based on pagination
   Array.from({length: numPages}).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
@@ -70,6 +76,27 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+      },
+    });
+  });
+
+  // Generate pages from tags
+  const postTags = [];
+  // Loop through each post to get tags
+  posts.forEach(node => {
+    // Loop through post tags and if unique, add to array
+    node.frontmatter.tags.forEach(tag => {
+      if (!postTags.includes(tag)) postTags.push(tag);
+    });
+  });
+  // Create page for each tag
+  postTags.forEach(tag => {
+    actions.createPage({
+      path: `/blog/tags/${tag}`,
+      component: path.resolve(`src/templates/tag.jsx`),
+      context: {
+        slug: tag,
+        label: tag.trim().replace(/^\w/, c => c.toUpperCase()),
       },
     });
   });

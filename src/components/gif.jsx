@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-const Gif = ({src, alt, width = "400"}) => {
+const Gif = ({src, alt, width = '400'}) => {
   return (
     <figure
       style={{textAlign: `center`}}
       dangerouslySetInnerHTML={{
         __html: `
-					<video src='${src}' width='${width}' autoplay loop playsinline muted />
-					${alt && <figcaption>{alt}</figcaption>}
+					<video src='${src}' width='${width}' autoplay loop playsinline muted></video>
+					${alt ? `<figcaption>${alt}</figcaption>` : ``}
 				`,
       }}
     />
