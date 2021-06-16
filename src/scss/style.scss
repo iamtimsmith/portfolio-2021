@@ -12,11 +12,5 @@
 @import './bio';
 @import './pagination';
 @import './tags';
+@import './sharing';
 
-
-/** CUSTOM CLASSES **/
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 15px;
-}

@@ -23,6 +23,12 @@ body {
 	transition: all 0.3s;
 }
 
+.container {
+	max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 footer {
   padding: var(--spacing-6) var(--spacing-0);
 }
@@ -194,7 +200,7 @@ a {
 	background-size: 100% 200%;
 	background-position: 0px 0px;
 	word-break: break-word;
-	transition: all 0.3s;
+	transition: background 0.3s;
 
 	&:hover,
 	&:focus {
