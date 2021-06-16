@@ -23,6 +23,9 @@
 			top: 2px;
 			margin-right: var(--spacing-1);
 		}
+		a {
+			font-weight: 600;
+		}
 	}
 
 	&__project-description {
@@ -47,6 +50,7 @@
 		a {
 			margin: var(--spacing-1) var(--spacing-2);
 			font-size: var(--font-size-lg);
+			background: none;
 		}
 	}
 }

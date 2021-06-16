@@ -38,7 +38,9 @@ const Projects = () => {
         <article className='projects__project' key={project.id}>
           <p className='projects__project-title'>
             <GoRepo />
-            <a href={project.url}>{project.name}</a>
+            <a href={project.url} target='_blank'>
+              {project.name}
+            </a>
           </p>
           <p className='projects__project-description'>{project.description}</p>
           <div className='projects__project-meta'>
@@ -56,11 +58,11 @@ const Projects = () => {
             </div>
             <nav className='projects__project-links'>
               {project.homepageUrl && (
-                <a href={project.homepageUrl}>
+                <a href={project.homepageUrl} target='_blank'>
                   <GoLinkExternal />
                 </a>
               )}
-              <a href={project.url}>
+              <a href={project.url} target='_blank'>
                 <GoMarkGithub />
               </a>
             </nav>

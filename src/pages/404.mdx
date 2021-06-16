@@ -1,0 +1,30 @@
+---
+title: '404: Page not found'
+description: Uh-oh! The page you're looking for seems to be missing.
+---
+
+Uh-oh! The page you're looking for seems to be missing. Here are some blog posts that might interest you though...
+
+<Posts posts={props.data.posts.nodes} />
+
+import {graphql} from 'gatsby';
+export const pageQuery = graphql`
+  query NotFoundPageQuery {
+    posts: allMdx(
+      filter: {slug: {regex: "/blog/./i"}, frontmatter: {published: {eq: true}}}
+      sort: {fields: fileAbsolutePath, order: DESC}
+      limit: 3
+    ) {
+      nodes {
+        frontmatter {
+          title
+        }
+        fields {
+          slug
+        }
+        id
+        excerpt
+      }
+    }
+  }
+`;

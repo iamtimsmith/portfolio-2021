@@ -9,9 +9,13 @@ const PostFooter = ({data}) => {
   return (
     <footer>
       <Seo title={data.title} />
-      <Tags tags={data.tags} />
-      <Bio author />
-      <Sharing title={data.title} />
+      {data.tags && (
+        <>
+          <Tags tags={data.tags} />
+          <Bio author />
+          <Sharing title={data.title} />
+        </>
+      )}
     </footer>
   );
 };
