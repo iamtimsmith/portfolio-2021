@@ -12,7 +12,7 @@ const PostFooter = ({data}) => {
       {data.tags && (
         <>
           <Tags tags={data.tags} />
-          <Bio author />
+          <Bio showAuthor />
           <Sharing title={data.title} />
         </>
       )}

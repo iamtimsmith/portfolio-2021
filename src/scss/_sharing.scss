@@ -20,6 +20,7 @@ $icon: #fafafa;
 	@include mq($tablet) {
 		top: 0;
 		left: -65px;
+		bottom: 0;
 		right: auto;
 		flex-direction: column;
 	}

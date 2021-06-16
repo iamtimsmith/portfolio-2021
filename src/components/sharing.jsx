@@ -63,7 +63,7 @@ const Sharing = ({title}) => {
           href={site.href}
           target='_blank'
           title={`Share to ${site.name}`}
-          ariaLabel={`Share to ${site.name}`}
+          aria-label={`Share to ${site.name}`}
           key={site.name}
         >
           {site.icon}

@@ -1,0 +1,49 @@
+.socials {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 50%;
+	min-height: 300px;
+	width: 80px;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 40px;
+		width: 2px;
+		background: var(--color-mid);
+		z-index: -1;
+	}
+
+	&__nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: var(--color-bg);
+		padding: var(--spacing-4) var(--spacing-0);
+		transition: background 0.3s;
+
+		button, a {
+			font-size: var(--font-size-xl);
+			background: none;
+			border: none;
+			margin: var(--spacing-1) var(--spacing-4);
+			color: var(--color-mid);
+			cursor: pointer;
+			transition: color 0.3s;
+
+			&:hover {
+				color: var(--color-dark);
+			}
+		}
+		button {
+			visibility: hidden;
+			&.show {
+				visibility: visible;
+			}
+		}
+	}
+}

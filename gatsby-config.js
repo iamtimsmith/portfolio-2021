@@ -1,8 +1,21 @@
+require('dotenv').config({
+  path: `.env`,
+});
+
 const siteMetadata = {
   title: `Tim Smith`,
-  description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-  author: `@iam_timsmith`,
-  authorDescription: `I'm a guy with stuff and things.`,
+  author: {
+    name: `Tim Smith`,
+    twitter: `@iam_timsmith`,
+    description: `I build things using React, Node, PHP, and more. Currently, I'm a Software Engineer working on <a href='https://www.dndbeyond.com' target='_blank'>D&D Beyond</a> at <a href='https://www.fandom.com' target='_blank'>Fandom</a>. You can follow me on Twitter at <a href='https://www.twitter.com/iam_timsmith' target='_blank'>@iam_timsmith</a>.`,
+    image: `${__dirname}/src/images/timsmith.jpg`,
+  },
+	socials: [
+		{name: `Twitter`, url: `https://www.twitter.com/iam_timsmith`},
+		{name: `LinkedIn`, url: `https://www.linkedin.com/in/tim-smith-1a651aa0`},
+		{name: `Github`, url: `https://github.com/iamtimsmith`},
+		{name: `Dev`, url: `https://dev.to/iam_timsmith`}
+	]
 };
 
 module.exports = {
@@ -68,7 +81,7 @@ module.exports = {
         fieldName: 'github',
         url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `bearer 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`,
+          Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
         },
         fetchOptions: {},
       },

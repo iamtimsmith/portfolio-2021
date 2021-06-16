@@ -8,16 +8,23 @@ import Bio from './bio';
 import Gif from './gif';
 import Seo from './seo';
 import Tags from './tags';
+import Socials from './socials';
 import PostFooter from './post-footer';
 import 'prismjs/themes/prism.css';
 import '../scss/style.scss';
 
 const Layout = ({children, pageContext}) => {
-  const data = useStaticQuery(graphql`
+  const {site} = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          author {
+            name
+            twitter
+            description
+            image
+          }
         }
       }
     }
@@ -26,18 +33,22 @@ const Layout = ({children, pageContext}) => {
   return (
     <MDXProvider components={{Gif, Bio, Seo, Tags}}>
       <div className='container'>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Header siteTitle={site.siteMetadata?.title || `Title`} />
         <main>
           {typeof pageContext !== `undefined` && (
             <h1>{pageContext.frontmatter.title}</h1>
           )}
           {children}
+					<Socials/>
           {/* Blog Footer */}
           {typeof pageContext !== `undefined` && (
-            <PostFooter data={pageContext.frontmatter} />
+            <PostFooter
+              data={pageContext.frontmatter}
+              author={site.siteMetadata.author}
+            />
           )}
         </main>
-        <Footer siteTitle={data.site.siteMetadata.title} />
+        <Footer siteTitle={site.siteMetadata.title} />
       </div>
     </MDXProvider>
   );
