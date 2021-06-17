@@ -6,7 +6,7 @@ import {useLocation} from '@reach/router';
 
 function Seo({description, lang, meta, title}) {
   const {pathname} = useLocation();
-  console.log(pathname);
+
   const {site} = useStaticQuery(
     graphql`
       query {
@@ -25,10 +25,7 @@ function Seo({description, lang, meta, title}) {
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-  const baseUrl =
-    process.env.NODE_ENV === `production`
-      ? `https://www.iamtimsmith.com`
-      : `http://localhost:8000`;
+  const baseUrl = process.env.SITE_URL || `http://localhost:8000`;
 
   return (
     <Helmet
