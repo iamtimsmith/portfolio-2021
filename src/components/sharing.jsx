@@ -10,12 +10,17 @@ import {
 } from 'react-icons/fa';
 
 const Sharing = ({title}) => {
-  const baseUrl =
-    process.env.NODE_ENV === `production`
-      ? `https://www.iamtimsmith.com`
-      : `http://localhost:8000`;
+	const {site} = useStaticQuery(graphql`
+		{
+			site {
+				siteMetadata {
+					siteUrl
+				}
+			}
+		}
+	`);
   const {pathname} = useLocation();
-  const url = `${baseUrl}${pathname}`;
+  const url = `${site.siteMetadata.siteUrl}${pathname}`;
   const image = `${url}/twitter-card.jpg`;
   const [showing, setShowing] = useState(false);
 
@@ -62,6 +67,7 @@ const Sharing = ({title}) => {
           className={`sharing__${site.name.toLowerCase()}`}
           href={site.href}
           target='_blank'
+					rel='noreferrer nofollow'
           title={`Share to ${site.name}`}
           aria-label={`Share to ${site.name}`}
           key={site.name}

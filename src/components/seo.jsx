@@ -13,6 +13,7 @@ function Seo({description, lang, meta, title}) {
         site {
           siteMetadata {
             title
+						siteUrl
             description
             author {
               twitter
@@ -25,8 +26,6 @@ function Seo({description, lang, meta, title}) {
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-  const baseUrl = process.env.SITE_URL || `http://localhost:8000`;
-
 
   return (
     <Helmet
@@ -54,7 +53,7 @@ function Seo({description, lang, meta, title}) {
         },
         {
           property: `og:image`,
-          content: `${baseUrl}${pathname}twitter-card.jpg`,
+          content: `${site.siteMetadata.siteUrl}${pathname}twitter-card.jpg`,
         },
         {
           name: `twitter:card`,
@@ -74,7 +73,7 @@ function Seo({description, lang, meta, title}) {
         },
         {
           property: `twitter:image`,
-          content: `${baseUrl}${pathname}twitter-card.jpg`,
+          content: `${site.siteMetadata.siteUrl}${pathname}twitter-card.jpg`,
         },
       ].concat(meta)}
     />

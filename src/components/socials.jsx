@@ -23,6 +23,7 @@ const Socials = () => {
 			case 'linkedin': return <FaLinkedin/>;
 			case 'github': return <FaGithub/>;
 			case 'dev': return <FaDev/>;
+			default: return null;
 		}
 	}
 
@@ -39,7 +40,7 @@ const Socials = () => {
 			<nav className='socials__nav'>
 				<button className={show ? `show` : ``} onClick={() => handleClick()}>&uarr;</button>
 				{socials.map(social => (
-					<a href={social.url} target='_blank' rel='noopener nofollow'>
+					<a href={social.url} target='_blank' rel='noreferrer nofollow' key={social.name}>
 						{getIcon(social.name.toLowerCase())}
 					</a>
 				))}

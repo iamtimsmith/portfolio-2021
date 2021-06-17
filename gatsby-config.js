@@ -1,5 +1,10 @@
+require('dotenv').config({
+  path: `.env`,
+});
+
 const siteMetadata = {
   title: `Tim Smith`,
+	siteUrl: `https://relaxed-brattain-f018de.netlify.app`,
   author: {
     name: `Tim Smith`,
     twitter: `@iam_timsmith`,

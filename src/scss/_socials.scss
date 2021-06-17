@@ -12,8 +12,8 @@
 		top: 0;
 		bottom: 0;
 		left: 40px;
-		width: 2px;
-		background: var(--color-mid);
+		width: 1px;
+		background: var(--color-text);
 		z-index: -1;
 	}
 
@@ -31,7 +31,7 @@
 			background: none;
 			border: none;
 			margin: var(--spacing-1) var(--spacing-4);
-			color: var(--color-mid);
+			color: var(--color-text);
 			cursor: pointer;
 			transition: color 0.3s;
 
@@ -41,8 +41,12 @@
 		}
 		button {
 			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.3s;
+
 			&.show {
 				visibility: visible;
+				opacity: 1;
 			}
 		}
 	}
