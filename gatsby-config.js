@@ -64,7 +64,7 @@ module.exports = {
             options: {
               title: siteMetadata.title,
               separator: '|',
-              author: siteMetadata.author,
+              author: siteMetadata.author.twitter,
               background: `#182227`,
               fontColor: '#E7E8E9',
               titleFontSize: 96,

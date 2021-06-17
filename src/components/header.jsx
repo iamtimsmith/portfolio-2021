@@ -9,7 +9,6 @@ const Header = ({siteTitle}) => (
       {siteTitle}
     </Link>
     <nav className='header__nav'>
-      {/* <Link to='/projects'>Projects</Link> */}
       <Link to='/blog'>Blog</Link>
       <Toggle />
     </nav>

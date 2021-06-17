@@ -1,15 +1,31 @@
 .footer {
 	text-align: center;
 
+	nav {
+		margin: var(--spacing-4) var(--spacing-0);
+
+		a {
+			background: none;
+			font-size: var(--font-size-xl);
+			color: var(--color-midlight);
+			margin: var(--spacing-2);
+			transition: color 0.3s;
+
+			&:hover {
+				color: var(--color-mid);
+			}
+		}
+	}
+
 	p {
 		margin: var(--spacing-0);
 		font-size: var(--font-size-sm);
 		color: var(--color-mid);
-	}
 
-	svg {
-		position: relative;
-		top: 3px;
-		color: var(--color-primary);
+		svg {
+			position: relative;
+			top: 3px;
+			color: var(--color-primary);
+		}
 	}
 }

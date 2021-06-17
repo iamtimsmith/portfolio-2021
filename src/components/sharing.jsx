@@ -66,7 +66,7 @@ const Sharing = ({title}) => {
         <a
           className={`sharing__${site.name.toLowerCase()}`}
           href={site.href}
-          target='_blank'
+          target='_parent'
 					rel='noreferrer nofollow'
           title={`Share to ${site.name}`}
           aria-label={`Share to ${site.name}`}

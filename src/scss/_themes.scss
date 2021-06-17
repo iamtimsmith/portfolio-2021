@@ -4,8 +4,9 @@
 
 :root {
   --color-bg: #fafafa;
-	--color-text: #404040;
+	--color-text: #151515;
 	--color-light: #e7e7e7;
+	--color-midlight: #c2c2c2;
 	--color-mid: #6d6d6d;
 	--color-dark: #1d1d1d;
   --color-primary: #5BD7BE;
@@ -14,8 +15,9 @@
 
 :root.dark {
 	--color-bg: #182227;
-  --color-text: #E7E8E9;
+  --color-text: #e7e7e7;
 	--color-light: #2F383C;
+	--color-midlight: #516067;
 	--color-mid: #838485;
 	--color-dark: #efefef;
   --color-primary: #298E7A;

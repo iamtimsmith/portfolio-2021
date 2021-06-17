@@ -2,7 +2,7 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	height: 50%;
+	height: 350px;
 	min-height: 300px;
 	width: 80px;
 
@@ -13,7 +13,7 @@
 		bottom: 0;
 		left: 40px;
 		width: 1px;
-		background: var(--color-text);
+		background: var(--color-midlight);
 		z-index: -1;
 	}
 
@@ -31,12 +31,12 @@
 			background: none;
 			border: none;
 			margin: var(--spacing-1) var(--spacing-4);
-			color: var(--color-text);
+			color: var(--color-midlight);
 			cursor: pointer;
 			transition: color 0.3s;
 
 			&:hover {
-				color: var(--color-dark);
+				color: var(--color-mid);
 			}
 		}
 		button {
