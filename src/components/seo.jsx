@@ -27,6 +27,7 @@ function Seo({description, lang, meta, title}) {
   const defaultTitle = site.siteMetadata?.title;
   const baseUrl = process.env.SITE_URL || `http://localhost:8000`;
 
+
   return (
     <Helmet
       htmlAttributes={{
