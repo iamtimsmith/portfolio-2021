@@ -1,7 +1,3 @@
-require('dotenv').config({
-  path: `.env`,
-});
-
 const siteMetadata = {
   title: `Tim Smith`,
   author: {
