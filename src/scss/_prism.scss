@@ -1,28 +1,29 @@
 :root {
 	/* Prism Colors */
-  --color-prism-0: #636f88;
-  --color-prism-1: #4A7096;
-  --color-prism-2: #875A7E;
-  --color-prism-3: #6E9051;
-  --color-prism-4: #408CA0;
-  --color-prism-5: #DD4A68;
-  --color-prism-6: #DEA93F;
+	--color-prism-text: #4d4d4c;
+  --color-prism-0: #8e908c;
+  --color-prism-1: #5e81ac;
+  --color-prism-2: #8e5783;
+  --color-prism-3: #6c894d;
+  --color-prism-4: #378172;
+  --color-prism-5: #bf616a;
 }
 
 :root.dark {
   /* Prism Colors */
-  --color-prism-0: #636f88;
-  --color-prism-1: #81A1C1;
-  --color-prism-2: #B48EAD;
-  --color-prism-3: #A3BE8C;
-  --color-prism-4: #88C0D0;
-  --color-prism-5: #EBCB8B;
+	--color-prism-text: #eceff4;
+  --color-prism-0: #566176;
+  --color-prism-1: #6ca1c1;
+  --color-prism-2: #a78ea2;
+  --color-prism-3: #a3be8c;
+  --color-prism-4: #88b3b3;
+  --color-prism-5: #bf616a;
 }
 
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: var(--color-text);
+	color: var(--color-prism-text);
 	background: none;
 	text-shadow: 0 1px var(--color-light);
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;

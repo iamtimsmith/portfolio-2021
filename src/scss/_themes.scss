@@ -4,19 +4,19 @@
 
 :root {
   --color-bg: #F3F6F7;
-	--color-text: #182227;
-	--color-light: #E6ECEF;
-	--color-midlight: #B6C8CE;
+	--color-text: #22272F;
+	--color-light: #ECEFF4;
+	--color-midlight: #C1CBD7;
 	--color-mid: #6C919D;
-	--color-dark: #182227;
+	--color-dark: #22272F;
   --color-primary: #5BD7BE;
 	--color-primary-alt: #BDEFE5;
 }
 
 :root.dark {
-	--color-bg: #182227;
+	--color-bg: #22272F;
   --color-text: #E6ECEF;
-	--color-light: #212D31;
+	--color-light: #2e3440;
 	--color-midlight: #415A62;
 	--color-mid: #85A3AD;
 	--color-dark: #E6ECEF;
