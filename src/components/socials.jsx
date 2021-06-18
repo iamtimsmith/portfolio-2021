@@ -27,7 +27,7 @@ const Socials = () => {
 		}
 	}
 
-	const handleShow = () => setShow(window.scrollY > 1000);
+	const handleShow = () => setShow(window.scrollY > 0);
 	const handleClick = () => window[`scrollTo`]({ top: 0, behavior: `smooth` });
 
 	useEffect(() => {

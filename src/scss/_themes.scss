@@ -3,23 +3,23 @@
 */
 
 :root {
-  --color-bg: #fafafa;
-	--color-text: #151515;
-	--color-light: #e7e7e7;
-	--color-midlight: #c2c2c2;
-	--color-mid: #6d6d6d;
-	--color-dark: #1d1d1d;
+  --color-bg: #F3F6F7;
+	--color-text: #182227;
+	--color-light: #E6ECEF;
+	--color-midlight: #B6C8CE;
+	--color-mid: #6C919D;
+	--color-dark: #182227;
   --color-primary: #5BD7BE;
 	--color-primary-alt: #BDEFE5;
 }
 
 :root.dark {
 	--color-bg: #182227;
-  --color-text: #e7e7e7;
-	--color-light: #2F383C;
-	--color-midlight: #516067;
-	--color-mid: #838485;
-	--color-dark: #efefef;
-  --color-primary: #298E7A;
-  --color-primary-alt: #1e6759;
+  --color-text: #E6ECEF;
+	--color-light: #212D31;
+	--color-midlight: #415A62;
+	--color-mid: #85A3AD;
+	--color-dark: #E6ECEF;
+  --color-primary: #1C7363;
+  --color-primary-alt: #186355;
 }
