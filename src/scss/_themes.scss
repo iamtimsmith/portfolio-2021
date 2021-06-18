@@ -4,8 +4,8 @@
 
 :root {
   --color-bg: #F3F6F7;
-	--color-text: #454F5F;
-	--color-light: #ECEFF4;
+	--color-text: #404040;
+	--color-light: #e7e7e7;
 	--color-midlight: #C1CBD7;
 	--color-mid: #6C919D;
 	--color-dark: #22272F;
@@ -14,9 +14,9 @@
 }
 
 :root.dark {
-	--color-bg: #22272F;
-  --color-text: #C1D0D7;
-	--color-light: #2e3440;
+	--color-bg: #182227;
+  --color-text: #E7E8E9;
+	--color-light: #2F383C;
 	--color-midlight: #415A62;
 	--color-mid: #85A3AD;
 	--color-dark: #E6ECEF;

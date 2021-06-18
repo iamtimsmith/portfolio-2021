@@ -31,7 +31,7 @@ const Bio = ({showAuthor = false}) => {
         className='bio__image'
       />
       <div className='bio__content'>
-        {site.siteMetadata.author && (
+        {(showAuthor && site.siteMetadata.author) && (
           <p className='bio__author'>
             Written by {site.siteMetadata.author.name}
           </p>

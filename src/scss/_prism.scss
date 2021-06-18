@@ -1,29 +1,29 @@
 :root {
 	/* Prism Colors */
-	--color-prism-text: #4d4d4c;
-  --color-prism-0: #8e908c;
-  --color-prism-1: #5e81ac;
-  --color-prism-2: #8e5783;
-  --color-prism-3: #6c894d;
-  --color-prism-4: #378172;
-  --color-prism-5: #bf616a;
+  --color-prism-0: slategray;
+  --color-prism-1: #D4353A;
+  --color-prism-2: #449C66;
+  --color-prism-3: #378172;
+  --color-prism-4: #AD5BAE;
+  --color-prism-5: #32669A;
+  --color-prism-6: #e90;
 }
 
 :root.dark {
   /* Prism Colors */
-	--color-prism-text: #eceff4;
-  --color-prism-0: #566176;
-  --color-prism-1: #6ca1c1;
-  --color-prism-2: #a78ea2;
-  --color-prism-3: #a3be8c;
-  --color-prism-4: #88b3b3;
-  --color-prism-5: #bf616a;
+  --color-prism-0: #999;
+  --color-prism-1: #e2777a;
+  --color-prism-2: #7ec699;
+  --color-prism-3: #76a9a0;
+  --color-prism-4: #cc99cd;
+  --color-prism-5: #6196cc;
+  --color-prism-6: #f8c555;
 }
 
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: var(--color-prism-text);
+	color: var(--color-text);
 	background: none;
 	text-shadow: 0 1px var(--color-light);
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -79,78 +79,81 @@ pre[class*="language-"] {
 	display: none;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: var(--color-prism-0);
-}
+.token {
+	color: var(--color-text);
 
-.token.punctuation {
-	color: var(--color-prism-1);
-}
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: var(--color-prism-0);
+	}
 
-.token.namespace {
-	opacity: .7;
-}
+	&.punctuation {
+		color: var(--color-text);
+	}
 
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: var(--color-prism-1);
-}
+	&.namespace {
+		opacity: .7;
+	}
 
-.token.number {
-	color: var(--color-prism-2);
-}
+	&.property,
+	&.tag,
+	&.constant,
+	&.symbol,
+	&.deleted,
+	&.class-name {
+		color: var(--color-prism-1);
+	}
 
-.token.boolean {
-	color: var(--color-prism-1);
-}
+	&.number {
+		color: var(--color-prism-2);
+	}
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	color: var(--color-prism-3);
-}
+	&.boolean {
+		color: var(--color-prism-1);
+	}
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-	color: var(--color-prism-1);
-	background: var(--color-light);
-	text-shadow: none;
-}
+	&.selector,
+	&.string,
+	&.attr-value,
+	&.char,
+	&.builtin,
+	&.inserted {
+		color: var(--color-prism-2);
+	}
 
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-	color: var(--color-prism-4);
-}
+	&.interpolation {
+		color: var(--color-prism-5);
+	}
 
-.token.keyword {
-	color: var(--color-prism-1);
-}
+	&.operator,
+	&.entity,
+	&.url,
+	&.variable {
+		color: var(--color-prism-1);
+		background: var(--color-light);
+		text-shadow: none;
+	}
 
-.token.regex,
-.token.important {
-	color: var(--color-prism-5);
-}
+	&.atrule,
+	&.attr-name,
+	&.function,
+	&.keyword {
+		color: var(--color-prism-4);
+	}
 
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
+	&.regex,
+	&.important {
+		color: var(--color-prism-5);
+	}
 
-.token.italic {
-	font-style: italic;
+	&.important,
+	&.bold {
+		font-weight: bold;
+	}
+
+	&.italic {
+		font-style: italic;
+	}
 }
