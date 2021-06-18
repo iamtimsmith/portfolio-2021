@@ -7,12 +7,12 @@
 		a {
 			background: none;
 			font-size: var(--font-size-xl);
-			color: var(--color-midlight);
+			color: var(--color-text);
 			margin: var(--spacing-2);
 			transition: color 0.3s;
 
 			&:hover {
-				color: var(--color-mid);
+				color: var(--color-dark);
 			}
 		}
 	}
