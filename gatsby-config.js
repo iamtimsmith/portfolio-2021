@@ -28,6 +28,9 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sass`,
+		`gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -72,6 +75,14 @@ module.exports = {
               fontStyle: `sans-serif`,
             },
           },
+					{
+						resolve: "gatsby-remark-external-links",
+						options: {
+							target: "_blank",
+							rel: "noreferrer nofollow"
+						}
+					},
+
         ],
       },
     },
@@ -97,6 +108,19 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/timsmith-teal.png`, // This path is relative to the root of the site.
+      },
+    },
+		{
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.GA_TRACKING_ID,
+        ],
+        gtagConfig: {
+          optimize_id: "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

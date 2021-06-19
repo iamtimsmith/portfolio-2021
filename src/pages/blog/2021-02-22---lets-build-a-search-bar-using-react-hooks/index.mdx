@@ -5,7 +5,7 @@ tags: [react]
 published: true
 ---
 
-A few years ago I wrote an article called [Let's build a search bar in React](https://www.iamtimsmith.com/blog/lets-build-a-search-bar-in-react) where I showed readers (you guessed it!) how to build a search bar in React. When I wrote that article, React Hooks didn't exist so it is written using class components. Since publishing the post, I've gotten several requests to rewrite the post showing how to build a search bar using React Hooks. After taking a break from blogging to focus on my family and being swamped with work, I'm happy to report that this is that post!
+A few years ago I wrote an article called [Let's build a search bar in React](/blog/lets-build-a-search-bar-in-react) where I showed readers (you guessed it!) how to build a search bar in React. When I wrote that article, React Hooks didn't exist so it is written using class components. Since publishing the post, I've gotten several requests to rewrite the post showing how to build a search bar using React Hooks. After taking a break from blogging to focus on my family and being swamped with work, I'm happy to report that this is that post!
 
 <Gif src='https://media.giphy.com/media/hZfm9Pj95F9Mk/giphy.mp4' width={300} />
 
@@ -13,11 +13,11 @@ In this post, I will follow roughly the same structure as the original. In my la
 
 ## Setting up the project
 
-I will be using the command line interface to get my project set up. If you're new to the command line or need a refresher, I've written [a blog post which explains most of the commands I will be using](https://www.iamtimsmith.com/blog/getting-started-with-the-linux-cli).
+I will be using the command line interface to get my project set up. If you're new to the command line or need a refresher, I've written [a blog post which explains most of the commands I will be using](/blog/getting-started-with-the-linux-cli).
 
 ### Creating the project folder and setting up a structure
 
-To get started, I will be creating a project folder on my computer, then building out a file structure for my application. When [using Parcel](https://www.iamtimsmith.com/blog/parcel-js-who-says-bundling-needs-to-be-difficult), you can choose how you want your project to be structured so I'm going to stick with the structure detailed below. First, the commands to set it up:
+To get started, I will be creating a project folder on my computer, then building out a file structure for my application. When [using Parcel](/blog/parcel-js-who-says-bundling-needs-to-be-difficult), you can choose how you want your project to be structured so I'm going to stick with the structure detailed below. First, the commands to set it up:
 
 ```bash
 mkdir react-hooks-searchbar && cd $_
@@ -145,7 +145,7 @@ While using the `dev` script, Parcel will hot-reload the application so as you m
 
 ## What are React Hooks?
 
-If you've read my previous blog posts about [React Components](https://www.iamtimsmith.com/blog/how-to-create-a-component) or [Building A Search Bar with React](https://www.iamtimsmith.com/blog/lets-build-a-search-bar-in-react), you've seen both [class and functional components](https://www.iamtimsmith.com/blog/class-components-vs-stateless-functional-components).When those posts were written, only a class component could have a state. Since then, the React team has done a lot of work to make code much more concise and one of the ways they've achieved this is through hooks. Because of these huge improvements, it is possible to have state and lifecycle methods inside of a functional component.
+If you've read my previous blog posts about [React Components](/blog/how-to-create-a-component) or [Building A Search Bar with React](/blog/lets-build-a-search-bar-in-react), you've seen both [class and functional components](/blog/class-components-vs-stateless-functional-components).When those posts were written, only a class component could have a state. Since then, the React team has done a lot of work to make code much more concise and one of the ways they've achieved this is through hooks. Because of these huge improvements, it is possible to have state and lifecycle methods inside of a functional component.
 
 While there are several hooks you can use for various purposes, I will just be focusing on one in particular. That hook is the `useState` hook, which allows you to create a piece of data as well as modify it without setting up a constructor or having to fuss with a class component.
 
