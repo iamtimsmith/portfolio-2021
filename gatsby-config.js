@@ -62,19 +62,19 @@ module.exports = {
               withWebp: true,
             },
           },
-          {
-            resolve: `gatsby-remark-twitter-cards`,
-            options: {
-              title: siteMetadata.title,
-              separator: '|',
-              author: siteMetadata.author.twitter,
-              background: `#182227`,
-              fontColor: '#E7E8E9',
-              titleFontSize: 96,
-              subtitleFontSize: 60,
-              fontStyle: `sans-serif`,
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-twitter-cards`,
+          //   options: {
+          //     title: siteMetadata.title,
+          //     separator: '|',
+          //     author: siteMetadata.author.twitter,
+          //     background: `#182227`,
+          //     fontColor: '#E7E8E9',
+          //     titleFontSize: 96,
+          //     subtitleFontSize: 60,
+          //     fontStyle: `sans-serif`,
+          //   },
+          // },
 					{
 						resolve: "gatsby-remark-external-links",
 						options: {
