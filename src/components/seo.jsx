@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 import {useLocation} from '@reach/router';
 
-function Seo({description, lang, meta, title}) {
+function Seo({description, lang, meta, title, image}) {
   const {pathname} = useLocation();
 
   const {site} = useStaticQuery(
@@ -53,7 +53,7 @@ function Seo({description, lang, meta, title}) {
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}${pathname}twitter-card.jpg`,
+          content: `${site.siteMetadata?.siteUrl}${image}`,
         },
         {
           name: `twitter:card`,
@@ -73,7 +73,7 @@ function Seo({description, lang, meta, title}) {
         },
         {
           property: `twitter:image`,
-          content: `${site.siteMetadata.siteUrl}${pathname}twitter-card.jpg`,
+          content: `${site.siteMetadata?.siteUrl}${image}`,
         },
       ].concat(meta)}
     />

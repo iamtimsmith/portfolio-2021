@@ -8,7 +8,7 @@ import Sharing from './sharing';
 const PostFooter = ({data}) => {
   return (
     <footer>
-      <Seo title={data.title} description={data.description} />
+      <Seo title={data.title} description={data.description} image={data.image} />
       {data.tags && (
         <>
           <Tags tags={data.tags} />

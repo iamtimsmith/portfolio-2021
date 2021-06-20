@@ -23,7 +23,6 @@ const Layout = ({children, pageContext}) => {
             name
             twitter
             description
-            image
           }
         }
       }
