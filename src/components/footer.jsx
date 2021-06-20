@@ -37,6 +37,7 @@ const Footer = ({siteTitle}) => {
 						target='_blank'
 						rel='noreferrer nofollow'
 						aria-label={social.name}
+						key={social.name}
 					>
 						{getIcon(social.name.toLowerCase())}
 					</a>

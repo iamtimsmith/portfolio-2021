@@ -35,7 +35,7 @@ $icon: #fafafa;
 	&__label {
 		font-size: var(--font-size-sm);
 		margin: var(--spacing-0);
-		color: var(--color-text);
+		color: var(--color-grey-700);
 		display: none;
 
 		@include mq($tablet) {

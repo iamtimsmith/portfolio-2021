@@ -24,7 +24,7 @@ const Bio = ({showAuthor = false}) => {
   `);
 
   return (
-    <section className='bio' style={{marginTop: showAuthor ? 30 : 0}}>
+    <section className={`bio${showAuthor ? ` bio--author` : ``}`}>
       <GatsbyImage
         image={getImage(image)}
         alt={site.siteMetadata.author.name}

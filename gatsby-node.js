@@ -3,7 +3,6 @@ const {createFilePath} = require(`gatsby-source-filesystem`);
 
 exports.onCreatePage = ({page, actions}) => {
   const {createPage, deletePage} = actions;
-  const {frontmatter} = page.context;
   const oldPage = Object.assign({}, page);
   page.path =
     page.path.indexOf(`---`) >= 0

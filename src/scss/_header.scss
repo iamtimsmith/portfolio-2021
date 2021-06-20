@@ -5,7 +5,7 @@
 	padding: var(--spacing-4) var(--spacing-0);
 
 	&__logo {
-		color: var(--color-dark);
+		color: var(--color-grey-900);
 		font-weight: 700;
 		font-size: var(--font-size-xl);
 		text-decoration: none;
@@ -14,7 +14,7 @@
 
 	&__nav {
 		a {
-			color: var(--color-dark);
+			color: var(--color-grey-700);
 			text-decoration: none;
 			margin: var(--spacing-2);
 			background: none;

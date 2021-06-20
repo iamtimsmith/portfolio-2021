@@ -52,7 +52,7 @@ const Sharing = ({title}) => {
     },
   ];
 
-  const handleScroll = () => setShowing(window.scrollY > 1000);
+  const handleScroll = () => setShowing(window.scrollY > 100 && window.scrollY < document.body.clientHeight - 2000);
 
   useEffect(() => {
     document.addEventListener(`scroll`, handleScroll);
