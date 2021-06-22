@@ -8,7 +8,7 @@ import Seo from '../components/seo';
 const IndexPage = ({data}) => (
   <Layout>
     <Seo
-			title='Home'
+			title='Software Engineer'
 			description={`Tim Smith is a software engineer focused on making the web a more enjoyable place to be`}
 			image='/timsmith-socical.jpg'
 		/>
