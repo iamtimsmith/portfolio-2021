@@ -1841,6 +1841,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.12.13":
+  version "7.14.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
+  integrity sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.14.0":
   version "7.14.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.5.tgz#665450911c6031af38f81db530f387ec04cd9a98"
@@ -7371,6 +7378,19 @@ gatsby-plugin-catch-links@^3.7.1:
     "@babel/runtime" "^7.14.0"
     escape-string-regexp "^1.0.5"
 
+gatsby-plugin-feed-mdx@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed-mdx/-/gatsby-plugin-feed-mdx-1.1.0.tgz#bbbfc36b3b3dd176d1e0dda8168f98614188cbdd"
+  integrity sha512-0ji4edVoUQBy8TGTAnxZkbRKKrNzaCp6j7TGtK5lzXG3DWK9HOYbsEZrBXr6g04Fo5E++CWhPKCzBbHiL0leiA==
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    "@hapi/joi" "^15.1.1"
+    common-tags "^1.8.0"
+    fs-extra "^8.1.0"
+    gatsby-plugin-utils "^1.0.0-next.0"
+    lodash.merge "^4.6.2"
+    rss "^1.2.2"
+
 gatsby-plugin-feed@^3.7.1:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-3.7.1.tgz#5ec1348ed8221439584c4eb91fa590a35f27e2a6"
@@ -7595,17 +7615,17 @@ gatsby-plugin-typescript@^3.6.0:
     "@babel/runtime" "^7.12.5"
     babel-plugin-remove-graphql-queries "^3.6.0"
 
+gatsby-plugin-utils@^1.0.0-next.0, gatsby-plugin-utils@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-1.7.1.tgz#c38cacc857a02e5c15976cd7893f2ecec3a17732"
+  integrity sha512-mZ6qDwTBheCXeUa9KBdeHTtwWzX4AyzqXrl3EVj3bWQzNFSvUMC5QJfySo1UnWBjYLdCUpe45ZeDg/85q52Cgg==
+  dependencies:
+    joi "^17.2.1"
+
 gatsby-plugin-utils@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-1.6.0.tgz#4cb050009caf0b0add15ecc81d473c438e7115e9"
   integrity sha512-RDHaPBvVE8v9EQvPAUyXZzoDFKo0t0j7qJHDvFQc0PfcX0EmQWXNkFd7PN+DVz8nPfuhLIV6GKS3WQXYbiCLIA==
-  dependencies:
-    joi "^17.2.1"
-
-gatsby-plugin-utils@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-1.7.1.tgz#c38cacc857a02e5c15976cd7893f2ecec3a17732"
-  integrity sha512-mZ6qDwTBheCXeUa9KBdeHTtwWzX4AyzqXrl3EVj3bWQzNFSvUMC5QJfySo1UnWBjYLdCUpe45ZeDg/85q52Cgg==
   dependencies:
     joi "^17.2.1"
 
