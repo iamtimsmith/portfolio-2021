@@ -7,7 +7,11 @@ import Seo from '../components/seo';
 
 const IndexPage = ({data}) => (
   <Layout>
-    <Seo title='Home' />
+    <Seo
+			title='Home'
+			description={`Tim Smith is a software engineer focused on making the web a more enjoyable place to be`}
+			image='/timsmith-socical.jpg'
+		/>
     <section style={{margin: `var(--spacing-8) var(--spacing-0)`}}>
       <h1>
         Hi, my name is <strong>Tim Smith</strong> and I'm a{' '}

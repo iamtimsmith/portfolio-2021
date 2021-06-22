@@ -3,10 +3,16 @@ import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import Posts from '../components/posts';
 import Pagination from '../components/pagination';
+import Seo from '../components/seo';
 
 const BlogTemplate = ({data, pageContext}) => {
   return (
     <Layout>
+			<Seo
+				title='Blog'
+				description={`A blog to teach new developers about engineering, javascript, and much more.`}
+				image='/timsmith-social.jpg'
+			/>
       <h1>Blog</h1>
       <Posts posts={data.posts.nodes} />
       <Pagination
