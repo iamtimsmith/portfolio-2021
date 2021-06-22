@@ -31,6 +31,18 @@ module.exports = {
 		`gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-catch-links`,
+		{
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ['/dashboard/**'],
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'iamtimsmith.com',
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -62,19 +74,6 @@ module.exports = {
               withWebp: true,
             },
           },
-          // {
-          //   resolve: `gatsby-remark-twitter-cards`,
-          //   options: {
-          //     title: siteMetadata.title,
-          //     separator: '|',
-          //     author: siteMetadata.author.twitter,
-          //     background: `#182227`,
-          //     fontColor: '#E7E8E9',
-          //     titleFontSize: 96,
-          //     subtitleFontSize: 60,
-          //     fontStyle: `sans-serif`,
-          //   },
-          // },
 					{
 						resolve: "gatsby-remark-external-links",
 						options: {
@@ -108,19 +107,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/timsmith-teal.png`, // This path is relative to the root of the site.
-      },
-    },
-		{
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          process.env.GA_TRACKING_ID,
-        ],
-        gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
