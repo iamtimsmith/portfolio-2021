@@ -7,7 +7,7 @@ import Footer from './footer';
 import Bio from './bio';
 import Gif from './gif';
 import Seo from './seo';
-import Tags from './tags';
+import EmailSignup from './email-signup';
 import Socials from './socials';
 import PostFooter from './post-footer';
 import 'prismjs/themes/prism.css';
@@ -30,17 +30,17 @@ const Layout = ({children, pageContext}) => {
   `);
 
   return (
-    <MDXProvider components={{Gif, Bio, Seo, Tags}}>
+    <MDXProvider components={{Gif, Bio, Seo, EmailSignup}}>
       <div className='container'>
         <Header siteTitle={site.siteMetadata?.title || `Title`} />
         <main>
-          {typeof pageContext !== `undefined` && (
+          {(typeof pageContext !== `undefined` && pageContext.frontmatter.title) && (
             <h1>{pageContext.frontmatter.title}</h1>
           )}
           {children}
 					<Socials/>
           {/* Blog Footer */}
-          {typeof pageContext !== `undefined` && (
+          {(typeof pageContext !== `undefined` && pageContext.frontmatter.title) && (
             <PostFooter
               data={pageContext.frontmatter}
               author={site.siteMetadata.author}

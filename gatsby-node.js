@@ -21,6 +21,8 @@ exports.onCreatePage = ({page, actions}) => {
   }
   // Delete blog page
   if (page.path === `/blog/`) deletePage(page);
+	// Delete style guide if prod
+	if (process.env.NODE_ENV === `production` && page.path === `/style-guide/`) deletePage(page);
 };
 
 exports.onCreateNode = ({node, actions, getNode}) => {

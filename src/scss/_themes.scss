@@ -24,6 +24,17 @@
 	--color-accent-700: #17625e;
 	--color-accent-800: #033b39;
 	--color-accent-900: #001616;
+
+	--color-error-50: #ffe4eb;
+	--color-error-100: #feb7c6;
+	--color-error-200: #f6899f;
+	--color-error-300: #f15a79;
+	--color-error-400: #ec2d53;
+	--color-error-500: #d21339;
+	--color-error-600: #a50c2d;
+	--color-error-700: #76061f;
+	--color-error-800: #490112;
+	--color-error-900: #1e0005;
 }
 
 :root.dark {
@@ -48,4 +59,15 @@
 	--color-accent-700: #9ae1de;
 	--color-accent-800: #beefec;
 	--color-accent-900: #defcfa;
+
+	--color-error-50: #1e0005;
+	--color-error-100: #490112;
+	--color-error-200: #76061f;
+	--color-error-300: #a50c2d;
+	--color-error-400: #d21339;
+	--color-error-500: #ec2d53;
+	--color-error-600: #f15a79;
+	--color-error-700: #f6899f;
+	--color-error-800: #feb7c6;
+	--color-error-900: #ffe4eb;
 }
