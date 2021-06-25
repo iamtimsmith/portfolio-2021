@@ -74,6 +74,8 @@ Let's take a closer look at what's going on here. Line 1 imports the express lib
 
 Once those variables are set, you can create the server by using `app.listen()`. First, pass in the port at which you want the server to run. This can be any value as long as it's an integer. After the port, can provide a callback. In this case, I've used the callback to log a message to the console indicating the server is running. This isn't required, but I like having the message to indicate that the terminal is working as expected.
 
+<EmailSignup title='Like this post? Join my mailing list!' />
+
 ## Setting up routes in express
 
 Before setting up routes, you need to include the body-parser package we included so express can use the information coming from the http request. To do so, modify the server file like so:
@@ -202,6 +204,8 @@ app.listen(port, () => {
 The line of code you added above says, "use this middleware, use the prefix of `/` for any routes in the controller, and use the routes file for the routing. This prefix could be whatever path you want at the beginning of the routes in the route file. In this case, I want the routes be at the root level instead of having a prefix, so I used `/`. Adding prefixes could be useful for apis or other such tools.
 
 Now if you run `node server.js`, you'll see the same output as before because the servers work the same way. In my opinion, handling routes this way is much more legible and scalable.
+
+<EmailSignup title='Like this post? Join my mailing list!' />
 
 ## Adding views with pug
 

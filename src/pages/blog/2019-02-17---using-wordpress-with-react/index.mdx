@@ -126,6 +126,8 @@ ReactDOM.render(<App />, document.getElementById('app'));
 
 Next we need to create the `PostList` and `PostView` components and import them into the `app.js` component.
 
+<EmailSignup title='Like this post? Join my mailing list!' />
+
 ## Creating our PostList Component
 
 Before starting to create our `PostList` component, we should spend a little time thinking about [what kind of component we should use](https://www.iamtimsmith.com/blog/class-components-vs-stateless-functional-components/). We will be making an http request with axios using the `componentDidMount` lifecycle method and then [we can store it in state](https://www.iamtimsmith.com/blog/this-state-how-to-use-state-in-react/). We can use both state and lifecycle methods in a class component. Now that we have an idea of how this component will be built, we can get started. First we should create the file for the component:
@@ -377,6 +379,8 @@ export default Header;
 ```
 
 The last step for our Wordpress and React js blog is to add import statements to the `app.js` file for our two components, `PostList` and `PostView` so react knows where to get them from. Once you have done this, you should be able to run the application and see the most recent blog posts from TechCrunch.
+
+<EmailSignup title='Like this post? Join my mailing list!' />
 
 ## Performance Issues with React js
 

@@ -144,6 +144,8 @@ I mentioned at the end of [part two](/blog/how-to-build-a-blog-with-wordpress-an
 
 Now if we visit the about page at [http://localhost:8000/about](http://localhost:8000/about), we can see the data coming in from WordPress. If we inspect the page and look at the head, we can also see that the title and meta tags are being updated in the head because of the SEO component!
 
+<EmailSignup title='Like this post? Join my mailing list!' />
+
 ## Creating Pages in the Pages Directory
 
 Gatsby js provides some awesome out-of-the-box routing. Anything we create in the `/pages` directory will automatically create a route for us. For instance, if we were to create a file called `gatsby-is-awesome.js`, Gatsby js would see that and create a route called http://localhost:8000/gatsby-is-awesome.
@@ -392,6 +394,8 @@ export default Header;
 The header component above looks a little different than it originally did, but as we start to dig into it a bit more we can see it hasn't changed much. We essentially just wrapped our header in the StaticQuery component and then ran our query inside of that component to give the header the necessary data. Simple, right?
 
 ![Our Gatsby js blog after updating the header component](./gatsby4.png)
+
+<EmailSignup title='Like this post? Join my mailing list!' />
 
 ### Adding a Menu to the Header
 

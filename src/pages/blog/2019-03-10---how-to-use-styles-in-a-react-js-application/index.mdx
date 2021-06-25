@@ -20,6 +20,8 @@ The primary reason for the debate has to do with separation of concerns. Is it b
 
 I don't know that there is necessarily a "correct" answer. I'm sure there are use cases where each is more appropriate, although I find myself reaching for Sass more often. Let's get into each a bit more so you can decide which you prefer!
 
+<EmailSignup title='Like this post? Join my mailing list!' />
+
 ## CSS-in-JS
 
 The concept of CSS-in-JS started making waves when it was discussed in 2014. Since then, many different libraries have been created to try and make this concept a reality. A few of these libraries are: [Styled Components](https://www.styled-components.com/), [Radium](https://formidable.com/open-source/radium/), [Aphrodite](https://github.com/Khan/aphrodite), or [Emotion](https://emotion.sh/docs/introduction).
@@ -362,6 +364,8 @@ Styled Components are very nice because it allows us to throw our styles in the 
 
 ![Finished social card with Styled Components](./styled-components.png)
 
+<EmailSignup title='Like this post? Join my mailing list!' />
+
 ## Using Sass in a React Application
 
 Sass was created several years ago and was originally implemented in applications built using Ruby. In recent years, it has been adapted to work with Node.js which is how we will be using it today. You may notice that we are creating "scss" files but calling it _sass_. This is because Sass was originally created with a certain syntax which is actually known as "Sass". Later an alternative syntax was created to closer resemble CSS, and this is called "Scss". Because Scss has the same functionality of Sass, it still falls into the category of Sass.
@@ -380,15 +384,15 @@ Instead, we will create separate files and just import them into the app.scss fi
 
 There are lots of different opinions on how to organize the folder with our styles. We could spend a TON of time going down a rabbit hole of organizational techniques, but I find that the way I like to do it is to organize my Sass folder the same as my project. Typically this would translate out to having the following layout:
 
-- /Sass
-  - /Components - A directory which has a .scss file for each React component
-  - /Pages - A directory which has a .scss file for each page that requires custom styles
-  - /Templates (optional) - A directory for templates if using them (for tools such as gatsby)
-  - /\_elements.scss - Any generic styles for the site. Shouldn't have any classes or ids for selectors.
-  - /\_keyframes.scss (optional) - Any keyframes or animations I will be using for the site.
-  - /\_mixins.scss - Any mixins (style snippets) that will be used over and over
-  - /\_variables.scss - Any variables that will be used throughout styles
-  - /app.scss - The file that imports all other scss files
+- Sass/
+  - Components/ - A directory which has a .scss file for each React component
+  - Pages/ - A directory which has a .scss file for each page that requires custom styles
+  - Templates/ (optional) - A directory for templates if using them (for tools such as gatsby)
+  - \_elements.scss - Any generic styles for the site. Shouldn't have any classes or ids for selectors.
+  - \_keyframes.scss (optional) - Any keyframes or animations I will be using for the site.
+  - \_mixins.scss - Any mixins (style snippets) that will be used over and over
+  - \_variables.scss - Any variables that will be used throughout styles
+  - app.scss - The file that imports all other scss files
 
 The first thing you may notice about the file names is that several of them start with an underscore. This is because outside of node, Sass is actually compiled to a CSS file. Any SCSS file without an underscore at the beginning is compiled as a different stylesheet. Since we are pulling all of our stylesheets into the app.scss file rather than separating them out, they should all start with an underscore.
 

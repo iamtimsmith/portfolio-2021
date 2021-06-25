@@ -73,6 +73,8 @@ Below the `h1` tag, I have added a line with the `include` keyword followed by t
 
 Honestly, that's really all there is to know about includes. You write code, then include it somewhere. It is worth noting that using when using includes, the whole file is included. There's not any way to only pull certain pieces out for reuse. This is also the way you pull other data such as mixins into the current file. What if you needed this sort of idea, but with dynamic data? That's where mixins come into play.
 
+<EmailSignup title='Like this post? Join my mailing list!' />
+
 ## What are mixins used for in Pug?
 
 Mixins allow you to write chunks of Pug markup with or without dynamic data, then use that markup anywhere you want. This allows you to write a sort of "mold" of a component, then fill it out with relevant data later on. A common example of this concept is cards on social media sites. Every post gets the same basic card to put the content and user info into, but it's just filling the component with different information each time instead of being written out every time it appears.
