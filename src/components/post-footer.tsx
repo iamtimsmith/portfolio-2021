@@ -5,6 +5,14 @@ import Seo from './seo';
 import Tags from './tags';
 import Sharing from './sharing';
 
+interface PostFooterProps {
+	data: {
+		title: string;
+		description: string;
+		image: string;
+	}
+}
+
 const PostFooter = ({data}) => {
   return (
     <footer>

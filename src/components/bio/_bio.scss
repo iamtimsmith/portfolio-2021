@@ -1,0 +1,33 @@
+.bio {
+  margin: var(--spacing-8) var(--spacing-0);
+  padding: var(--spacing-5) var(--spacing-0);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 1px solid var(--color-grey-200);
+  border-bottom: 1px solid var(--color-grey-200);
+  transition: 0.3s;
+
+  &--author {
+    margin: var(--spacing-0);
+  }
+
+  &__image {
+    border-radius: 50%;
+    margin-right: var(--spacing-4);
+  }
+
+  &__content {
+    flex: 1;
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__author {
+    font-weight: 700;
+    margin-bottom: var(--spacing-0);
+    color: var(--color-grey-900);
+  }
+}

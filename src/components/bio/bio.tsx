@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql, useStaticQuery} from 'gatsby';
 import {getImage, GatsbyImage} from 'gatsby-plugin-image';
+import './_bio.scss';
 
 const Bio = ({showAuthor = false}) => {
   const {image, site} = useStaticQuery(graphql`
@@ -31,7 +32,7 @@ const Bio = ({showAuthor = false}) => {
         className='bio__image'
       />
       <div className='bio__content'>
-        {(showAuthor && site.siteMetadata.author) && (
+        {showAuthor && site.siteMetadata.author && (
           <p className='bio__author'>
             Written by {site.siteMetadata.author.name}
           </p>

@@ -8,7 +8,7 @@ exports.onRenderBody = ({setHeadComponents}) => {
 				(function() {
 					// Update theme to light or dark
 					function setTheme(theme) {
-						window.__theme = theme;
+						window.theme = theme;
 						// TODO: Update logic
 						console.log('Theme Updated to ' + theme);
 
@@ -20,7 +20,7 @@ exports.onRenderBody = ({setHeadComponents}) => {
 					};
 
 					// Save user preference
-					window.__setPreferredTheme = function(theme) {
+					window.setPreferredTheme = function(theme) {
 						setTheme(theme);
 						try {
 							localStorage.setItem('theme', theme);

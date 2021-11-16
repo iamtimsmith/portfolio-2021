@@ -49,5 +49,14 @@
   "devDependencies": {
     "onchange": "^7.1.0",
     "prettier": "2.2.1"
-  }
+  },
+	"prettier": {
+		"arrowParens": "avoid",
+		"semi": true,
+		"bracketSpacing": true,
+		"singleQuote": true,
+		"jsxSingleQuote": true,
+		"useTabs": true,
+		"tabWidth": 2
+	}
 }
