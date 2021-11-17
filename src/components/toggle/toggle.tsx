@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
+import './toggle.scss';
 
 declare const window: any;
 
