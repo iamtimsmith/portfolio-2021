@@ -1,3 +1,5 @@
+@import '../../scss/utils';
+
 .socials {
 	display: none;
 	position: fixed;
@@ -20,7 +22,8 @@
 		padding: var(--spacing-4) var(--spacing-0);
 		overflow: visible;
 
-		&, * {
+		&,
+		* {
 			transition: 0.3s;
 		}
 
@@ -36,7 +39,8 @@
 			transition: 0.3s;
 		}
 
-		button, a {
+		button,
+		a {
 			font-size: var(--font-size-xl);
 			background: none;
 			border: none;

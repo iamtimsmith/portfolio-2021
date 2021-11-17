@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 
+declare const window: any;
+
 const Toggle = () => {
 	const [isDark, setIsDark] = useState(
 		typeof window !== `undefined` && window.theme === `dark`
@@ -15,7 +17,7 @@ const Toggle = () => {
 	return (
 		<button
 			onClick={() => handleClick()}
-			label='Toggle Theme'
+			aria-label='Toggle Theme'
 			className='toggle'
 		>
 			{(isDark && <IoSunnyOutline />) || <IoMoonOutline />}

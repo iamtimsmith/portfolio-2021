@@ -1,9 +1,11 @@
+@import '../../scss/utils';
+
 .projects {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
-  list-style: none;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+	list-style: none;
 
 	@include mq($phone) {
 		grid-template-columns: repeat(2, 1fr);

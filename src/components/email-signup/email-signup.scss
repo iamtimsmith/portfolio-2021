@@ -1,3 +1,5 @@
+@import '../../scss/utils';
+
 .email-signup {
 	display: block;
 	margin: var(--spacing-6) var(--spacing-0);
@@ -19,7 +21,6 @@
 
 	&__error {
 		color: var(--color-error-600);
-
 	}
 
 	input {

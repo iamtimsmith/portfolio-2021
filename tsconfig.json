@@ -1,21 +1,19 @@
 {
+	"include": ["./src/**/*", "./modules.d.ts"],
 	"compilerOptions": {
-		"baseUrl": ".",
-		"target": "es5",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"forceConsistentCasingInFileNames": true,
-		"noEmit": true,
-		"incremental": true,
-		"esModuleInterop": true,
+		"baseUrl": "./src",
+		"target": "esnext",
 		"module": "esnext",
 		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve"
-	},
-	"include": ["**/*.ts", "**/*.tsx"],
-	"exclude": ["node_modules"]
+		"lib": ["dom", "es2017"],
+		// "allowJs": true,
+		// "checkJs": true,
+		"jsx": "react",
+		"strict": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"noEmit": true,
+		"skipLibCheck": true
+	}
 }
