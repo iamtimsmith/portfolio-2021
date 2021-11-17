@@ -82,8 +82,8 @@ In the Pizza component above, you can see that we have a state which includes a 
 I know what you're thinking. _Super Cool, Tim. Now what?_
 
 <Gif
-  src='https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4'
-  width={300}
+	src='https://media.giphy.com/media/20KLYSIhq35V4EpVlC/giphy.mp4'
+	width={300}
 />
 
 I'm glad you asked. That brings us to the next section:
@@ -102,7 +102,7 @@ Did you get it? I'll go over it anyway just in case. Let's say we just want to o
 
 The code above would be output in the browser like this:
 
-```html:title=html
+```html
 <p>Pepperoni</p>
 ```
 
@@ -115,7 +115,7 @@ Okay, so we have our state and we can output it. It's basically the same as prop
 ```jsx
 // app.js
 
-this.setState({item: 'newValue'});
+this.setState({ item: 'newValue' });
 ```
 
 The code above calls a `this.setState` function and passes in an object with key-value pairs. If the key matches one we already have in state, it updates the value in state to the new value provided. If the key doesn't exist in state, it will be created with the given value.
@@ -172,8 +172,8 @@ Here is the code for our newly created `Button` component:
 ```jsx
 // app.js
 
-const Button = ({action, label}) => (
-  <button onClick={() => action()}>{label}</button>
+const Button = ({ action, label }) => (
+	<button onClick={() => action()}>{label}</button>
 );
 ```
 
@@ -217,41 +217,41 @@ We need to remember to bind `this` to our function in the constructor as well. R
 ```jsx
 // app.js
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Example extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isHungry: true,
-      topping: 'Pepperoni',
-      slices: 8,
-    };
-    this.eatSlice = this.eatSlice.bind(this);
-    this.buySlice = this.buySlice.bind(this);
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			isHungry: true,
+			topping: 'Pepperoni',
+			slices: 8,
+		};
+		this.eatSlice = this.eatSlice.bind(this);
+		this.buySlice = this.buySlice.bind(this);
+	}
 
-  eatSlice() {
-    const totalSlices = this.state.slices - 1;
-    this.setState({
-      slices: totalSlices,
-    });
-  }
+	eatSlice() {
+		const totalSlices = this.state.slices - 1;
+		this.setState({
+			slices: totalSlices,
+		});
+	}
 
-  buySlice() {
-    const totalSlices = this.state.slices + 1;
-    this.setState({
-      slices: totalSlices,
-    });
-  }
+	buySlice() {
+		const totalSlices = this.state.slices + 1;
+		this.setState({
+			slices: totalSlices,
+		});
+	}
 
-  render() {
-    return (
-      <div>
-        <Button action={this.eatSlice} label='Eat a slice' />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<Button action={this.eatSlice} label='Eat a slice' />
+			</div>
+		);
+	}
 }
 ```
 
@@ -285,16 +285,16 @@ In this post, we talked about what state is, how to create state, how to change 
 
 <br />
 <iframe
-  height='600'
-  style='width: 100%;'
-  scrolling='no'
-  title='xMqdjV'
-  src='//codepen.io/iamtimsmith/embed/xMqdjV/?height=265&theme-id=dark&default-tab=result'
-  frameborder='no'
-  allowtransparency='true'
-  allowfullscreen='true'
+	height='600'
+	style='width: 100%;'
+	scrolling='no'
+	title='xMqdjV'
+	src='//codepen.io/iamtimsmith/embed/xMqdjV/?height=265&theme-id=dark&default-tab=result'
+	frameborder='no'
+	allowtransparency='true'
+	allowfullscreen='true'
 >
-  See the Pen <a href='https://codepen.io/iamtimsmith/pen/xMqdjV/'>xMqdjV</a> by
-  Tim Smith (<a href='https://codepen.io/iamtimsmith'>@iamtimsmith</a>) on{' '}
-  <a href='https://codepen.io'>CodePen</a>.
+	See the Pen <a href='https://codepen.io/iamtimsmith/pen/xMqdjV/'>xMqdjV</a> by
+	Tim Smith (<a href='https://codepen.io/iamtimsmith'>@iamtimsmith</a>) on{' '}
+	<a href='https://codepen.io'>CodePen</a>.
 </iframe>

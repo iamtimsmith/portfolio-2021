@@ -1,0 +1,24 @@
+.toggle {
+	background: none;
+	border: none;
+	color: var(--color-grey-700);
+	font-size: var(--font-size-lg);
+	line-height: 0;
+	position: relative;
+	top: 5px;
+	cursor: pointer;
+
+	&__light {
+		display: none;
+		.dark & {
+			display: block;
+		}
+	}
+
+	&__dark {
+		display: block;
+		.dark & {
+			display: none;
+		}
+	}
+}
