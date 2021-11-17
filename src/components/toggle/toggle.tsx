@@ -21,7 +21,8 @@ const Toggle = () => {
 			aria-label='Toggle Theme'
 			className='toggle'
 		>
-			{(isDark && <IoSunnyOutline />) || <IoMoonOutline />}
+			<IoSunnyOutline className='toggle__light' />
+			<IoMoonOutline className='toggle__dark' />
 		</button>
 	);
 };

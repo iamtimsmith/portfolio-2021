@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'components/layout';
-import Posts from '../components/posts';
-import Seo from '../components/seo';
+import Posts from '../components/posts/posts';
+import Seo from '../components/seo/seo';
 
 const BlogTemplate = ({ data, pageContext }) => {
 	return (

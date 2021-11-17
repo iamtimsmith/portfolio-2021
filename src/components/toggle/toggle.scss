@@ -7,4 +7,18 @@
 	position: relative;
 	top: 5px;
 	cursor: pointer;
+
+	&__light {
+		display: none;
+		.dark & {
+			display: block;
+		}
+	}
+
+	&__dark {
+		display: block;
+		.dark & {
+			display: none;
+		}
+	}
 }

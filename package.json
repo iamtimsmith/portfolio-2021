@@ -8,7 +8,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "onchange \"**/*.{js,jsx,ts,tsx,json,md,mdx,css}\" -- prettier --write --ignore-unknown {{changed}}",
-    "serve": "gatsby serve",
+    "start": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
