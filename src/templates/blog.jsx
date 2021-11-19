@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import Posts from '../components/posts';
+import { BlogList } from '../components/blog-list';
 import Pagination from '../components/pagination';
 import Seo from '../components/seo';
 
@@ -14,7 +14,7 @@ const BlogTemplate = ({ data, pageContext }) => {
         image='/timsmith-social.jpg'
       />
       <h1>Blog</h1>
-      <Posts posts={data.posts.nodes} />
+      <BlogList posts={data.posts.nodes} />
       <Pagination
         page={pageContext.currentPage}
         totalPages={pageContext.numPages}
