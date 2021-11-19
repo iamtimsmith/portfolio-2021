@@ -64,7 +64,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     }
   `);
-  // Get posts, and create number of pages
+  /**
+   * Create pages for each post
+   * from the `src/posts` directory
+   */
   const posts = data.posts.nodes;
   posts.forEach(post => {
     createPage({
@@ -76,6 +79,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
+  /**
+   * Logic for Pagination
+   * Create paginated blog pages
+   */
   const postsPerPage = 6;
   const numPages = Math.ceil(posts.length / postsPerPage);
   // Create pages based on pagination
@@ -92,7 +99,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  // Generate pages from tags
+  /**
+   * Create pages for tags.
+   */
   const postTags = [];
   // Loop through each post to get tags
   posts.forEach(node => {
