@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 
-const Posts = ({posts}) => {
+const Posts = ({ posts }) => {
   return (
     <ul className='posts'>
       {posts.map(node => (

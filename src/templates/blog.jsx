@@ -1,18 +1,18 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Posts from '../components/posts';
 import Pagination from '../components/pagination';
 import Seo from '../components/seo';
 
-const BlogTemplate = ({data, pageContext}) => {
+const BlogTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
-			<Seo
-				title='Blog'
-				description={`A blog to teach new developers about engineering, javascript, and much more.`}
-				image='/timsmith-social.jpg'
-			/>
+      <Seo
+        title='Blog'
+        description={`A blog to teach new developers about engineering, javascript, and much more.`}
+        image='/timsmith-social.jpg'
+      />
       <h1>Blog</h1>
       <Posts posts={data.posts.nodes} />
       <Pagination
@@ -26,8 +26,11 @@ const BlogTemplate = ({data, pageContext}) => {
 export const query = graphql`
   query BlogTemplateQuery($skip: Int!, $limit: Int!) {
     posts: allMdx(
-      filter: {slug: {regex: "/blog/./i"}, frontmatter: {published: {eq: true}}}
-      sort: {fields: fileAbsolutePath, order: DESC}
+      filter: {
+        fileAbsolutePath: { regex: "/src/posts/./i" }
+        frontmatter: { published: { eq: true } }
+      }
+      sort: { fields: fileAbsolutePath, order: DESC }
       limit: $limit
       skip: $skip
     ) {

@@ -31,7 +31,7 @@ export const query = graphql`
   query IndexPageQuery {
     allMdx(
       filter: {
-        slug: { regex: "/blog/./i" }
+        fileAbsolutePath: { regex: "src/posts/./i" }
         frontmatter: { published: { eq: true } }
       }
       sort: { fields: fileAbsolutePath, order: DESC }
