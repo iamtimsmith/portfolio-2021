@@ -15,6 +15,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "gatsby": "^3.6.2",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^3.7.1",
     "gatsby-plugin-feed": "^3.7.1",
     "gatsby-plugin-feed-mdx": "^1.1.0",
@@ -50,13 +51,13 @@
     "onchange": "^7.1.0",
     "prettier": "2.2.1"
   },
-	"prettier": {
-		"arrowParens": "avoid",
-		"semi": true,
-		"bracketSpacing": true,
-		"singleQuote": true,
-		"jsxSingleQuote": true,
-		"useTabs": false,
-		"tabWidth": 2
-	}
+  "prettier": {
+    "arrowParens": "avoid",
+    "semi": true,
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "useTabs": false,
+    "tabWidth": 2
+  }
 }

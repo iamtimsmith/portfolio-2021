@@ -1,12 +1,12 @@
 const path = require(`path`);
-const {createFilePath} = require(`gatsby-source-filesystem`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.onCreatePage = ({page, actions}) => {
-  const {createPage, deletePage} = actions;
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
   const oldPage = Object.assign({}, page);
   page.path =
     page.path.indexOf(`---`) >= 0
-      ? page.path.replace(/(\d{4}-\d{2}-\d{2}---)/i, ``)
+      ? `/blog${page.path.replace(/(\d{4}-\d{2}-\d{2}---)/i, ``)}`
       : page.path;
   if (page.path !== oldPage.path) {
     // Replace old page with new page
@@ -21,36 +21,37 @@ exports.onCreatePage = ({page, actions}) => {
   }
   // Delete blog page
   if (page.path === `/blog/`) deletePage(page);
-	// Delete style guide if prod
-	if (process.env.NODE_ENV === `production` && page.path === `/style-guide/`) deletePage(page);
+  // Delete style guide if prod
+  if (process.env.NODE_ENV === `production` && page.path === `/style-guide/`)
+    deletePage(page);
 };
 
-exports.onCreateNode = ({node, actions, getNode}) => {
-  const {createNodeField} = actions;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === 'Mdx') {
-    const value = createFilePath({node, getNode});
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: 'slug',
       node,
       value:
         value.indexOf(`---`) >= 0
-          ? value.replace(/(\d{4}-\d{2}-\d{2}---)/i, ``)
+          ? `/blog${value.replace(/(\d{4}-\d{2}-\d{2}---)/i, ``)}`
           : value,
     });
   }
 };
 
-exports.createPages = async ({graphql, actions, reporter}) => {
-  const {createPage} = actions;
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
 
-  const {data} = await graphql(`
+  const { data } = await graphql(`
     {
       posts: allMdx(
         filter: {
-          slug: {regex: "/blog/./i"}
-          frontmatter: {published: {eq: true}}
+          fileAbsolutePath: { regex: "/src/posts/./i" }
+          frontmatter: { published: { eq: true } }
         }
-        sort: {fields: fileAbsolutePath, order: DESC}
+        sort: { fields: fileAbsolutePath, order: DESC }
       ) {
         nodes {
           frontmatter {
@@ -65,10 +66,20 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   `);
   // Get posts, and create number of pages
   const posts = data.posts.nodes;
+  posts.forEach(post => {
+    createPage({
+      path: post.fields.slug,
+      component: path.resolve('./src/templates/post.jsx'),
+      context: {
+        slug: post.fields.slug,
+      },
+    });
+  });
+
   const postsPerPage = 6;
   const numPages = Math.ceil(posts.length / postsPerPage);
   // Create pages based on pagination
-  Array.from({length: numPages}).forEach((_, i) => {
+  Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: path.resolve('./src/templates/blog.jsx'),
