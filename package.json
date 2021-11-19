@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "scripts": {
+    "dev": "gatsby develop -p 1125",
     "build": "gatsby build",
-    "dev": "gatsby develop",
     "format": "onchange \"**/*.{js,jsx,ts,tsx,json,md,mdx,css}\" -- prettier --write --ignore-unknown {{changed}}",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -49,5 +49,14 @@
   "devDependencies": {
     "onchange": "^7.1.0",
     "prettier": "2.2.1"
-  }
+  },
+	"prettier": {
+		"arrowParens": "avoid",
+		"semi": true,
+		"bracketSpacing": false,
+		"singleQuote": true,
+		"jsxSingleQuote": true,
+		"useTabs": false,
+		"tabWidth": 2
+	}
 }
