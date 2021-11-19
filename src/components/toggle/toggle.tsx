@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {IoSunnyOutline, IoMoonOutline} from 'react-icons/io5';
+import React, { useEffect, useState } from 'react';
+import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 import './toggle.scss';
 
 declare const window: any;
 
-const Toggle = () => {
+export const Toggle = () => {
   const [isDark, setIsDark] = useState(
     typeof window !== `undefined` && window.__theme === `dark`
   );
@@ -30,5 +30,3 @@ const Toggle = () => {
     </button>
   );
 };
-
-export default Toggle;

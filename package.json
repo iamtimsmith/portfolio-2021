@@ -53,7 +53,7 @@
 	"prettier": {
 		"arrowParens": "avoid",
 		"semi": true,
-		"bracketSpacing": false,
+		"bracketSpacing": true,
 		"singleQuote": true,
 		"jsxSingleQuote": true,
 		"useTabs": false,
