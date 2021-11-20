@@ -6,7 +6,6 @@ import Tags from './tags';
 import Sharing from './sharing';
 
 const PostFooter = ({ data }) => {
-  console.log(data);
   return (
     <footer>
       <Seo

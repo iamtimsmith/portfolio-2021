@@ -2,7 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const Posts = ({ posts }) => {
+interface BlogListProps {
+  posts: {
+    id: string;
+    excerpt: string;
+    frontmatter: {
+      title: string;
+    };
+    fields: {
+      slug: string;
+    };
+  }[];
+}
+
+export const BlogList = ({ posts }: BlogListProps) => {
   return (
     <ul className='posts'>
       {posts.map(node => (
@@ -17,8 +30,6 @@ const Posts = ({ posts }) => {
   );
 };
 
-Posts.propTypes = {
+BlogList.propTypes = {
   posts: PropTypes.array,
 };
-
-export default Posts;

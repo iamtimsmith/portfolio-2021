@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import Header from './header';
 import Footer from './footer';
 import { Bio } from './bio';
+import { BlogList } from './blog-list';
 import Gif from './gif';
 import Seo from './seo';
 import EmailSignup from './email-signup';
@@ -30,14 +31,16 @@ const Layout = ({ children, pageContext }) => {
   `);
 
   return (
-    <MDXProvider components={{ Gif, Bio, Seo, EmailSignup }}>
+    <MDXProvider components={{ Gif, Bio, Seo, BlogList, EmailSignup }}>
+      {typeof pageContext !== `undefined` && (
+        <Seo
+          title={pageContext.frontmatter.title}
+          description={pageContext.frontmatter.description}
+        />
+      )}
       <div className='container'>
         <Header siteTitle={site.siteMetadata?.title || `Title`} />
         <main>
-          {typeof pageContext !== `undefined` &&
-            pageContext.frontmatter.title && (
-              <h1>{pageContext.frontmatter.title}</h1>
-            )}
           {children}
           <Socials />
           {/* Blog Footer */}

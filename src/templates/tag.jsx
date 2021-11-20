@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import Posts from '../components/posts';
+import { BlogList } from '../components/blog-list';
 import Seo from '../components/seo';
 
 const BlogTemplate = ({ data, pageContext }) => {
@@ -13,7 +13,7 @@ const BlogTemplate = ({ data, pageContext }) => {
         image='/timsmith-social.jpg'
       />
       <h1>#{pageContext.slug}</h1>
-      <Posts posts={data.posts.nodes} />
+      <BlogList posts={data.posts.nodes} />
     </Layout>
   );
 };
