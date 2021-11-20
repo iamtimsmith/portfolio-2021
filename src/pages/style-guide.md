@@ -1,4 +1,4 @@
-import '../scss/_style-guide.scss';
+import '../styles/_style-guide.scss';
 
 # Style Guide
 This page contains information about colors, typography, and other elements on the site in one convenient location. It will be deleted in production builds, so you don't have to worry about visitors finding this page.

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import './blog-list.scss';
 
 interface BlogListProps {
   posts: {
@@ -17,10 +18,10 @@ interface BlogListProps {
 
 export const BlogList = ({ posts }: BlogListProps) => {
   return (
-    <ul className='posts'>
-      {posts.map(node => (
-        <li className='posts__post' key={node.id}>
-          <strong className='posts__post-title'>
+    <ul className='blog-list'>
+      {posts.map((node, id) => (
+        <li className='blog-list__post' key={id}>
+          <strong className='blog-list__post-title'>
             <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
           </strong>
           <p>{node.excerpt}</p>

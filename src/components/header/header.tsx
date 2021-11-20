@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { Toggle } from './toggle';
+import { Toggle } from '../toggle';
+import './header.scss';
 
-const Header = ({ siteTitle }) => (
+interface HeaderProps {
+  siteTitle: string;
+}
+
+export const Header = ({ siteTitle }: HeaderProps) => (
   <header className='header'>
     <Link to='/' className='header__logo'>
       {siteTitle}
@@ -14,13 +18,3 @@ const Header = ({ siteTitle }) => (
     </nav>
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
-
-export default Header;
