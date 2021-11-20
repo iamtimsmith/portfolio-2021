@@ -1,13 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from '@reach/router';
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedin,
-  FaPinterest,
-  FaEnvelope,
-} from 'react-icons/fa';
 import { SiteContext } from '../../utils/context';
+import { getIcon, getSharingData } from '../../utils/social';
 import './sharing.scss';
 
 interface SharingProps {
@@ -20,34 +14,6 @@ export const Sharing = ({ title }: SharingProps) => {
   const url = `${site.siteUrl}${pathname}`;
   const image = `${url}/twitter-card.jpg`;
   const [showing, setShowing] = useState(false);
-
-  const socials = [
-    {
-      name: `Facebook`,
-      href: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      icon: <FaFacebookF />,
-    },
-    {
-      name: `Twitter`,
-      href: `https://twitter.com/share?url=${url}&text=Check out this article!`,
-      icon: <FaTwitter />,
-    },
-    {
-      name: `Linkedin`,
-      href: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
-      icon: <FaLinkedin />,
-    },
-    {
-      name: `Pinterest`,
-      href: `https://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${title}`,
-      icon: <FaPinterest />,
-    },
-    {
-      name: `Email`,
-      href: `mailto:?&body=Check%20this%20article%20out!%0A%0A${url}`,
-      icon: <FaEnvelope />,
-    },
-  ];
 
   const handleScroll = () =>
     setShowing(
@@ -62,7 +28,7 @@ export const Sharing = ({ title }: SharingProps) => {
   return (
     <aside className={showing ? `sharing show` : `sharing`}>
       <p className='sharing__label'>Share:</p>
-      {socials.map(site => (
+      {getSharingData(url, image, title).map(site => (
         <a
           className={`sharing__${site.name.toLowerCase()}`}
           href={site.href}
@@ -72,7 +38,7 @@ export const Sharing = ({ title }: SharingProps) => {
           aria-label={`Share to ${site.name}`}
           key={site.name}
         >
-          {site.icon}
+          {getIcon(site.name.toLowerCase())}
         </a>
       ))}
     </aside>
