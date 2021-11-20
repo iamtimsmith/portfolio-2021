@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
+import './pagination.scss';
 
-const Pagination = ({page, totalPages}) => {
+interface PaginationProps {
+  page: number;
+  totalPages: number;
+}
+
+export const Pagination = ({ page, totalPages }: PaginationProps) => {
   return (
     <nav className='pagination'>
       {(page === 1 && <span>&larr; Previous</span>) || (
@@ -19,11 +24,3 @@ const Pagination = ({page, totalPages}) => {
     </nav>
   );
 };
-
-Pagination.propTypes = {
-  page: PropTypes.number,
-  totalPages: PropTypes.number,
-  paginate: PropTypes.func,
-};
-
-export default Pagination;

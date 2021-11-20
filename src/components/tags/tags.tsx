@@ -1,7 +1,12 @@
 import React from 'react';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
+import './tags.scss';
 
-const Tags = ({tags = []}) => {
+interface TagsProps {
+  tags: string[];
+}
+
+export const Tags = ({ tags = [] }: TagsProps) => {
   return (
     <nav className='tags'>
       <span>Tags: </span>
@@ -13,5 +18,3 @@ const Tags = ({tags = []}) => {
     </nav>
   );
 };
-
-export default Tags;

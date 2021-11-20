@@ -1,17 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Bio } from './bio';
-import Seo from './seo';
-import Tags from './tags';
-import Sharing from './sharing';
+import { Bio } from '../bio';
+import { Seo } from '../seo';
+import { Tags } from '../tags';
+import { Sharing } from '../sharing';
 
-const PostFooter = ({ data }) => {
+interface PostFooterProps {
+  data: {
+    title: string;
+    description: string;
+    tags: string[];
+    image: string;
+  };
+}
+
+export const PostFooter = ({ data }: PostFooterProps) => {
   return (
     <footer>
       <Seo
         title={data.title}
         description={data.description}
-        // image={data.image}
+        image={data.image}
       />
       {data.tags && (
         <>
@@ -22,10 +30,6 @@ const PostFooter = ({ data }) => {
       )}
     </footer>
   );
-};
-
-PostFooter.propTypes = {
-  data: PropTypes.object,
 };
 
 export default PostFooter;

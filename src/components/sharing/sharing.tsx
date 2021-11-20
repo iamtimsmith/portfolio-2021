@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useLocation} from '@reach/router';
-import {useStaticQuery, graphql} from 'gatsby';
+import React, { useEffect, useState, useContext } from 'react';
+import { useLocation } from '@reach/router';
 import {
   FaFacebookF,
   FaTwitter,
@@ -8,19 +7,17 @@ import {
   FaPinterest,
   FaEnvelope,
 } from 'react-icons/fa';
+import { SiteContext } from '../../utils/context';
+import './sharing.scss';
 
-const Sharing = ({title}) => {
-	const {site} = useStaticQuery(graphql`
-		{
-			site {
-				siteMetadata {
-					siteUrl
-				}
-			}
-		}
-	`);
-  const {pathname} = useLocation();
-  const url = `${site.siteMetadata.siteUrl}${pathname}`;
+interface SharingProps {
+  title: string;
+}
+
+export const Sharing = ({ title }: SharingProps) => {
+  const { site } = useContext(SiteContext);
+  const { pathname } = useLocation();
+  const url = `${site.siteUrl}${pathname}`;
   const image = `${url}/twitter-card.jpg`;
   const [showing, setShowing] = useState(false);
 
@@ -52,7 +49,10 @@ const Sharing = ({title}) => {
     },
   ];
 
-  const handleScroll = () => setShowing(window.scrollY > 100 && window.scrollY < document.body.clientHeight - 2000);
+  const handleScroll = () =>
+    setShowing(
+      window.scrollY > 100 && window.scrollY < document.body.clientHeight - 2000
+    );
 
   useEffect(() => {
     document.addEventListener(`scroll`, handleScroll);
@@ -67,7 +67,7 @@ const Sharing = ({title}) => {
           className={`sharing__${site.name.toLowerCase()}`}
           href={site.href}
           target='_parent'
-					rel='noreferrer nofollow'
+          rel='noreferrer nofollow'
           title={`Share to ${site.name}`}
           aria-label={`Share to ${site.name}`}
           key={site.name}
@@ -78,5 +78,3 @@ const Sharing = ({title}) => {
     </aside>
   );
 };
-
-export default Sharing;
