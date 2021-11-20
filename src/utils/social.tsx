@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
+import { GiTechnoHeart } from 'react-icons/gi';
 import {
   FaFacebookF,
   FaTwitter,
@@ -22,6 +23,8 @@ export const getIcon = (icon: string) => {
       return <FaFacebookF />;
     case 'github':
       return <FaGithub />;
+    case 'heart':
+      return <GiTechnoHeart />;
     case 'light':
       return <IoSunnyOutline />;
     case 'linkedin':
