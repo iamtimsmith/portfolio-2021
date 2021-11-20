@@ -1,4 +1,5 @@
 import React from 'react';
+import './gif.scss';
 
 interface GifProps {
   src: string;

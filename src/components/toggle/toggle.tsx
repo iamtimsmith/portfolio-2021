@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
+import { getIcon } from '../../utils/social';
 import './toggle.scss';
 
 declare const window: any;
@@ -25,8 +25,13 @@ export const Toggle = () => {
       aria-label='Toggle Theme'
       className='toggle'
     >
-      <IoSunnyOutline className='toggle__icon toggle__icon--light' />
-      <IoMoonOutline className='toggle__icon toggle__icon--dark' />
+      <span className='toggle__icon toggle__icon--light'>
+        {getIcon('light')}
+      </span>
+      {/* prettier-ignore */}
+      <span className='toggle__icon toggle__icon--dark'>
+				{getIcon('dark')}
+			</span>
     </button>
   );
 };

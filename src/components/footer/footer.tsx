@@ -1,7 +1,6 @@
 import React from 'react';
-import { FaTwitter, FaLinkedin, FaGithub, FaDev } from 'react-icons/fa';
-import { GiTechnoHeart } from 'react-icons/gi';
 import { useStaticQuery, graphql } from 'gatsby';
+import { getIcon } from '../../utils/social';
 import './footer.scss';
 
 interface SocialMenuItem {
@@ -28,21 +27,6 @@ export const Footer = () => {
     }
   `);
 
-  const getIcon = (site: string) => {
-    switch (site) {
-      case 'twitter':
-        return <FaTwitter />;
-      case 'linkedin':
-        return <FaLinkedin />;
-      case 'github':
-        return <FaGithub />;
-      case 'dev':
-        return <FaDev />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <footer className='footer'>
       <nav>
@@ -60,7 +44,7 @@ export const Footer = () => {
       </nav>
       <p>
         &copy; {new Date().getFullYear()}. All rights reserved. Made with{' '}
-        <GiTechnoHeart /> by {title}.
+        {getIcon('heart')} by {title}.
       </p>
     </footer>
   );
