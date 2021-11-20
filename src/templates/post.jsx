@@ -5,8 +5,7 @@ import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
 import { PostFooter } from '../components/post-footer';
 
-const PostTemplate = ({ data: { post }, pageContext }) => {
-  console.log(post.frontmatter);
+const PostTemplate = ({ data: { post } }) => {
   return (
     <Layout>
       <Seo
