@@ -12,7 +12,9 @@ const BlogTemplate = ({ data, pageContext }) => {
         description={`Blog posts about ${pageContext.slug} written by Tim Smith.`}
         image='/timsmith-social.jpg'
       />
-      <h1>#{pageContext.slug}</h1>
+      <h1>
+        Posts about <strong>#{pageContext.slug}</strong>
+      </h1>
       <BlogList posts={data.posts.nodes} />
     </Layout>
   );
