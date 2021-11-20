@@ -71,7 +71,7 @@ const Projects = () => {
   //     ))}
   //   </section>
   // );
-	return <p>Projects</p>;
+  return <p>Projects</p>;
 };
 
 export default Projects;

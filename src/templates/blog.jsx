@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
+import { Layout } from '../components/layout';
 import { BlogList } from '../components/blog-list';
-import Pagination from '../components/pagination';
-import Seo from '../components/seo';
+import { Pagination } from '../components/pagination';
+import { Seo } from '../components/seo';
 
 const BlogTemplate = ({ data, pageContext }) => {
   return (

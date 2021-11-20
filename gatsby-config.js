@@ -9,7 +9,7 @@ const siteMetadata = {
     name: `Tim Smith`,
     twitter: `@iam_timsmith`,
     description: `I build things using React, Node, PHP, and more. Currently, I'm a Software Engineer working on <a href='https://www.dndbeyond.com' target='_blank'>D&D Beyond</a> at <a href='https://www.fandom.com' target='_blank'>Fandom</a>. You can follow me on Twitter at <a href='https://www.twitter.com/iam_timsmith' target='_blank'>@iam_timsmith</a>.`,
-    image: `${__dirname}/src/images/timsmith.jpg`,
+    image: `./src/images/timsmith.jpg`,
   },
   socials: [
     { name: `Twitter`, url: `https://www.twitter.com/iam_timsmith` },
@@ -69,7 +69,7 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve('./src/components/layout.jsx'),
+          default: require.resolve('./src/templates/page.jsx'),
         },
         gatsbyRemarkPlugins: [
           `gatsby-remark-prismjs`,

@@ -1,48 +1,29 @@
-import React from 'react';
-import {graphql, useStaticQuery} from 'gatsby';
-import {getImage, GatsbyImage} from 'gatsby-plugin-image';
+import React, { useContext } from 'react';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { SiteContext } from '../../utils/context';
 import './bio.scss';
 
-export const Bio = ({showAuthor = false}) => {
-  const {image, site} = useStaticQuery(graphql`
-    {
-      image: file(name: {eq: "timsmith"}) {
-        childImageSharp {
-          gatsbyImageData(width: 100)
-        }
-      }
-      site {
-        siteMetadata {
-          author {
-            name
-            twitter
-            description
-          }
-        }
-      }
-    }
-  `);
+export const Bio = ({ showAuthor = false }) => {
+  const { site } = useContext(SiteContext);
 
-  const portrait = getImage(image);
+  const portrait = getImage(site.author.image);
 
   return (
     <section className={`bio${showAuthor ? ` bio--author` : ``}`}>
       {portrait && (
         <GatsbyImage
           image={portrait}
-          alt={site.siteMetadata.author.name}
+          alt={site.author.name}
           className='bio__image'
         />
       )}
       <div className='bio__content'>
-        {showAuthor && site.siteMetadata.author && (
-          <p className='bio__author'>
-            Written by {site.siteMetadata.author.name}
-          </p>
+        {showAuthor && site.author && (
+          <p className='bio__author'>Written by {site.author.name}</p>
         )}
         <p
           dangerouslySetInnerHTML={{
-            __html: site.siteMetadata.author.description,
+            __html: site.author.description,
           }}
         ></p>
       </div>

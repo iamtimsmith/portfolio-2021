@@ -2,25 +2,13 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
-  const oldPage = Object.assign({}, page);
-  page.path =
-    page.path.indexOf(`---`) >= 0
-      ? `/blog${page.path.replace(/(\d{4}-\d{2}-\d{2}---)/i, ``)}`
-      : page.path;
-  if (page.path !== oldPage.path) {
-    // Replace old page with new page
-    deletePage(oldPage);
-    createPage(page);
-  }
+  const { deletePage } = actions;
   if (
     page.context.frontmatter &&
     page.context.frontmatter.published === false
   ) {
     deletePage(page);
   }
-  // Delete blog page
-  if (page.path === `/blog/`) deletePage(page);
   // Delete style guide if prod
   if (process.env.NODE_ENV === `production` && page.path === `/style-guide/`)
     deletePage(page);
@@ -30,6 +18,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode });
+    /**
+     * Add slug field for each post
+     * - Provides slug without dates in path
+     */
     createNodeField({
       name: 'slug',
       node,
