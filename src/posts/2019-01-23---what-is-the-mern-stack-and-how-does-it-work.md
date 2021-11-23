@@ -2,7 +2,7 @@
 title: What is the MERN stack and how do I use it?
 description: In this MERN stack tutorial, we will build a simple blog using React js, Node js, Express js, and Mongodb to add to our Full-Stack Developer toolkit.
 image: ../images/what-is-the-mern-stack-and-how-does-it-work.jpg
-tags: [reactjs, node, express, mongodb]
+tags: [react, node, express, mongodb]
 published: true
 ---
 

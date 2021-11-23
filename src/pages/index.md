@@ -1,7 +1,7 @@
 ---
 title: Software Engineer
 description: Tim Smith is a software engineer focused on making the web a more enjoyable place to be
-image: ../images/timsmith-socical.jpg
+image: ../images/timsmith-social.jpg
 ---
 
 <section style="margin: var(--spacing-8) var(--spacing-0)">

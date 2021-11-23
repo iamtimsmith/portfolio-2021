@@ -66,6 +66,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
+        tags: allMdx(
+          filter: {
+            fileAbsolutePath: { regex: "/src/posts/i" }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
       }
     `);
   } else {
@@ -82,6 +92,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+          }
+        }
+        tags: allMdx(
+          filter: { fileAbsolutePath: { regex: "/src/posts/./i" } }
+        ) {
+          group(field: frontmatter___tags) {
+            fieldValue
           }
         }
       }
@@ -127,25 +144,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * Create pages for tags.
    */
-  const postTags = [];
-  // Loop through each post to get tags
-  posts.forEach(node => {
-    // Loop through post tags and if unique, add to array
-    node.frontmatter.tags.forEach(tag => {
-      if (!postTags.includes(tag)) postTags.push(tag);
-    });
+  const tags = content.data.tags.group;
+  // Create page for all tags
+  actions.createPage({
+    path: `/tags`,
+    component: path.resolve(`src/templates/tags.jsx`),
+    context: {
+      filters: {
+        ...postFilters,
+      },
+    },
   });
   // Create page for each tag
-  postTags.forEach(tag => {
+  tags.forEach(tag => {
     actions.createPage({
-      path: `/blog/tags/${tag}`,
+      path: `/tags/${tag.fieldValue}`,
       component: path.resolve(`src/templates/tag.jsx`),
       context: {
-        slug: tag,
-        label: tag.trim().replace(/^\w/, c => c.toUpperCase()),
+        slug: tag.fieldValue,
+        label: tag.fieldValue.trim().replace(/^\w/, c => c.toUpperCase()),
         filters: {
           ...postFilters,
-          frontmatter: { ...postFilters.frontmatter, tags: { in: tag } },
+          frontmatter: {
+            ...postFilters.frontmatter,
+            tags: { in: tag.fieldValue },
+          },
         },
       },
     });

@@ -4,7 +4,7 @@ import { Layout } from '../components/layout';
 import { BlogList } from '../components/blog-list';
 import { Seo } from '../components/seo';
 
-const BlogTemplate = ({ data, pageContext }) => {
+const TagTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Seo
@@ -41,4 +41,4 @@ export const query = graphql`
   }
 `;
 
-export default BlogTemplate;
+export default TagTemplate;

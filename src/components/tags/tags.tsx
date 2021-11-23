@@ -11,7 +11,7 @@ export const Tags = ({ tags = [] }: TagsProps) => {
     <nav className='tags'>
       <span>Tags: </span>
       {tags.map(tag => (
-        <Link to={`/blog/tags/${tag}`} className='tags__tag' key={tag}>
+        <Link to={`/tags/${tag}`} className='tags__tag' key={tag}>
           #{tag}
         </Link>
       ))}
