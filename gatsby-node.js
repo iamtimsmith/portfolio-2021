@@ -1,6 +1,16 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+const postFilters =
+  process.env.NODE_ENV === 'production'
+    ? {
+        fileAbsolutePath: { regex: '/src/posts/./i' },
+        frontmatter: { published: { eq: true } },
+      }
+    : {
+        fileAbsolutePath: { regex: '/src/posts/./i' },
+      };
+
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;
   if (
@@ -36,31 +46,70 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const { data } = await graphql(`
-    {
-      posts: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/src/posts/./i" }
-          frontmatter: { published: { eq: true } }
-        }
-        sort: { fields: fileAbsolutePath, order: DESC }
-      ) {
-        nodes {
-          frontmatter {
-            tags
+  let content;
+  if (process.env.NODE_ENV === 'production') {
+    content = await graphql(`
+      {
+        posts: allMdx(
+          filter: {
+            fileAbsolutePath: { regex: "/src/posts/./i" }
+            frontmatter: { published: { eq: true } }
           }
-          fields {
-            slug
+          sort: { fields: fileAbsolutePath, order: DESC }
+        ) {
+          nodes {
+            frontmatter {
+              tags
+            }
+            fields {
+              slug
+            }
+          }
+        }
+        tags: allMdx(
+          filter: {
+            fileAbsolutePath: { regex: "/src/posts/i" }
+            frontmatter: { published: { eq: true } }
+          }
+        ) {
+          group(field: frontmatter___tags) {
+            fieldValue
           }
         }
       }
-    }
-  `);
+    `);
+  } else {
+    content = await graphql(`
+      {
+        posts: allMdx(
+          filter: { fileAbsolutePath: { regex: "/src/posts/./i" } }
+          sort: { fields: fileAbsolutePath, order: DESC }
+        ) {
+          nodes {
+            frontmatter {
+              tags
+            }
+            fields {
+              slug
+            }
+          }
+        }
+        tags: allMdx(
+          filter: { fileAbsolutePath: { regex: "/src/posts/./i" } }
+        ) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
+      }
+    `);
+  }
+
   /**
    * Create pages for each post
    * from the `src/posts` directory
    */
-  const posts = data.posts.nodes;
+  const posts = content.data.posts.nodes;
   posts.forEach(post => {
     createPage({
       path: post.fields.slug,
@@ -87,6 +136,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+        filters: postFilters,
       },
     });
   });
@@ -94,22 +144,32 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * Create pages for tags.
    */
-  const postTags = [];
-  // Loop through each post to get tags
-  posts.forEach(node => {
-    // Loop through post tags and if unique, add to array
-    node.frontmatter.tags.forEach(tag => {
-      if (!postTags.includes(tag)) postTags.push(tag);
-    });
+  const tags = content.data.tags.group;
+  // Create page for all tags
+  actions.createPage({
+    path: `/tags`,
+    component: path.resolve(`src/templates/tags.jsx`),
+    context: {
+      filters: {
+        ...postFilters,
+      },
+    },
   });
   // Create page for each tag
-  postTags.forEach(tag => {
+  tags.forEach(tag => {
     actions.createPage({
-      path: `/blog/tags/${tag}`,
+      path: `/tags/${tag.fieldValue}`,
       component: path.resolve(`src/templates/tag.jsx`),
       context: {
-        slug: tag,
-        label: tag.trim().replace(/^\w/, c => c.toUpperCase()),
+        slug: tag.fieldValue,
+        label: tag.fieldValue.trim().replace(/^\w/, c => c.toUpperCase()),
+        filters: {
+          ...postFilters,
+          frontmatter: {
+            ...postFilters.frontmatter,
+            tags: { in: tag.fieldValue },
+          },
+        },
       },
     });
   });

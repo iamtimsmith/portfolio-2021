@@ -72,11 +72,13 @@ module.exports = {
           default: require.resolve('./src/templates/page.jsx'),
         },
         gatsbyRemarkPlugins: [
+          `gatsby-remark-unwrap-images`,
           `gatsby-remark-prismjs`,
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: false,
               showCaptions: true,
               withWebp: true,
             },

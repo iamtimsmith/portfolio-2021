@@ -1,7 +1,7 @@
 ---
 title: Software Engineer
 description: Tim Smith is a software engineer focused on making the web a more enjoyable place to be
-image: ../images/timsmith-socical.jpg
+image: ../images/timsmith-social.jpg
 ---
 
 <section style="margin: var(--spacing-8) var(--spacing-0)">
@@ -29,11 +29,12 @@ export const pageQuery = graphql`
         frontmatter: { published: { eq: true } }
       }
       sort: { fields: fileAbsolutePath, order: DESC }
-      limit: 5
+      limit: 6
     ) {
       nodes {
         frontmatter {
           title
+					published
         }
         fields {
           slug

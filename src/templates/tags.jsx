@@ -1,0 +1,40 @@
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import { Layout } from '../components/layout';
+import { Seo } from '../components/seo';
+
+const TagsTemplate = ({ data, pageContext }) => {
+  return (
+    <Layout>
+      <Seo
+        title='All Tags'
+        description='Tags available for blog posts'
+        image='/timsmith-social.jpg'
+      />
+      <h1>All Tags</h1>
+      <p>
+        Below you can find all of the tags being used in the blog so you can
+        find exactly what you're looking for.
+      </p>
+      <ul>
+        {data.tags.group.map((tag, id) => (
+          <li key={id}>
+            <Link to={`/tags/${tag.fieldValue}`}>#{tag.fieldValue}</Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query TagsTemplateQuery($filters: MdxFilterInput!) {
+    tags: allMdx(filter: $filters) {
+      group(field: frontmatter___tags) {
+        fieldValue
+      }
+    }
+  }
+`;
+
+export default TagsTemplate;

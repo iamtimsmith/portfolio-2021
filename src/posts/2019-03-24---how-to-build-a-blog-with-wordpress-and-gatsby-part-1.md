@@ -2,7 +2,7 @@
 title: How To Build A Blog with Wordpress and Gatsby.js - Part 1
 description: Ever wondered how to use Gatsby js with WordPress? This post will cover everything you need to know about getting WordPress ready for a Gatsby site.
 image: ../images/how-to-build-a-blog-with-wordpress-and-gatsby-part-1.jpg
-tags: [reactjs, wordpress]
+tags: [react, wordpress]
 published: true
 ---
 
