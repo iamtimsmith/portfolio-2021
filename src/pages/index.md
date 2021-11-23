@@ -29,11 +29,12 @@ export const pageQuery = graphql`
         frontmatter: { published: { eq: true } }
       }
       sort: { fields: fileAbsolutePath, order: DESC }
-      limit: 5
+      limit: 6
     ) {
       nodes {
         frontmatter {
           title
+					published
         }
         fields {
           slug

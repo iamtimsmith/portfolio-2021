@@ -1,6 +1,16 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+const postFilters =
+  process.env.NODE_ENV === 'production'
+    ? {
+        fileAbsolutePath: { regex: '/src/posts/./i' },
+        frontmatter: { published: { eq: true } },
+      }
+    : {
+        fileAbsolutePath: { regex: '/src/posts/./i' },
+      };
+
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;
   if (
@@ -36,31 +46,53 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const { data } = await graphql(`
-    {
-      posts: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "/src/posts/./i" }
-          frontmatter: { published: { eq: true } }
-        }
-        sort: { fields: fileAbsolutePath, order: DESC }
-      ) {
-        nodes {
-          frontmatter {
-            tags
+  let content;
+  if (process.env.NODE_ENV === 'production') {
+    content = await graphql(`
+      {
+        posts: allMdx(
+          filter: {
+            fileAbsolutePath: { regex: "/src/posts/./i" }
+            frontmatter: { published: { eq: true } }
           }
-          fields {
-            slug
+          sort: { fields: fileAbsolutePath, order: DESC }
+        ) {
+          nodes {
+            frontmatter {
+              tags
+            }
+            fields {
+              slug
+            }
           }
         }
       }
-    }
-  `);
+    `);
+  } else {
+    content = await graphql(`
+      {
+        posts: allMdx(
+          filter: { fileAbsolutePath: { regex: "/src/posts/./i" } }
+          sort: { fields: fileAbsolutePath, order: DESC }
+        ) {
+          nodes {
+            frontmatter {
+              tags
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    `);
+  }
+
   /**
    * Create pages for each post
    * from the `src/posts` directory
    */
-  const posts = data.posts.nodes;
+  const posts = content.data.posts.nodes;
   posts.forEach(post => {
     createPage({
       path: post.fields.slug,
@@ -87,6 +119,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+        filters: postFilters,
       },
     });
   });
@@ -110,6 +143,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         slug: tag,
         label: tag.trim().replace(/^\w/, c => c.toUpperCase()),
+        filters: {
+          ...postFilters,
+          frontmatter: { ...postFilters.frontmatter, tags: { in: tag } },
+        },
       },
     });
   });

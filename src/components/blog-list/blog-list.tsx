@@ -9,6 +9,7 @@ interface BlogListProps {
     excerpt: string;
     frontmatter: {
       title: string;
+      published?: boolean;
     };
     fields: {
       slug: string;
@@ -22,7 +23,10 @@ export const BlogList = ({ posts }: BlogListProps) => {
       {posts.map((node, id) => (
         <li className='blog-list__post' key={id}>
           <strong className='blog-list__post-title'>
-            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>{' '}
+            {!node.frontmatter.published && (
+              <span className='error'> - Draft</span>
+            )}
           </strong>
           <p>{node.excerpt}</p>
         </li>

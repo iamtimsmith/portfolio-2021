@@ -24,12 +24,13 @@ const BlogTemplate = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query BlogTemplateQuery($skip: Int!, $limit: Int!) {
+  query BlogTemplateQuery(
+    $skip: Int!
+    $limit: Int!
+    $filters: MdxFilterInput!
+  ) {
     posts: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "/src/posts/./i" }
-        frontmatter: { published: { eq: true } }
-      }
+      filter: $filters
       sort: { fields: fileAbsolutePath, order: DESC }
       limit: $limit
       skip: $skip
@@ -38,6 +39,7 @@ export const query = graphql`
         id
         frontmatter {
           title
+          published
         }
         fields {
           slug

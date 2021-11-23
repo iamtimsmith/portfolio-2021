@@ -21,18 +21,16 @@ const BlogTemplate = ({ data, pageContext }) => {
 };
 
 export const query = graphql`
-  query TagTemplateQuery($slug: [String]) {
+  query TagTemplateQuery($filters: MdxFilterInput!) {
     posts: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "src/posts/./i" }
-        frontmatter: { published: { eq: true }, tags: { in: $slug } }
-      }
+      filter: $filters
       sort: { fields: fileAbsolutePath, order: DESC }
     ) {
       nodes {
         id
         frontmatter {
           title
+          published
         }
         fields {
           slug

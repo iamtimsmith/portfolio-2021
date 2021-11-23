@@ -13,7 +13,10 @@ const PostTemplate = ({ data: { post } }) => {
         description={post.frontmatter.description}
         image='/timsmith-social.jpg'
       />
-      <h1>{post.frontmatter.title}</h1>
+      <h1>
+        {post.frontmatter.title}{' '}
+        {!post.frontmatter.published && <span className='error'>- Draft</span>}
+      </h1>
       <MDXRenderer children={post.body} />
       <PostFooter data={post.frontmatter} />
     </Layout>
@@ -27,6 +30,7 @@ export const query = graphql`
         title
         description
         tags
+        published
       }
       body
     }
