@@ -31,6 +31,7 @@ export const Seo = ({ description, lang, meta, title, image }: SeoProps) => {
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={site.siteUrl + image} />
+      <link rel='shortcut icon' href={site.favicon} />
       {meta}
     </Helmet>
   );

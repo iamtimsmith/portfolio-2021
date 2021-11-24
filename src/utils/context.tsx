@@ -14,6 +14,7 @@ interface Context {
       image: ImageDataLike;
     };
     socials: { name: string; url: string }[];
+    favicon: string;
   };
 }
 
@@ -24,7 +25,7 @@ interface SiteProviderProps {
 }
 
 export const SiteProvider = ({ children }: SiteProviderProps) => {
-  const { config, portrait } = useStaticQuery(
+  const { config, portrait, favicon } = useStaticQuery(
     graphql`
       query {
         config: site {
@@ -48,6 +49,9 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
             gatsbyImageData(width: 100)
           }
         }
+        favicon: file(name: { eq: "favicon" }) {
+          publicURL
+        }
       }
     `
   );
@@ -61,6 +65,7 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
             ...config.siteMetadata.author,
             image: portrait.childImageSharp.gatsbyImageData,
           },
+          favicon: favicon.publicURL,
         },
       }}
     >
