@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import './pagination.scss';
+import { PaginationButtons } from './pagination.style';
 
 interface PaginationProps {
   page: number;
@@ -9,7 +9,7 @@ interface PaginationProps {
 
 export const Pagination = ({ page, totalPages }: PaginationProps) => {
   return (
-    <nav className='pagination'>
+    <PaginationButtons>
       {(page === 1 && <span>&larr; Previous</span>) || (
         <Link to={`/blog/${page - 1 > 1 ? page - 1 : ``}`}>
           &larr; Previous
@@ -21,6 +21,6 @@ export const Pagination = ({ page, totalPages }: PaginationProps) => {
       {(page === totalPages && <span>&rarr; Next</span>) || (
         <Link to={`/blog/${page + 1}`}>Next &rarr;</Link>
       )}
-    </nav>
+    </PaginationButtons>
   );
 };

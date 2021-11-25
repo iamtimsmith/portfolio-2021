@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from '@reach/router';
 import { SiteContext } from '../../utils/context';
 import { getIcon, getSharingData } from '../../utils/social';
-import './sharing.scss';
+import { SharingBar, Label, Button, Site } from './sharing.style';
 
 interface SharingProps {
   title: string;
@@ -26,11 +26,11 @@ export const Sharing = ({ title }: SharingProps) => {
   }, []);
 
   return (
-    <aside className={showing ? `sharing show` : `sharing`}>
-      <p className='sharing__label'>Share:</p>
+    <SharingBar show={showing}>
+      <Label>Share:</Label>
       {getSharingData(url, image, title).map(site => (
-        <a
-          className={`sharing__${site.name.toLowerCase()}`}
+        <Button
+          site={site.name.toLowerCase() as Site}
           href={site.href}
           target='_parent'
           rel='noreferrer nofollow'
@@ -39,8 +39,8 @@ export const Sharing = ({ title }: SharingProps) => {
           key={site.name}
         >
           {getIcon(site.name.toLowerCase())}
-        </a>
+        </Button>
       ))}
-    </aside>
+    </SharingBar>
   );
 };

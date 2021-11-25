@@ -13,6 +13,7 @@ interface Context {
       twitter: string;
       image: ImageDataLike;
     };
+    menu: { name: string; url: string }[];
     socials: { name: string; url: string }[];
     favicon: string;
   };
@@ -37,6 +38,10 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
               name
               twitter
               description
+            }
+            menu {
+              name
+              url
             }
             socials {
               name

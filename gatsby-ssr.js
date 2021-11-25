@@ -1,6 +1,8 @@
-const React = require(`react`);
+import React from 'react';
 
-exports.onRenderBody = ({setHeadComponents}) => {
+export { wrapRootElement } from './src/utils/wrap-root-element';
+
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <script
       dangerouslySetInnerHTML={{

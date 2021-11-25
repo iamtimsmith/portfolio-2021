@@ -1,5 +1,5 @@
 import React from 'react';
-import './gif.scss';
+import { Figure } from './gif.style';
 
 interface GifProps {
   src: string;
@@ -9,9 +9,9 @@ interface GifProps {
 
 export const Gif = ({ src, alt, width = '400' }: GifProps) => {
   return (
-    <figure className='gif'>
+    <Figure>
       <video src={src} width={width} autoPlay loop playsInline muted />
       {alt && <figcaption>{alt}</figcaption>}
-    </figure>
+    </Figure>
   );
 };

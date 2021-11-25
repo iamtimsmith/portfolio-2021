@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { SiteContext } from '../../utils/context';
 import { getIcon } from '../../utils/social';
-import './socials.scss';
+import { SocialAside, SocialNav, BackToTopButton } from './socials.style';
 
 export const Socials = () => {
   const [show, setShow] = useState(false);
@@ -16,11 +16,11 @@ export const Socials = () => {
   }, []);
 
   return (
-    <aside className='socials'>
-      <nav className='socials__nav'>
-        <button className={show ? `show` : ``} onClick={() => handleClick()}>
+    <SocialAside>
+      <SocialNav>
+        <BackToTopButton show={show} onClick={handleClick}>
           &uarr;
-        </button>
+        </BackToTopButton>
         {site.socials.map(social => (
           <a
             href={social.url}
@@ -31,7 +31,7 @@ export const Socials = () => {
             {getIcon(social.name.toLowerCase())}
           </a>
         ))}
-      </nav>
-    </aside>
+      </SocialNav>
+    </SocialAside>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getIcon } from '../../utils/social';
-import './footer.scss';
+import { FooterSection } from './footer.style';
 
 interface SocialMenuItem {
   name: string;
@@ -28,7 +28,7 @@ export const Footer = () => {
   `);
 
   return (
-    <footer className='footer'>
+    <FooterSection>
       <nav>
         {socials.map((social: SocialMenuItem) => (
           <a
@@ -46,6 +46,6 @@ export const Footer = () => {
         &copy; {new Date().getFullYear()}. All rights reserved. Made with{' '}
         {getIcon('heart')} by {title}.
       </p>
-    </footer>
+    </FooterSection>
   );
 };
