@@ -69,7 +69,7 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve('./src/templates/page.jsx'),
+          default: require.resolve('./src/templates/page.tsx'),
         },
         gatsbyRemarkPlugins: [
           `gatsby-remark-unwrap-images`,

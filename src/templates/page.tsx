@@ -2,7 +2,12 @@ import React from 'react';
 import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
 
-const PageTemplate = ({ children, pageContext }) => {
+interface PageTemplateProps {
+  children: any;
+  pageContext: any;
+}
+
+const PageTemplate = ({ children, pageContext }: PageTemplateProps) => {
   return (
     <Layout>
       <Seo

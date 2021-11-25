@@ -5,7 +5,22 @@ import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
 import { PostFooter } from '../components/post-footer';
 
-const PostTemplate = ({ data: { post } }) => {
+interface PostTemplateProps {
+  data: {
+    post: {
+      frontmatter: {
+        title: string;
+        description: string;
+        tags: string[];
+        published: boolean;
+        image: string;
+      };
+      body: string;
+    };
+  };
+}
+
+const PostTemplate = ({ data: { post } }: PostTemplateProps) => {
   return (
     <Layout>
       <Seo

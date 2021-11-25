@@ -3,7 +3,17 @@ import { Link, graphql } from 'gatsby';
 import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
 
-const TagsTemplate = ({ data, pageContext }) => {
+interface TagsTemplateProps {
+  data: {
+    tags: {
+      group: {
+        fieldValue: string;
+      }[];
+    };
+  };
+}
+
+const TagsTemplate = ({ data }: TagsTemplateProps) => {
   return (
     <Layout>
       <Seo

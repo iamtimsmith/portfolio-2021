@@ -102,7 +102,7 @@ Did you get it? I'll go over it anyway just in case. Let's say we just want to o
 
 The code above would be output in the browser like this:
 
-```html:title=html
+```html
 <p>Pepperoni</p>
 ```
 
