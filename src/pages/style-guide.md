@@ -1,4 +1,6 @@
-import '../styles/_style-guide.scss';
+import { StyleGuidePage } from '../styles/style-guide';
+
+<StyleGuidePage>
 
 # Style Guide
 This page contains information about colors, typography, and other elements on the site in one convenient location. It will be deleted in production builds, so you don't have to worry about visitors finding this page.
@@ -140,3 +142,5 @@ A component to change the meta tags and other seo information about a page. Acce
 	image='/deck.jpg'
 />
 ```
+
+</StyleGuidePage>
