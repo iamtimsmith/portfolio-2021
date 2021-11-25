@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "portfolio-2021",
+  "description": "The portfolio and blog site for Tim Smith",
+  "version": "2.0.0",
+  "author": "Tim Smith <tim@iamtimsmith.com>",
   "scripts": {
     "dev": "gatsby develop -p 1125",
     "build": "gatsby build",

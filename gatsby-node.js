@@ -113,7 +113,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   posts.forEach(post => {
     createPage({
       path: post.fields.slug,
-      component: path.resolve('./src/templates/post.jsx'),
+      component: path.resolve('./src/templates/post.tsx'),
       context: {
         slug: post.fields.slug,
       },
@@ -130,7 +130,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: path.resolve('./src/templates/blog.jsx'),
+      component: path.resolve('./src/templates/blog.tsx'),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
@@ -148,7 +148,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create page for all tags
   actions.createPage({
     path: `/tags`,
-    component: path.resolve(`src/templates/tags.jsx`),
+    component: path.resolve(`src/templates/tags.tsx`),
     context: {
       filters: {
         ...postFilters,
@@ -159,7 +159,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   tags.forEach(tag => {
     actions.createPage({
       path: `/tags/${tag.fieldValue}`,
-      component: path.resolve(`src/templates/tag.jsx`),
+      component: path.resolve(`src/templates/tag.tsx`),
       context: {
         slug: tag.fieldValue,
         label: tag.fieldValue.trim().replace(/^\w/, c => c.toUpperCase()),
