@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import './blog-list.scss';
+import {
+  BlogListItems,
+  BlogPost,
+  BlogPostTitle,
+  DraftMessage,
+} from './blog-list.style';
 
 interface BlogListProps {
   posts: {
@@ -19,19 +24,17 @@ interface BlogListProps {
 
 export const BlogList = ({ posts }: BlogListProps) => {
   return (
-    <ul className='blog-list'>
+    <BlogListItems>
       {posts.map((node, id) => (
-        <li className='blog-list__post' key={id}>
-          <strong className='blog-list__post-title'>
+        <BlogPost key={id}>
+          <BlogPostTitle>
             <Link to={node.fields.slug}>{node.frontmatter.title}</Link>{' '}
-            {!node.frontmatter.published && (
-              <span className='error'> - Draft</span>
-            )}
-          </strong>
+          </BlogPostTitle>
+          {!node.frontmatter.published && <DraftMessage> - Draft</DraftMessage>}
           <p>{node.excerpt}</p>
-        </li>
+        </BlogPost>
       ))}
-    </ul>
+    </BlogListItems>
   );
 };
 

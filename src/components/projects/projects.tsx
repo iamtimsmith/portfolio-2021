@@ -9,7 +9,7 @@ import React from 'react';
 //   GoRepo,
 // } from 'react-icons/go';
 
-const Projects = () => {
+export const Projects = () => {
   // const {projects} = useStaticQuery(graphql`
   //   query ProjectsQuery {
   //     projects: github {
@@ -73,5 +73,3 @@ const Projects = () => {
   // );
   return <p>Projects</p>;
 };
-
-export default Projects;

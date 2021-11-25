@@ -10,9 +10,10 @@ import { Seo } from '../seo';
 import { EmailSignup } from '../email-signup';
 import { Socials } from '../socials';
 import { SiteProvider } from '../../utils/context';
+import { GlobalStyles } from '../../styles/global';
+import { Container } from './layout.style';
 import 'prismjs/themes/prism.css';
-import '../../styles/style.scss';
-import './layout.scss';
+// import '../../styles/style.scss';
 
 interface LayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -20,17 +21,22 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <SiteProvider>
-      <MDXProvider components={{ Bio, BlogList, EmailSignup, Gif, Link, Seo }}>
-        <div className='container'>
-          <Header />
-          <main>
-            {children}
-            <Socials />
-          </main>
-          <Footer />
-        </div>
-      </MDXProvider>
-    </SiteProvider>
+    <>
+      <GlobalStyles />
+      <SiteProvider>
+        <MDXProvider
+          components={{ Bio, BlogList, EmailSignup, Gif, Link, Seo }}
+        >
+          <Container>
+            <Header />
+            <main>
+              {children}
+              <Socials />
+            </main>
+            <Footer />
+          </Container>
+        </MDXProvider>
+      </SiteProvider>
+    </>
   );
 };

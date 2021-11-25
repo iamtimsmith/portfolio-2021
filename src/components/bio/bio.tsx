@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { getImage, GatsbyImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
 import { SiteContext } from '../../utils/context';
-import './bio.scss';
+import { BioSection, BioImage, BioContent, BioAuthor } from './bio.style';
 
 export const Bio = ({ showAuthor = false }) => {
   const { site } = useContext(SiteContext);
@@ -9,24 +9,18 @@ export const Bio = ({ showAuthor = false }) => {
   const portrait = getImage(site.author.image);
 
   return (
-    <section className={`bio${showAuthor ? ` bio--author` : ``}`}>
-      {portrait && (
-        <GatsbyImage
-          image={portrait}
-          alt={site.author.name}
-          className='bio__image'
-        />
-      )}
-      <div className='bio__content'>
+    <BioSection author={showAuthor}>
+      {portrait && <BioImage image={portrait} alt={site.author.name} />}
+      <BioContent>
         {showAuthor && site.author && (
-          <p className='bio__author'>Written by {site.author.name}</p>
+          <BioAuthor>Written by {site.author.name}</BioAuthor>
         )}
         <p
           dangerouslySetInnerHTML={{
             __html: site.author.description,
           }}
-        ></p>
-      </div>
-    </section>
+        />
+      </BioContent>
+    </BioSection>
   );
 };

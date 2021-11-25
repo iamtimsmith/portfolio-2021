@@ -2,19 +2,21 @@ import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import { Toggle } from '../toggle';
 import { SiteContext } from '../../utils/context';
-import './header.scss';
+import { Navbar, Logo, Nav } from './header.style';
 
 export const Header = () => {
   const { site } = useContext(SiteContext);
   return (
-    <header className='header'>
-      <Link to='/' className='header__logo'>
-        {site.title}
-      </Link>
-      <nav className='header__nav'>
-        <Link to='/blog'>Blog</Link>
+    <Navbar>
+      <Logo to='/'>{site.title}</Logo>
+      <Nav>
+        {site.menu.map((item, id) => (
+          <Link to={item.url} key={id}>
+            {item.name}
+          </Link>
+        ))}
         <Toggle />
-      </nav>
-    </header>
+      </Nav>
+    </Navbar>
   );
 };

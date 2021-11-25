@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import './tags.scss';
+import { TagList, Tag } from './tags.style';
 
 interface TagsProps {
   tags: string[];
@@ -8,13 +8,13 @@ interface TagsProps {
 
 export const Tags = ({ tags = [] }: TagsProps) => {
   return (
-    <nav className='tags'>
+    <TagList>
       <span>Tags: </span>
       {tags.map(tag => (
-        <Link to={`/tags/${tag}`} className='tags__tag' key={tag}>
+        <Tag to={`/tags/${tag}`} key={tag}>
           #{tag}
-        </Link>
+        </Tag>
       ))}
-    </nav>
+    </TagList>
   );
 };

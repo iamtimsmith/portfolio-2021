@@ -1,7 +1,12 @@
 import React, { FormEvent, useState } from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import { isValidEmail } from '../../utils/validators';
-import './email-signup.scss';
+import {
+  EmailSignupAside,
+  EmailSignupTitle,
+  EmailSignupForm,
+} from './email-signup.style';
+// import './email-signup.scss';
 
 export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
   const [email, setEmail] = useState(``);
@@ -20,8 +25,8 @@ export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
   };
 
   return (
-    <aside className='email-signup'>
-      <p className='email-signup__title'>{title}</p>
+    <EmailSignupAside>
+      <EmailSignupTitle children={title} />
       {response && response.result === `success` ? (
         <p>
           Awesome! You're signed up and can expect a monthly email with all of
@@ -33,12 +38,8 @@ export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
             By signing up, you'll receive a monthly email with my latest blog
             posts about development, career, and more.
           </p>
-          <form
-            className={`email-signup__form ${
-              response && response.result === 'error'
-                ? 'email-signup__form--error'
-                : ''
-            }`}
+          <EmailSignupForm
+            error={response && response.result === 'error'}
             onSubmit={e => handleSubmit(e)}
           >
             {response && response.result === `error` && (
@@ -55,9 +56,9 @@ export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
               placeholder='kevin.malone@dundermifflin.com'
             />
             <button>Submit</button>
-          </form>
+          </EmailSignupForm>
         </>
       )}
-    </aside>
+    </EmailSignupAside>
   );
 };

@@ -11,6 +11,10 @@ const siteMetadata = {
     description: `I build things using React, Node, PHP, and more. Currently, I'm a Software Engineer working on <a href='https://www.dndbeyond.com' target='_blank'>D&D Beyond</a> at <a href='https://www.fandom.com' target='_blank'>Fandom</a>. You can follow me on Twitter at <a href='https://www.twitter.com/iam_timsmith' target='_blank'>@iam_timsmith</a>.`,
     image: `./src/images/timsmith.jpg`,
   },
+  menu: [
+    { name: 'Blog', url: '/blog' },
+    { name: 'Tags', url: '/tags' },
+  ],
   socials: [
     { name: `Twitter`, url: `https://www.twitter.com/iam_timsmith` },
     { name: `LinkedIn`, url: `https://www.linkedin.com/in/tim-smith-1a651aa0` },
@@ -31,6 +35,7 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

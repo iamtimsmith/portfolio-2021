@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getIcon } from '../../utils/social';
-import './toggle.scss';
+import { ToggleButton, ToggleIcon } from './toggle.style';
 
 declare const window: any;
 
@@ -20,18 +20,14 @@ export const Toggle = () => {
   }, []);
 
   return (
-    <button
-      onClick={() => handleClick()}
-      aria-label='Toggle Theme'
-      className='toggle'
-    >
-      <span className='toggle__icon toggle__icon--light'>
+    <ToggleButton onClick={() => handleClick()} aria-label='Toggle Theme'>
+      <ToggleIcon icon='light' theme={isDark ? 'dark' : 'light'}>
         {getIcon('light')}
-      </span>
+      </ToggleIcon>
       {/* prettier-ignore */}
-      <span className='toggle__icon toggle__icon--dark'>
+      <ToggleIcon icon='dark' theme={isDark ? 'dark' : 'light'}>
 				{getIcon('dark')}
-			</span>
-    </button>
+			</ToggleIcon>
+    </ToggleButton>
   );
 };
