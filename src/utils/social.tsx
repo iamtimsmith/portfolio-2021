@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
-import { GiTechnoHeart } from 'react-icons/gi';
+import { GiTechnoHeart, GiPumpkinLantern } from 'react-icons/gi';
+import { TiTree } from 'react-icons/ti';
 import {
   FaFacebookF,
   FaTwitter,
@@ -13,6 +14,8 @@ import {
 
 export const getIcon = (icon: string) => {
   switch (icon) {
+    case 'christmas':
+      return <TiTree />;
     case 'dark':
       return <IoMoonOutline />;
     case 'dev':
@@ -23,6 +26,8 @@ export const getIcon = (icon: string) => {
       return <FaFacebookF />;
     case 'github':
       return <FaGithub />;
+    case 'halloween':
+      return <GiPumpkinLantern />;
     case 'heart':
       return <GiTechnoHeart />;
     case 'light':

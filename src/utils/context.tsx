@@ -1,7 +1,12 @@
-import React, { createContext, ReactChildren } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import dayjs from 'dayjs';
+import Snowfall from 'react-snowfall';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ImageDataLike } from 'gatsby-plugin-image';
 
+declare const window: any;
+
+export type Theme = 'dark' | 'light' | 'halloween' | 'christmas';
 interface Context {
   site: {
     title: string;
@@ -17,6 +22,8 @@ interface Context {
     socials: { name: string; url: string }[];
     favicon: string;
   };
+  theme: Theme;
+  changeTheme: (theme: Theme) => void;
 }
 
 export const SiteContext = createContext({} as Context);
@@ -26,6 +33,9 @@ interface SiteProviderProps {
 }
 
 export const SiteProvider = ({ children }: SiteProviderProps) => {
+  const isOctober = dayjs().month() === 9;
+  const isDecember = dayjs().month() === 11;
+  const [theme, setTheme] = useState<Theme>('light');
   const { config, portrait, favicon } = useStaticQuery(
     graphql`
       query {
@@ -61,6 +71,22 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
     `
   );
 
+  const changeTheme = (theme: Theme) => {
+    setTheme(theme);
+    window.__setPreferredTheme(theme);
+  };
+
+  useEffect(() => {
+    if (
+      (!isOctober && window.__theme === 'halloween') ||
+      (!isDecember && window.__theme === 'christmas')
+    ) {
+      setTheme('dark');
+    } else {
+      setTheme(window.__theme);
+    }
+  }, []);
+
   return (
     <SiteContext.Provider
       value={{
@@ -72,9 +98,16 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
           },
           favicon: favicon.publicURL,
         },
+        theme,
+        changeTheme,
       }}
     >
       {children}
+      {theme === 'christmas' && (
+        <div className='snowfall'>
+          <Snowfall />
+        </div>
+      )}
     </SiteContext.Provider>
   );
 };

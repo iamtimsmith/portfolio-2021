@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { lightTheme } from './themes/light';
 import { darkTheme } from './themes/dark';
+import { christmasTheme } from './themes/christmas';
+import { halloweenTheme } from './themes/halloween';
 import { normalize } from './normalize';
 import { variables } from './variables';
 import { elements } from './elements';
@@ -11,6 +13,8 @@ export const GlobalStyles = createGlobalStyle`
 	${variables}
 	${lightTheme}
 	${darkTheme}
+	${christmasTheme}
+	${halloweenTheme}
 	${elements}
 	${prism}
 `;
