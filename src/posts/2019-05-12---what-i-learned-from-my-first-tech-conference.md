@@ -1,7 +1,7 @@
 ---
 title: What I Learned from my First Tech Conference
 description: I recently attended my first tech conference. In this article I will talk about what I learned, what to expect, and how to prepare to have a great time!
-image: ../images/what-i-learned-from-my-first-tech-conference.jpg
+image: what-i-learned-from-my-first-tech-conference.jpg
 tags: [misc]
 published: true
 ---

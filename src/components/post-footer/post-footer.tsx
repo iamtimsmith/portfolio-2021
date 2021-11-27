@@ -16,18 +16,9 @@ interface PostFooterProps {
 export const PostFooter = ({ data }: PostFooterProps) => {
   return (
     <footer>
-      <Seo
-        title={data.title}
-        description={data.description}
-        image={data.image}
-      />
-      {data.tags && (
-        <>
-          <Tags tags={data.tags} />
-          <Bio showAuthor />
-          <Sharing title={data.title} />
-        </>
-      )}
+      <Tags tags={data.tags} />
+      <Bio showAuthor />
+      <Sharing title={data.title} />
     </footer>
   );
 };

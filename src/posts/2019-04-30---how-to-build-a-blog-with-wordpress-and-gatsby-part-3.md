@@ -1,7 +1,7 @@
 ---
 title: How To Build A Blog with Wordpress and Gatsby.js - Part 3
 description: In the third part of this series about WordPress and Gatsby js, we will be creating pages using templates and components using data from WordPress.
-image: ../images/how-to-build-a-blog-with-wordpress-and-gatsby-part-3.jpg
+image: how-to-build-a-blog-with-wordpress-and-gatsby-part-3.jpg
 tags: [react, wordpress]
 published: true
 ---

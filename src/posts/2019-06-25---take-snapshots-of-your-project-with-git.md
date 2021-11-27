@@ -1,7 +1,7 @@
 ---
 title: Take Snapshots of Your Project with Git
 description: Git is a tool which allows you to take "snapshots" of your project. I'm going to show you how to get started with git so you can improve your worklow.
-image: ../images/take-snapshots-of-your-project-with-git.jpg
+image: take-snapshots-of-your-project-with-git.jpg
 tags: [workflow]
 published: true
 ---

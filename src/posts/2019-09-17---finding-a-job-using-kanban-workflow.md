@@ -1,7 +1,7 @@
 ---
 title: Finding a Job While Using a Kanban Workflow
 description: In this post, I'll teach you how using a kanban workflow when finding a job can help keep you organized throughout the application process.
-image: ../images/finding-a-job-using-kanban-workflow.jpg
+image: finding-a-job-using-kanban-workflow.jpg
 tags: [workflow]
 published: true
 ---

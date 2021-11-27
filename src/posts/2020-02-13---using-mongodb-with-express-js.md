@@ -1,7 +1,7 @@
 ---
 title: Using MongoDB with an Express.js Application
 description: MongoDB is a nosql database that is growing in popularity. In this post, I'll show you how you can use it in your next Express application.
-image: ../images/using-mongodb-with-express-js.jpg
+image: using-mongodb-with-express-js.jpg
 tags: [express, mongodb]
 published: true
 ---

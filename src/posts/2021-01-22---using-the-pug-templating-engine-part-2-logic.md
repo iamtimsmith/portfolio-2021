@@ -1,7 +1,7 @@
 ---
 title: Using the Pug Templating Engine  Part 2 - Logic
 description: Today I'm going to show you how you can use variables and logic in your templates to make them dynamic and flexible to allow you to display data however you need.
-image: ../images/using-the-pug-templating-engine-part-2-logic.jpg
+image: using-the-pug-templating-engine-part-2-logic.jpg
 tags: [pug]
 published: true
 ---

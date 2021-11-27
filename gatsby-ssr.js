@@ -11,14 +11,10 @@ export const onRenderBody = ({ setHeadComponents }) => {
 					// Update theme to light or dark
 					function setTheme(theme) {
 						window.__theme = theme;
-						// TODO: Update logic
+
 						console.log('Theme Updated to ' + theme);
 
-						if (theme === 'dark') {
-							document.documentElement.className = 'dark';
-						} else {
-							document.documentElement.className = '';
-						}
+						document.documentElement.className = theme;
 					};
 
 					// Save user preference

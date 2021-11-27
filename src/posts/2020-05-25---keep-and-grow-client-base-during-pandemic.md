@@ -1,7 +1,7 @@
 ---
 title: How to Keep and Even Grow Your Client Base Despite the Pandemic
 description: Clients are the lifeblood of any business, be it small or large. In this post, I'll tell you about how to continue growing your business during the pandemic.
-image: ../images/keep-and-grow-client-base-during-pandemic.jpg
+image: keep-and-grow-client-base-during-pandemic.jpg
 tags: [misc]
 published: false
 ---

@@ -1,7 +1,7 @@
 ---
 title: Let's build a search bar using React Hooks
 description: In this post, I'll show you how to build a search bar component using React Hooks to make state management, lifecycle methods, and other things a piece of cake.
-image: ../images/lets-build-a-search-bar-using-react-hooks.jpg
+image: lets-build-a-search-bar-using-react-hooks.jpg
 tags: [react]
 published: true
 ---

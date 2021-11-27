@@ -3,6 +3,7 @@
   "description": "The portfolio and blog site for Tim Smith",
   "version": "2.0.0",
   "author": "Tim Smith <tim@iamtimsmith.com>",
+	"license": "0BSD",
   "scripts": {
     "dev": "gatsby develop -p 1125",
     "build": "gatsby build",
@@ -14,6 +15,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^2.0.1",
+    "dayjs": "^1.10.7",
     "gatsby": "^3.6.2",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^3.7.1",
@@ -47,6 +49,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-snowfall": "^1.1.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
