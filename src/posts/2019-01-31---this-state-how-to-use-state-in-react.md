@@ -1,7 +1,7 @@
 ---
 title: this.state - How to Use State in React js
 description: If you're anything like me, the concept of state was confusing at first. In this tutorial, we'll learn how to use state and props in a react js application.
-image: ../images/this-state-how-to-use-state-in-react.png
+image: this-state-how-to-use-state-in-react.png
 tags: [react]
 published: true
 ---

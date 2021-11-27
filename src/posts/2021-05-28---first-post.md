@@ -1,7 +1,7 @@
 ---
 title: First Post dasfsa
 description: Sample description
-seo_image: ../images/gatsby-astronaut.png
+image: gatsby-astronaut.png
 tags: [misc, react]
 published: false
 ---

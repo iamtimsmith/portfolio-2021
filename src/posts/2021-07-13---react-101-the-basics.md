@@ -1,7 +1,7 @@
 ---
 title: "React 101: The Basics"
 description: The basics of react
-image: /static/react-101-the-basics.jpg
+image: deck.jpg
 tags: [react, basics]
 published: false
 ---

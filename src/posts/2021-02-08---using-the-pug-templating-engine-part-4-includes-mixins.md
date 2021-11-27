@@ -1,7 +1,7 @@
 ---
 title: Using the Pug Templating Engine  Part 4 - Includes & Mixins
 description: With Pug, you can use pieces called includes and mixins to make development more efficient. I'll teach you about it in this blog post.
-image: ../images/using-the-pug-templating-engine-part-4-includes.jpg
+image: using-the-pug-templating-engine-part-4-includes.jpg
 tags: [pug]
 published: true
 ---

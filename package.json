@@ -3,6 +3,7 @@
   "description": "The portfolio and blog site for Tim Smith",
   "version": "2.0.0",
   "author": "Tim Smith <tim@iamtimsmith.com>",
+	"license": "0BSD",
   "scripts": {
     "dev": "gatsby develop -p 1125",
     "build": "gatsby build",

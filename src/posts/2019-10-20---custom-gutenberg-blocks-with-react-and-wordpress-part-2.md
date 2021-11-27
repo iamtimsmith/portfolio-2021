@@ -1,7 +1,7 @@
 ---
 title: Creating Custom Gutenberg Blocks with React and WordPress - Part 2
 description: I'll explain how to use JSX when building out custom Gutenberg blocks with react and WordPress.
-image: ../images/custom-gutenberg-blocks-with-react-and-wordpress-part-2.jpg
+image: custom-gutenberg-blocks-with-react-and-wordpress-part-2.jpg
 tags: [wordpress, react]
 published: true
 ---

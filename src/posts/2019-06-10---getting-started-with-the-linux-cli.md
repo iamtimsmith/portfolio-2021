@@ -1,7 +1,7 @@
 ---
 title: Getting Started with the Linux Command Line Interface
 description: By learning a few commands can open a new world of functionality as a developer. Today I'm going to cover some of those basic commands to get you going.
-image: ../images/getting-started-with-the-linux-cli.jpg
+image: getting-started-with-the-linux-cli.jpg
 tags: [workflow]
 published: true
 ---

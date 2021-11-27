@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { ImageDataLike, getSrc } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
@@ -17,16 +18,17 @@ interface PostTemplateProps {
       };
       body: string;
     };
+    image: ImageDataLike;
   };
 }
 
-const PostTemplate = ({ data: { post } }: PostTemplateProps) => {
+const PostTemplate = ({ data: { post, image } }: PostTemplateProps) => {
   return (
     <Layout>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description}
-        image='/timsmith-social.jpg'
+        image={getSrc(image)}
       />
       <h1>
         {post.frontmatter.title}{' '}
@@ -39,7 +41,7 @@ const PostTemplate = ({ data: { post } }: PostTemplateProps) => {
 };
 
 export const query = graphql`
-  query PostTemplateQuery($slug: String!) {
+  query PostTemplateQuery($slug: String!, $image: String!) {
     post: mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
@@ -48,6 +50,11 @@ export const query = graphql`
         published
       }
       body
+    }
+    image: file(base: { eq: $image }) {
+      childImageSharp {
+        gatsbyImageData
+      }
     }
   }
 `;

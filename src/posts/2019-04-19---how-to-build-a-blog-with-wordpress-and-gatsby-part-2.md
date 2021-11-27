@@ -1,7 +1,7 @@
 ---
 title: How To Build A Blog with Wordpress and Gatsby.js - Part 2
 description: In the last post, we covered setting up WordPress for use with Gatsby. Today we will cover how to pull the data from WordPress into Gatsby and build pages.
-image: ../images/how-to-build-a-blog-with-wordpress-and-gatsby-part-2.jpg
+image: how-to-build-a-blog-with-wordpress-and-gatsby-part-2.jpg
 tags: [react, wordpress]
 published: true
 ---
