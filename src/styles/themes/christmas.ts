@@ -2,8 +2,8 @@ import { css } from 'styled-components';
 
 export const christmasTheme = css`
   :root.christmas {
-    --color-grey-50: #001c01;
-    --color-grey-100: #0c3d14;
+    --color-grey-50: #00160e;
+    --color-grey-100: #002417;
     --color-grey-200: #3e4c59;
     --color-grey-300: #52606d;
     --color-grey-400: #616e7c;

@@ -62,7 +62,7 @@ The big difference between server-side rendering and static site generation is t
 React has become one of (if not THE) most in demand front end library for good reason. It offers features which make front ends data-driven and reactive. I will cover some of these benefits below so you can decide if React is the right tool for the project you're looking to build.
 
 ### Unidirectional data flow
-A unidirectional data flow means that data only flows one way. This is important because other frameworks and libraries allow data to be cchanged from both the front and back ends which can get hairy to troubleshoot. So how does unidirectional data flow work? First, the state, or data, is passed to the view and it's children. The view can then call actions if data needs to be updated. Once the action is called, it updates the state which then causes the view to re-render. This may sound confusing, but I have placed a diagram below to help illustraate how this is unidirectional.
+A unidirectional data flow means that data only flows one way. This is important because other frameworks and libraries allow data to be cchanged from both the front and back ends which can get hairy to troubleshoot. So how does unidirectional data flow work? First, the state, or data, is passed to the view and it's children. The view can then call actions if data needs to be updated. Once the action is called, it updates the state which then causes the view to re-render. This may sound confusing, but I have placed a diagram below to help illustrate how this is unidirectional.
 
 ![Unidirectional flow chart](../images/unidirectional-flow.png)
 
