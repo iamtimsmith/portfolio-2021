@@ -2,9 +2,9 @@ import { css } from 'styled-components';
 
 export const lightTheme = css`
   :root {
-    --color-grey-50: #f5f7fa;
-    --color-grey-100: #e4e7eb;
-    --color-grey-200: #cbd2d9;
+    --color-grey-50: #fdfdfe;
+    --color-grey-100: #eef2f6;
+    --color-grey-200: #dbe2ed;
     --color-grey-300: #9aa5b1;
     --color-grey-400: #7b8794;
     --color-grey-500: #616e7c;

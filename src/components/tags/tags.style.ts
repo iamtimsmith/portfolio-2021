@@ -7,7 +7,7 @@ export const TagList = styled.nav`
 `;
 
 export const Tag = styled(Link)`
-  background: var(--color-grey-200);
+  background: var(--color-grey-100);
   padding: var(--spacing-1);
   margin: var(--spacing-1);
   border-radius: 3px;
