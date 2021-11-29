@@ -7,7 +7,7 @@ import { ToggleButton, ToggleIcon } from './toggle.style';
 export const Toggle = () => {
   const { theme, changeTheme } = useContext(SiteContext);
   const isOctober = dayjs().month() === 9;
-  const isDecember = dayjs('2021-12-10').month() === 11;
+  const isDecember = dayjs().month() === 11;
 
   const handleClick = () => {
     switch (theme) {
