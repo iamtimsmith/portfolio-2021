@@ -8,7 +8,7 @@ interface TagsProps {
 
 export const Tags = ({ tags = [] }: TagsProps) => {
   return (
-    <TagList>
+    <TagList aria-label='tags'>
       <span>Tags: </span>
       {tags.map(tag => (
         <Tag to={`/tags/${tag}`} key={tag}>

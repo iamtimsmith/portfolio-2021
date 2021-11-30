@@ -54,7 +54,7 @@ export const elements = css`
     }
 
     strong {
-      color: var(--color-accent-400);
+      color: var(--color-accent-600);
     }
   }
 
@@ -181,7 +181,7 @@ export const elements = css`
       max-width: 590px;
       margin: var(--spacing-0) auto var(--spacing-0);
       text-align: center;
-      color: var(--color-grey-500);
+      color: var(--color-grey-700);
     }
   }
 
@@ -213,13 +213,9 @@ export const elements = css`
       }
 
       .dark & {
-        background: var(--color-accent-400);
-        border-color: var(--color-accent-400);
-        color: var(--color-grey-900);
-
         &:hover {
-          background: var(--color-accent-300);
-          border: 2px solid var(--color-accent-300);
+          background: var(--color-accent-400);
+          border: 2px solid var(--color-accent-400);
         }
       }
     }
@@ -260,7 +256,8 @@ export const elements = css`
     }
   }
 
-  .error {
+  .error,
+  .draft {
     color: var(--color-error-400);
   }
 `;

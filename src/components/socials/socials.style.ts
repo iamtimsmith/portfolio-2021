@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mq, tablet } from '../../styles/breakpoints';
 
-export const SocialAside = styled.aside`
+export const SocialContainer = styled.div`
   display: none;
   position: fixed;
   bottom: 0;

@@ -1,28 +1,6 @@
 import { css } from 'styled-components';
 
 export const prism = css`
-  :root {
-    /* Prism Colors */
-    --color-prism-0: slategray;
-    --color-prism-1: #d4353a;
-    --color-prism-2: #449c66;
-    --color-prism-3: #378172;
-    --color-prism-4: #ad5bae;
-    --color-prism-5: #32669a;
-    --color-prism-6: #e90;
-  }
-
-  :root.dark {
-    /* Prism Colors */
-    --color-prism-0: #999;
-    --color-prism-1: #e2777a;
-    --color-prism-2: #7ec699;
-    --color-prism-3: #76a9a0;
-    --color-prism-4: #cc99cd;
-    --color-prism-5: #6196cc;
-    --color-prism-6: #f8c555;
-  }
-
   code[class*='language-'],
   pre[class*='language-'] {
     color: var(--color-grey-900);
@@ -93,19 +71,75 @@ export const prism = css`
   .token {
     color: var(--color-grey-700);
 
+    &.namespace {
+      opacity: 0.7;
+    }
+
     &.comment,
+    &.prolog,
+    &.cdata {
+      color: var(--color-grey-600);
+    }
+
+    &.attr-value .punctuation:first-child,
+    &.punctuation,
+    &.punctuation {
+      color: var(--color-grey-900);
+    }
+
+    &.entity,
+    &.symbol,
+    &.delimiter,
+    &.keyword,
+    &.selector,
+    &.important,
+    &.atrule,
+    &.url {
+      color: var(--color-prism-blue);
+    }
+
+    &.doctype,
+    &.builtin,
+    &.doctype,
+    &.builtin,
+    &.operator,
+    &.tag,
+    &.tag .punctuation,
+    &.attr-name {
+      color: var(--color-prism-teal);
+      background: none;
+    }
+
+    &.boolean,
+    &.number,
+    &.property,
+    &.constant,
+    &.variable,
+    &.string,
+    &.char,
+    &.attr-value,
+    &.attr-value .punctuation {
+      color: var(--color-prism-green);
+    }
+
+    &.class-name,
+    &.function {
+      color: var(--color-prism-purple);
+    }
+
+    &.url {
+      text-decoration: underline;
+    }
+
+    &.regex {
+      background: none;
+    }
+
+    /* &.comment,
     &.prolog,
     &.doctype,
     &.cdata {
       color: var(--color-prism-0);
-    }
-
-    &.punctuation {
-      color: var(--color-grey-700);
-    }
-
-    &.namespace {
-      opacity: 0.7;
     }
 
     &.property,
@@ -113,31 +147,8 @@ export const prism = css`
     &.constant,
     &.symbol,
     &.deleted,
-    &.class-name {
-      color: var(--color-prism-1);
-    }
-
-    &.number {
-      color: var(--color-prism-2);
-    }
-
-    &.boolean {
-      color: var(--color-prism-1);
-    }
-
-    &.selector,
-    &.string,
-    &.attr-value,
-    &.char,
-    &.builtin,
-    &.inserted {
-      color: var(--color-prism-2);
-    }
-
-    &.interpolation {
-      color: var(--color-prism-5);
-    }
-
+    &.class-name,
+    &.boolean,
     &.operator,
     &.entity,
     &.url,
@@ -145,6 +156,16 @@ export const prism = css`
       color: var(--color-prism-1);
       background: none;
       text-shadow: none;
+    }
+
+    &.number,
+    &.selector,
+    &.string,
+    &.attr-value,
+    &.char,
+    &.builtin,
+    &.inserted {
+      color: var(--color-prism-2);
     }
 
     &.atrule,
@@ -155,9 +176,10 @@ export const prism = css`
     }
 
     &.regex,
-    &.important {
+    &.important,
+    &.interpolation {
       color: var(--color-prism-5);
-    }
+    } */
 
     &.important,
     &.bold {

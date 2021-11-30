@@ -32,7 +32,7 @@ const PostTemplate = ({ data: { post, image } }: PostTemplateProps) => {
       />
       <h1>
         {post.frontmatter.title}{' '}
-        {!post.frontmatter.published && <span className='error'>- Draft</span>}
+        {!post.frontmatter.published && <span className='draft'>- Draft</span>}
       </h1>
       <MDXRenderer children={post.body} />
       <PostFooter data={post.frontmatter} />

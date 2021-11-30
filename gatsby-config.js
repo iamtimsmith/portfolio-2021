@@ -35,6 +35,7 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-axe`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -97,18 +98,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: 'gatsby-source-graphql',
-    //   options: {
-    //     typeName: 'GitHub',
-    //     fieldName: 'github',
-    //     url: 'https://api.github.com/graphql',
-    //     headers: {
-    //       Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
-    //     },
-    //     fetchOptions: {},
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-feed-mdx`,
       options: {

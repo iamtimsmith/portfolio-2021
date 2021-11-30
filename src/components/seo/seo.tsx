@@ -10,7 +10,13 @@ interface SeoProps {
   image?: string;
 }
 
-export const Seo = ({ description, lang, meta, title, image }: SeoProps) => {
+export const Seo = ({
+  description,
+  lang = 'en',
+  meta,
+  title,
+  image,
+}: SeoProps) => {
   const { site } = useContext(SiteContext);
 
   return (

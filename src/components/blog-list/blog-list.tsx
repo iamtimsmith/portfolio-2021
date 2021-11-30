@@ -30,7 +30,9 @@ export const BlogList = ({ posts }: BlogListProps) => {
           <BlogPostTitle>
             <Link to={node.fields.slug}>{node.frontmatter.title}</Link>{' '}
           </BlogPostTitle>
-          {!node.frontmatter.published && <DraftMessage> - Draft</DraftMessage>}
+          {!node.frontmatter.published && (
+            <span className='draft'> - Draft</span>
+          )}
           <p>{node.excerpt}</p>
         </BlogPost>
       ))}
