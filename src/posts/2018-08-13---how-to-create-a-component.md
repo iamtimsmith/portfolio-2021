@@ -16,7 +16,7 @@ By creating a component for this, we can write the actual code once and just dro
 
 In order to create a class component, we will have to give it a name. In the code below, we will call our class component "Example". All of our code for the component will go where the ellipsis ("...") is.
 
-```javascript
+```jsx
 // app.js
 import React from 'react';
 
@@ -27,7 +27,7 @@ class Example1 extends React.Component {
 
 That was pretty easy! It should be noted that if this is a component in a file of it's own, it will have to be exported. There are two ways to do this. We can either include "export default" before our class instantiation or we can simply put a line after the class that exports it. The examples of this are below:
 
-```javascript
+```jsx
 // app.js
 export default class Example2 extends React.Component {
   ...
@@ -47,7 +47,7 @@ Another huge benefit to class components is state. As I mentioned earlier, state
 
 To get started with state, we need to add a constructor to our class component. You can [read more about constructors here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor), but for now just know that this is required to add state to our components. Typically we see "props" being passed in as an argument for our constructor so we can use any props being passed into this component. The example below illustrates this.
 
-```javascript
+```jsx
 // app.js
 class Example4 extends React.Component {
   constructor(props) {
@@ -64,7 +64,7 @@ export default Example4;
 
 After our constructor, we can add a render method which will return our JSX. It should be noted that in React, the return (regardless of component type) can only return one direct element. What this means is that all of the JSX we are writing to create that component must be wrapped in an outer element such as a `<div>`. The example below illustrates how this is built.
 
-```javascript
+```jsx
 // app.js
 class Example5 extends React.Component {
   ...
@@ -82,7 +82,7 @@ class Example5 extends React.Component {
 
 Another benefit of class components is the ability to write functions for use in our components. It's pretty straightforward. We can write a function between the constructor and render methods. We can pass any parameters necessary in just like any other JavaScript function. There is one additional step to make this work though. Inside the constructor, we need to bind the 'this' keyword to the method so it can be used anywhere. To do this we can use the code below:
 
-```javascript
+```jsx
 // app.js
 this.customFunction = this.customFunction.bind(this);
 ```
@@ -95,14 +95,14 @@ An example at the bottom of this post will illustrate this more so you can get a
 
 If we have our components in separate files, we will first need to import the component into the file where we want to use it. We can do it with this code:
 
-```javascript
+```jsx
 // app.js
 import Example6 from './path/to/component';
 ```
 
 Once imported, we can add it to our JSX using the name we assigned to it in the import. For example, we can add the component imported above as follows:
 
-```javascript
+```jsx
 // app.js
 <Example6 />
 ```
@@ -113,7 +113,7 @@ So what if we want to pass data into our component so we don't have to hard code
 
 Let's say we want to pass the string "Hello World" into our component. When we assign the prop, we need to come up with a name for the prop. This should be something that tells us exactly what it is. Since this is a demo, I'll just use 'text' but in real apps it should be more descriptive. We can do it like this:
 
-```javascript
+```jsx
 // app.js
 <Example6 text='Hello World' />
 ```
@@ -122,7 +122,7 @@ Let's say we want to pass the string "Hello World" into our component. When we a
 
 Okay, so we have props being passed into our component, now what? I said before that when we create our component's constructor, we generally put props into the arguments. That's how our component receives the props we pass into it. Once there, we can access them in our JSX by using this.props.NameOfProp as follows:
 
-```javascript
+```jsx
 // app.js
 <p>{this.props.text}</p>
 ```
@@ -131,7 +131,7 @@ The code above will render "Hello World" in a p tag. Easy peezy, right?
 
 ## Complete Code
 
-```javascript
+```jsx
 // app.js
 // First we create our class
 class Greeting extends React.Component {

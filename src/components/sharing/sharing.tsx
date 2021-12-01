@@ -26,7 +26,7 @@ export const Sharing = ({ title }: SharingProps) => {
   }, []);
 
   return (
-    <SharingBar show={showing}>
+    <SharingBar show={showing} aria-label='Sharing navigation'>
       <Label>Share:</Label>
       {getSharingData(url, image, title).map(site => (
         <Button

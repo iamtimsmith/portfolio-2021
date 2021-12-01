@@ -11,7 +11,7 @@ export const darkTheme = css`
     --color-grey-600: #9aa5b1;
     --color-grey-700: #cbd2d9;
     --color-grey-800: #e4e7eb;
-    --color-grey-900: #f5f7fa;
+    --color-grey-900: #ffffff;
 
     --color-accent-50: #001616;
     --color-accent-100: #033b39;
@@ -36,12 +36,17 @@ export const darkTheme = css`
     --color-error-900: #ffe4eb;
 
     /* Prism Colors */
-    --color-prism-0: #999;
-    --color-prism-1: #e2777a;
-    --color-prism-2: #7ec699;
-    --color-prism-3: #76a9a0;
-    --color-prism-4: #cc99cd;
-    --color-prism-5: #6196cc;
-    --color-prism-6: #f8c555;
+    --color-prism-blue: #6bb9f0;
+    --color-prism-gold: #f7ca18;
+    --color-prism-green: #7ed07e;
+    --color-prism-grey: #bdc3c7;
+    --color-prism-orange: #f2a75f;
+    --color-prism-purple: #dda0dd;
+    --color-prism-red: #ff9494;
+    --color-prism-teal: #67cdcc;
+  }
+
+  .draft {
+    color: var(--color-error-600) !important;
   }
 `;

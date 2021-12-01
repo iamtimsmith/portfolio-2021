@@ -1,6 +1,6 @@
 ---
 title: "React 101: The Basics"
-description: The basics of react
+description: Learn about the benefits of using React and the surrounding ecosystem for your project.
 image: react-101-the-basics.jpg
 tags: [react, basics]
 published: true
@@ -77,6 +77,8 @@ Another feature of React is the ability to build reusable components for your pr
 Each component can also accept props, or variable data which can then be used to render data in the component. By using props, you can build out the basic structure of a component without any actual hard-coded text or images and pass props in to make those things dynamic each time you use the component.
 
 I have written a [blog post about creating components using the class component](/blog/class-components-vs-stateless-functional-components/) structure and will soon write one about writing functional components using hooks for state and lifecycle methods.
+
+<EmailSignup title='Like this post? Join my mailing list!' />
 
 ## The React ecosystem
 One of the more complicated things to learn is the ecosystem around React. Since it is such a popular tool, there are LOTS of different libraries which can be used to do a variety of things. Below I will talk about some of the libraries used for common challenges when building a React application.

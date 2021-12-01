@@ -220,12 +220,12 @@ export const normalize = css`
 		* Restore the focus styles unset by the previous rule.
 		*/
 
-  button:-moz-focusring,
+  /* button:-moz-focusring,
   [type='button']:-moz-focusring,
   [type='reset']:-moz-focusring,
   [type='submit']:-moz-focusring {
     outline: 1px dotted ButtonText;
-  }
+  } */
 
   /**
 		* Correct the padding in Firefox.
@@ -294,7 +294,7 @@ export const normalize = css`
 
   [type='search'] {
     -webkit-appearance: textfield; /* 1 */
-    outline-offset: -2px; /* 2 */
+    //outline-offset: -2px; /* 2 */
   }
 
   /**

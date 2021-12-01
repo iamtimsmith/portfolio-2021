@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { SiteContext } from '../../utils/context';
 import { getIcon } from '../../utils/social';
-import { SocialAside, SocialNav, BackToTopButton } from './socials.style';
+import { SocialContainer, SocialNav, BackToTopButton } from './socials.style';
 
 export const Socials = () => {
   const [show, setShow] = useState(false);
@@ -16,8 +16,8 @@ export const Socials = () => {
   }, []);
 
   return (
-    <SocialAside>
-      <SocialNav>
+    <SocialContainer>
+      <SocialNav aria-label='Social media menu'>
         <BackToTopButton show={show} onClick={handleClick}>
           &uarr;
         </BackToTopButton>
@@ -26,12 +26,13 @@ export const Socials = () => {
             href={social.url}
             target='_blank'
             rel='noreferrer nofollow'
+            aria-label={social.name}
             key={social.name}
           >
             {getIcon(social.name.toLowerCase())}
           </a>
         ))}
       </SocialNav>
-    </SocialAside>
+    </SocialContainer>
   );
 };

@@ -15,7 +15,7 @@ interface SharingBarProps {
   show: boolean;
 }
 
-export const SharingBar = styled.aside<SharingBarProps>`
+export const SharingBar = styled.nav<SharingBarProps>`
   position: fixed;
   bottom: ${props => (props.show ? `0px` : `-65px`)};
   left: 0;

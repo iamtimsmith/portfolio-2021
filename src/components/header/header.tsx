@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <Navbar>
       <Logo to='/'>{site.title}</Logo>
-      <Nav>
+      <Nav aria-label='Main menu'>
         {site.menu.map((item, id) => (
           <Link to={item.url} key={id}>
             {item.name}

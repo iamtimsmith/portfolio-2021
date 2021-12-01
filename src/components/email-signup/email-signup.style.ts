@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { mq, tablet } from '../../styles/breakpoints';
 
-export const EmailSignupAside = styled.aside`
+export const EmailSignupContainer = styled.div`
   display: block;
   margin: var(--spacing-6) var(--spacing-0);
   padding: var(--spacing-8);

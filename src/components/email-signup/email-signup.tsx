@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import { isValidEmail } from '../../utils/validators';
 import {
-  EmailSignupAside,
+  EmailSignupContainer,
   EmailSignupTitle,
   EmailSignupForm,
 } from './email-signup.style';
@@ -25,7 +25,7 @@ export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
   };
 
   return (
-    <EmailSignupAside>
+    <EmailSignupContainer>
       <EmailSignupTitle children={title} />
       {response && response.result === `success` ? (
         <p>
@@ -59,6 +59,6 @@ export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
           </EmailSignupForm>
         </>
       )}
-    </EmailSignupAside>
+    </EmailSignupContainer>
   );
 };
