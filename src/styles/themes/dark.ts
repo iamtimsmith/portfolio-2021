@@ -36,13 +36,14 @@ export const darkTheme = css`
     --color-error-900: #ffe4eb;
 
     /* Prism Colors */
-    --color-prism-grey: #4c566a;
-    --color-prism-green: #90c695;
-    --color-prism-blue: #5c97bf;
-    --color-prism-purple: #be90d4;
-    --color-prism-teal: #add8e6;
-    --color-prism-white: #d8dee9;
-    --color-prism-6: #f8c555;
+    --color-prism-blue: #6bb9f0;
+    --color-prism-gold: #f7ca18;
+    --color-prism-green: #7ed07e;
+    --color-prism-grey: #bdc3c7;
+    --color-prism-orange: #f2a75f;
+    --color-prism-purple: #dda0dd;
+    --color-prism-red: #ff9494;
+    --color-prism-teal: #67cdcc;
   }
 
   .draft {

@@ -1,55 +1,38 @@
 import { css } from 'styled-components';
 
 export const prism = css`
+  /**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ */
+
   code[class*='language-'],
   pre[class*='language-'] {
     color: var(--color-grey-900);
     background: none;
-    text-shadow: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: var(--font-size-sm);
+    font-size: 0.9rem;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
     word-wrap: normal;
-    line-height: 1.8;
-    tab-size: 2;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
     hyphens: none;
-
-    &,
-    * {
-      transition: 0.3s;
-    }
-  }
-
-  pre[class*='language-']::-moz-selection,
-  pre[class*='language-'] ::-moz-selection,
-  code[class*='language-']::-moz-selection,
-  code[class*='language-'] ::-moz-selection {
-    text-shadow: none;
-    background: #b3d4fc;
-  }
-
-  pre[class*='language-']::selection,
-  pre[class*='language-'] ::selection,
-  code[class*='language-']::selection,
-  code[class*='language-'] ::selection {
-    text-shadow: none;
-    background: #b3d4fc;
-  }
-
-  @media print {
-    code[class*='language-'],
-    pre[class*='language-'] {
-      text-shadow: none;
-    }
   }
 
   /* Code blocks */
   pre[class*='language-'] {
-    padding: var(--spacing-4);
-    margin: 30px 0;
+    padding: 1em;
+    margin: 0.5em 0;
     overflow: auto;
   }
 
@@ -60,134 +43,91 @@ export const prism = css`
 
   /* Inline code */
   :not(pre) > code[class*='language-'] {
-    padding: 1px;
+    padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
   }
-  :not(pre) > code[class*='language-']:after {
-    display: none;
+
+  code,
+  .token {
+    text-shadow: none !important;
   }
 
   .token {
-    color: var(--color-grey-700);
+    background: none !important;
+  }
 
-    &.namespace {
-      opacity: 0.7;
-    }
+  .token.comment,
+  .token.block-comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: var(--color-prism-grey);
+  }
 
-    &.comment,
-    &.prolog,
-    &.cdata {
-      color: var(--color-grey-600);
-    }
+  .token.punctuation {
+    color: var(--color-grey-900);
+  }
 
-    &.attr-value .punctuation:first-child,
-    &.punctuation,
-    &.punctuation {
-      color: var(--color-grey-900);
-    }
+  .token.tag,
+  .token.attr-name,
+  .token.namespace,
+  .token.deleted {
+    color: var(--color-prism-red);
+  }
 
-    &.entity,
-    &.symbol,
-    &.delimiter,
-    &.keyword,
-    &.selector,
-    &.important,
-    &.atrule,
-    &.url {
-      color: var(--color-prism-blue);
-    }
+  .token.function-name {
+    color: var(--color-prism-blue);
+  }
 
-    &.doctype,
-    &.builtin,
-    &.doctype,
-    &.builtin,
-    &.operator,
-    &.tag,
-    &.tag .punctuation,
-    &.attr-name {
-      color: var(--color-prism-teal);
-      background: none;
-    }
+  .token.boolean,
+  .token.number,
+  .token.function {
+    color: var(--color-prism-orange);
+  }
 
-    &.boolean,
-    &.number,
-    &.property,
-    &.constant,
-    &.variable,
-    &.string,
-    &.char,
-    &.attr-value,
-    &.attr-value .punctuation {
-      color: var(--color-prism-green);
-    }
+  .token.property,
+  .token.class-name,
+  .token.constant,
+  .token.symbol {
+    color: var(--color-prism-gold);
+  }
 
-    &.class-name,
-    &.function {
-      color: var(--color-prism-purple);
-    }
+  .token.selector,
+  .token.important,
+  .token.atrule,
+  .token.keyword,
+  .token.builtin {
+    color: var(--color-prism-purple);
+  }
 
-    &.url {
-      text-decoration: underline;
-    }
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.regex,
+  .token.variable {
+    color: var(--color-prism-green);
+  }
 
-    &.regex {
-      background: none;
-    }
+  .token.operator,
+  .token.entity,
+  .token.url {
+    color: var(--color-prism-teal);
+  }
 
-    /* &.comment,
-    &.prolog,
-    &.doctype,
-    &.cdata {
-      color: var(--color-prism-0);
-    }
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  .token.italic {
+    font-style: italic;
+  }
 
-    &.property,
-    &.tag,
-    &.constant,
-    &.symbol,
-    &.deleted,
-    &.class-name,
-    &.boolean,
-    &.operator,
-    &.entity,
-    &.url,
-    &.variable {
-      color: var(--color-prism-1);
-      background: none;
-      text-shadow: none;
-    }
+  .token.entity {
+    cursor: help;
+  }
 
-    &.number,
-    &.selector,
-    &.string,
-    &.attr-value,
-    &.char,
-    &.builtin,
-    &.inserted {
-      color: var(--color-prism-2);
-    }
-
-    &.atrule,
-    &.attr-name,
-    &.function,
-    &.keyword {
-      color: var(--color-prism-4);
-    }
-
-    &.regex,
-    &.important,
-    &.interpolation {
-      color: var(--color-prism-5);
-    } */
-
-    &.important,
-    &.bold {
-      font-weight: bold;
-    }
-
-    &.italic {
-      font-style: italic;
-    }
+  .token.inserted {
+    color: green;
   }
 `;

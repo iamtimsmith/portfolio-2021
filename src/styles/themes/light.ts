@@ -35,12 +35,13 @@ export const lightTheme = css`
     --color-error-800: #490112;
     --color-error-900: #1e0005;
     /* Prism Colors */
-    --color-prism-0: slategray;
-    --color-prism-1: #d4353a;
-    --color-prism-2: #449c66;
-    --color-prism-3: #378172;
-    --color-prism-4: #ad5bae;
-    --color-prism-5: #32669a;
-    --color-prism-6: #e90;
+    --color-prism-blue: #1460aa;
+    --color-prism-gold: #726012;
+    --color-prism-green: #436e43;
+    --color-prism-grey: #4f5a65;
+    --color-prism-orange: #804600;
+    --color-prism-purple: #77448b;
+    --color-prism-red: #bc3e31;
+    --color-prism-teal: #008b8b;
   }
 `;

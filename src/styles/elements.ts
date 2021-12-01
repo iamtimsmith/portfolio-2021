@@ -6,6 +6,11 @@ export const elements = css`
   :before {
     box-sizing: border-box;
   }
+  :focus {
+    outline-style: solid !important;
+    outline-width: 3px !important;
+    outline-color: var(--color-accent-300) !important;
+  }
 
   html {
     line-height: 1.5;
@@ -201,22 +206,15 @@ export const elements = css`
 
     button {
       padding: var(--spacing-2);
-      background: var(--color-accent-500);
-      border: 2px solid var(--color-accent-500);
+      background: var(--color-accent-700);
+      border: 2px solid var(--color-accent-700);
       color: var(--color-grey-50);
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s;
 
       &:hover {
         background: var(--color-accent-600);
         border: 2px solid var(--color-accent-600);
-      }
-
-      .dark & {
-        &:hover {
-          background: var(--color-accent-400);
-          border: 2px solid var(--color-accent-400);
-        }
       }
     }
     /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -248,7 +246,7 @@ export const elements = css`
     background-size: 100% 200%;
     background-position: 0px 0px;
     word-break: break-word;
-    transition: 0.3s;
+    transition: background-position 0.3s;
 
     &:hover,
     &:focus {
