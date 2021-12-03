@@ -48,6 +48,11 @@ export const prism = css`
     white-space: normal;
   }
 
+  .gatsby-highlight-code-line {
+    background-color: var(--color-accent-100);
+    display: block;
+  }
+
   code,
   .token {
     text-shadow: none !important;

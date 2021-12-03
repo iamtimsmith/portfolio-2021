@@ -107,3 +107,4 @@ Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby f
 ## Themes
 
 - For Theme color swatches, go to [Smart Swatch](https://smart-swatch.netlify.app/)
+- To check colors for accessibility, use [ColorSafe](http://colorsafe.co/)

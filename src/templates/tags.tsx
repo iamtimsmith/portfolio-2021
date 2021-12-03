@@ -8,6 +8,7 @@ interface TagsTemplateProps {
     tags: {
       group: {
         fieldValue: string;
+        totalCount: number;
       }[];
     };
   };
@@ -30,6 +31,9 @@ const TagsTemplate = ({ data }: TagsTemplateProps) => {
         {data.tags.group.map((tag, id) => (
           <li key={id}>
             <Link to={`/tags/${tag.fieldValue}`}>#{tag.fieldValue}</Link>
+            {tag.totalCount === 1
+              ? ` - ${tag.totalCount} post`
+              : ` - ${tag.totalCount} posts`}
           </li>
         ))}
       </ul>
@@ -42,6 +46,7 @@ export const query = graphql`
     tags: allMdx(filter: $filters) {
       group(field: frontmatter___tags) {
         fieldValue
+        totalCount
       }
     }
   }
