@@ -6,11 +6,6 @@ export const elements = css`
   :before {
     box-sizing: border-box;
   }
-  :focus {
-    outline-style: solid !important;
-    outline-width: 3px !important;
-    outline-color: var(--color-accent-300) !important;
-  }
 
   html {
     line-height: 1.5;
@@ -251,6 +246,17 @@ export const elements = css`
     &:hover,
     &:focus {
       background-position: 0px 100%;
+    }
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    &:focus {
+      outline-style: solid !important;
+      outline-width: 3px !important;
+      outline-color: var(--color-accent-300) !important;
     }
   }
 
