@@ -166,7 +166,7 @@ const MyComponent = () => {
 ```
 
 ## The useContext hook
-I will mention another hook called `useContext`, but this will not be a comprehensive post on React context. I will simply show you how to use the hook in the event that you need to. First, what is Context? Along with hooks, the team behind React added a feature which allowed for global state management and called it Context. By using this tool, you can keep items in state outside of a specific component and use it where needed.
+I will mention another hook called `useContext`, but this will not be [a comprehensive post on React context](/blog/how-to-use-react-context). I will simply show you how to use the hook in the event that you need to. First, what is Context? Along with hooks, the team behind React added a feature which allowed for global state management and called it Context. By using this tool, you can keep items in state outside of a specific component and use it where needed.
 
 The example below assumes you have already created a context with an item called `food` in another file and already wrapped the app in the Context Provider. To use the `useContext` provider, you need the context itself. Once you've called the hook, you can use destructuring to get specific items within the context.
 
