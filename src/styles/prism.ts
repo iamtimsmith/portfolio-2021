@@ -49,7 +49,7 @@ export const prism = css`
   }
 
   .gatsby-highlight-code-line {
-    background-color: var(--color-accent-100);
+    background-color: var(--color-grey-200);
     display: block;
   }
 
