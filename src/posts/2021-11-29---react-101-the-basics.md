@@ -103,7 +103,7 @@ Of the solutions I mentioned earlier, Gatsby and Create React App both come with
 Aside from the required libraries, there are a lot of libraries to choose from. These are all optional, so it's worth looking into each one for your needs and seeing which one works best for your project and preferences.
 
 #### State Management
-React contains a state management system called [Context](https://reactjs.org/docs/context.html) which allows state to be managed on a global scale and used where it's needed. This comes built in and doesn't require any other libraries to be installed, but I thought it was worth mentioning here because it's a viable solution out-of-the-box.
+React contains a state management system called [Context](https://reactjs.org/docs/context.html) which allows [state to be managed on a global scale and used where it's needed](/blog/how-to-use-react-context). This comes built in and doesn't require any other libraries to be installed, but I thought it was worth mentioning here because it's a viable solution out-of-the-box.
 
 Another really popular library for global state management is called [Redux](https://redux.js.org/). This is a very widely used library and uses actions, reducers, and stores to handle state. In short, a component calls an action which is then analyzed by the reducer to decide how to update state. There can be more to this method such as sagas and thunks but in it's most basic form, this is an overview of how it works.
 
