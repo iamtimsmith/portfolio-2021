@@ -3,10 +3,7 @@ import { useLocation } from '@reach/router';
 import { SiteContext } from '../../utils/context';
 import { getIcon, getSharingData } from '../../utils/social';
 import { SharingBar, Label, Button, Site } from './sharing.style';
-
-interface SharingProps {
-  title: string;
-}
+import { SharingProps } from './sharing.i';
 
 export const Sharing = ({ title }: SharingProps) => {
   const { site } = useContext(SiteContext);

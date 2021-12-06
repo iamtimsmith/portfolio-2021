@@ -2,11 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getIcon } from '../../utils/social';
 import { FooterSection } from './footer.style';
-
-interface SocialMenuItem {
-  name: string;
-  url: string;
-}
+import { SocialMenuItem } from './footer.i';
 
 export const Footer = () => {
   const {

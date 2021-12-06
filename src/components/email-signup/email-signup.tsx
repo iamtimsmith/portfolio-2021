@@ -6,7 +6,6 @@ import {
   EmailSignupTitle,
   EmailSignupForm,
 } from './email-signup.style';
-// import './email-signup.scss';
 
 export const EmailSignup = ({ title = `Sign up for my mailing list!` }) => {
   const [email, setEmail] = useState(``);

@@ -4,28 +4,7 @@ import { Layout } from '../components/layout';
 import { BlogList } from '../components/blog-list';
 import { Pagination } from '../components/pagination';
 import { Seo } from '../components/seo';
-
-interface BlogTemplateProps {
-  data: {
-    posts: {
-      nodes: {
-        id: string;
-        frontmatter: {
-          title: string;
-          published: boolean;
-        };
-        fields: {
-          slug: string;
-        };
-        excerpt: string;
-      }[];
-    };
-  };
-  pageContext: {
-    currentPage: number;
-    numPages: number;
-  };
-}
+import { BlogTemplateProps } from '../types/blog.i';
 
 const BlogTemplate = ({ data, pageContext }: BlogTemplateProps) => {
   return (

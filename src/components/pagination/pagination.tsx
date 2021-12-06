@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { PaginationButtons } from './pagination.style';
-
-interface PaginationProps {
-  page: number;
-  totalPages: number;
-}
+import { PaginationProps } from './pagination.i';
 
 export const Pagination = ({ page, totalPages }: PaginationProps) => {
   return (

@@ -7,11 +7,8 @@ import { SiteProvider } from '../../utils/context';
 import { mdxComponents } from '../../utils/wrap-root-element';
 import { GlobalStyles } from '../../styles/global';
 import { Container } from './layout.style';
+import { LayoutProps } from './layout.i';
 import 'prismjs/themes/prism.css';
-
-interface LayoutProps {
-  children: JSX.Element | JSX.Element[];
-}
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
