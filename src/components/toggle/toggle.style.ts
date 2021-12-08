@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Theme } from '../../utils/context';
+import { ToggleIconProps } from './toggle.i';
 
 export const ToggleButton = styled.button`
   background: none;
@@ -11,9 +11,7 @@ export const ToggleButton = styled.button`
   top: 5px;
   cursor: pointer;
 `;
-interface ToggleIconProps {
-  show: boolean;
-}
+
 export const ToggleIcon = styled.span<ToggleIconProps>`
   display: ${props => (props.show ? `block` : `none`)};
 `;

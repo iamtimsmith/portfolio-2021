@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { TagList, Tag } from './tags.style';
-
-interface TagsProps {
-  tags: string[];
-}
+import { TagsProps } from './tags.i';
 
 export const Tags = ({ tags = [] }: TagsProps) => {
   return (

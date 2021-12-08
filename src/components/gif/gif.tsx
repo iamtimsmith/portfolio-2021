@@ -1,11 +1,6 @@
 import React from 'react';
 import { Figure } from './gif.style';
-
-interface GifProps {
-  src: string;
-  alt?: string;
-  width?: number | string;
-}
+import { GifProps } from './gif.i';
 
 export const Gif = ({ src, alt, width = '400' }: GifProps) => {
   return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { SiteContext } from '../../utils/context';
 import { getIcon } from '../../utils/social';
 import { SocialContainer, SocialNav, BackToTopButton } from './socials.style';
+import { SocialItem } from './socials.i';
 
 export const Socials = () => {
   const [show, setShow] = useState(false);
@@ -21,7 +22,7 @@ export const Socials = () => {
         <BackToTopButton show={show} onClick={handleClick}>
           &uarr;
         </BackToTopButton>
-        {site.socials.map(social => (
+        {site.socials.map((social: SocialItem) => (
           <a
             href={social.url}
             target='_blank'

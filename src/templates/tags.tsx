@@ -2,17 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
-
-interface TagsTemplateProps {
-  data: {
-    tags: {
-      group: {
-        fieldValue: string;
-        totalCount: number;
-      }[];
-    };
-  };
-}
+import { TagsTemplateProps } from '../types/tags.i';
 
 const TagsTemplate = ({ data }: TagsTemplateProps) => {
   return (

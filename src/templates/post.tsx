@@ -5,22 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Layout } from '../components/layout';
 import { Seo } from '../components/seo';
 import { PostFooter } from '../components/post-footer';
-
-interface PostTemplateProps {
-  data: {
-    post: {
-      frontmatter: {
-        title: string;
-        description: string;
-        tags: string[];
-        published: boolean;
-        image: string;
-      };
-      body: string;
-    };
-    image: ImageDataLike;
-  };
-}
+import { PostTemplateProps } from '../types/post.i';
 
 const PostTemplate = ({ data: { post, image } }: PostTemplateProps) => {
   return (

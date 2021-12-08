@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { getIcon } from '../../utils/social';
 import { SiteContext } from '../../utils/context';
 import { ToggleButton, ToggleIcon } from './toggle.style';
+declare const window: any;
 
 export const Toggle = () => {
   const { theme, changeTheme } = useContext(SiteContext);
@@ -23,6 +24,11 @@ export const Toggle = () => {
         return changeTheme('light');
     }
   };
+
+  // Get theme on load
+  useEffect(() => {
+    changeTheme(window.__theme);
+  }, []);
 
   return (
     <ToggleButton onClick={() => handleClick()} aria-label='Toggle Theme'>

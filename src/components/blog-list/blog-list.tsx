@@ -1,26 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import {
-  BlogListItems,
-  BlogPost,
-  BlogPostTitle,
-  DraftMessage,
-} from './blog-list.style';
-
-interface BlogListProps {
-  posts: {
-    id: string;
-    excerpt: string;
-    frontmatter: {
-      title: string;
-      published?: boolean;
-    };
-    fields: {
-      slug: string;
-    };
-  }[];
-}
+import { BlogListItems, BlogPost, BlogPostTitle } from './blog-list.style';
+import { BlogListProps } from './blog-list.i';
 
 export const BlogList = ({ posts }: BlogListProps) => {
   return (
@@ -38,8 +19,4 @@ export const BlogList = ({ posts }: BlogListProps) => {
       ))}
     </BlogListItems>
   );
-};
-
-BlogList.propTypes = {
-  posts: PropTypes.array,
 };

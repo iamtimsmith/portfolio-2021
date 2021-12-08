@@ -16,7 +16,3 @@ export const BlogPostTitle = styled.strong`
     color: var(--color-grey-900);
   }
 `;
-
-export const DraftMessage = styled.span`
-  color: var(--color-error-400);
-`;

@@ -1,14 +1,7 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { SiteContext } from '../../utils/context';
-
-interface SeoProps {
-  title: string;
-  description?: string;
-  lang?: string;
-  meta?: any;
-  image?: string;
-}
+import { SeoProps } from './seo.i';
 
 export const Seo = ({
   description,

@@ -3,27 +3,7 @@ import { graphql } from 'gatsby';
 import { Layout } from '../components/layout';
 import { BlogList } from '../components/blog-list';
 import { Seo } from '../components/seo';
-
-interface TagTemplateProps {
-  data: {
-    posts: {
-      nodes: {
-        id: string;
-        frontmatter: {
-          title: string;
-          published: boolean;
-        };
-        fields: {
-          slug: string;
-        };
-        excerpt: string;
-      }[];
-    };
-  };
-  pageContext: {
-    slug: string;
-  };
-}
+import { TagTemplateProps } from '../types/tag.i';
 
 const TagTemplate = ({ data, pageContext }: TagTemplateProps) => {
   return (
