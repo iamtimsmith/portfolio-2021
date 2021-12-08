@@ -3,7 +3,6 @@ import Snowfall from 'react-snowfall';
 import { useContextQuery } from './useContextQuery';
 import { reducer, store } from './reducer';
 import { Theme, Context, SiteProviderProps } from '../types/context.i';
-declare const window: any;
 
 export const SiteContext = createContext({} as Context);
 
@@ -12,19 +11,15 @@ export const SiteProvider = ({ children }: SiteProviderProps) => {
   const site = useContextQuery();
 
   // Actions
-  const changeTheme = (theme: Theme) =>
-    dispatch({ type: 'CHANGE_THEME', theme });
-
-  // Get theme on load
-  useEffect(() => {
-    changeTheme(window.__theme);
-  }, []);
+  const changeTheme = (theme: Theme) => {
+    return dispatch({ type: 'CHANGE_THEME', theme });
+  };
 
   return (
     <SiteContext.Provider
       value={{
         site,
-        theme: theme,
+        theme,
         changeTheme,
       }}
     >
