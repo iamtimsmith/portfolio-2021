@@ -91,12 +91,32 @@ Since the variable is assigned to the root element, you can use it anywhere in t
 
 By using CSS variables in this way, you don't have to add styles for both light and dark themes on each element. Instead, you can use and reuse a variable with a different value based on the theme class assigned to a given element.
 
+## Once my variables are created, how do I use them?
+Using variables is very quick and easy. To call a variable, you use the `var()` function which is now built in to the CSS language. The first parameter is the name of the variable you'd like to use. For instance, the example below shows how to use a variable called `--text-color`.
+
+```css
+.thing {
+	color: var(--text-color);
+}
+```
+
+More often than not, you'll just see it used like this. There is, however, a second optional parameter you can pass in to the function. The second parameter is a fallback value in case the variable isn't set. You can see what a `var()` call with a variable and a fallback value looks like below:
+
+```css
+.thing {
+	color: var(--text-color, #333);
+}
+```
+
 ## Are there any limitations?
 Although css variables have solved a lot of problems for front-end developers, it is not without flaws. If you've spent time writing SCSS or something similar, you may have used variables and mixins to handle media queries. This cannot be done with CSS variables which is a bit of a bummer. In addition, CSS variables can't store a url. This would be useful if you had to reuse an image in different places, but it doesn't work.
 
 <Gif
 	src="https://media.giphy.com/media/hGUsHFdmERpc1VpoCA/giphy.mp4"
 />
+
+### Browser Support
+Thanks to modern browers, you can use CSS variables with all browsers except IE11. That means if you have to support Interent Explorer 11 or older browsers in general, CSS variables may not be the right choice for your project. You can [learn more about which browsers are supported here](https://caniuse.com/css-variables).
 
 ## Conclusion
 Overall, CSS variables are a very cool innovation within your styles. They make it very easy to not only write reusable styles, but update them or expand on them further down the road. I highly recommend checking them out in your next project and seeing what you think about them.
