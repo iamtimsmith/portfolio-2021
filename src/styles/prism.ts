@@ -11,7 +11,7 @@ export const prism = css`
     color: var(--color-grey-900);
     background: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
