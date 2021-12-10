@@ -195,10 +195,11 @@ export const elements = css`
 
   form {
     input {
-      padding: var(--spacing-2);
-      border: 1px solid white;
+      padding: calc(var(--spacing-2) + 1px);
+      border: 1px solid var(--color-grey-700);
     }
 
+    a,
     button {
       padding: var(--spacing-2);
       background: var(--color-accent-700);
@@ -256,12 +257,21 @@ export const elements = css`
     &:focus {
       outline-style: solid !important;
       outline-width: 3px !important;
-      outline-color: var(--color-accent-300) !important;
+      outline-color: var(--color-accent-300);
     }
   }
 
   .error,
   .draft {
     color: var(--color-error-400);
+  }
+
+  @keyframes spinner {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 `;

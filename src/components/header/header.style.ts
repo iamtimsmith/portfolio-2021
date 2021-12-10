@@ -17,7 +17,7 @@ export const Logo = styled(Link)`
 `;
 
 export const Nav = styled.nav`
-  a {
+  > a {
     color: var(--color-grey-700);
     text-decoration: none;
     margin: var(--spacing-2);

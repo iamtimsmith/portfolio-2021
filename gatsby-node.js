@@ -77,6 +77,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fieldValue
           }
         }
+        site {
+          siteMetadata {
+            useSearch
+            postsPerPage
+          }
+        }
       }
     `);
   } else {
@@ -103,9 +109,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fieldValue
           }
         }
+        site {
+          siteMetadata {
+            useSearch
+            postsPerPage
+          }
+        }
       }
     `);
   }
+
+  const config = content.data.site.siteMetadata;
 
   /**
    * Create pages for each post
@@ -127,7 +141,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    * Logic for Pagination
    * Create paginated blog pages
    */
-  const postsPerPage = 6;
+  const { postsPerPage } = config;
   const numPages = Math.ceil(posts.length / postsPerPage);
   // Create pages based on pagination
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -143,6 +157,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+
+  /**
+   * Create search page if enabled
+   */
+  if (!!config.useSearch) {
+    actions.createPage({
+      path: `/search`,
+      component: path.resolve(`src/templates/search.tsx`),
+      context: {
+        filters: {
+          ...postFilters,
+        },
+      },
+    });
+  }
 
   /**
    * Create pages for tags.

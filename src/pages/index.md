@@ -18,8 +18,6 @@ image: ../images/timsmith-social.jpg
 
 <Link to='/blog'>View more posts &rarr;</Link>
 
-
-
 import {graphql} from 'gatsby';
 export const pageQuery = graphql`
   query HomePageQuery {

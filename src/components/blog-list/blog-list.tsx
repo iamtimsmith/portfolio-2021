@@ -11,7 +11,7 @@ export const BlogList = ({ posts }: BlogListProps) => {
           <BlogPostTitle>
             <Link to={node.fields.slug}>{node.frontmatter.title}</Link>{' '}
           </BlogPostTitle>
-          {!node.frontmatter.published && (
+          {node.frontmatter.published === false && (
             <span className='draft'> - Draft</span>
           )}
           <p>{node.excerpt}</p>
