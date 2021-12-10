@@ -22,6 +22,7 @@ export const useContextQuery = () => {
               name
               url
             }
+            useSearch
           }
         }
         portrait: file(name: { eq: "timsmith" }) {
