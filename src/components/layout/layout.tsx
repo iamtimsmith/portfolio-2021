@@ -3,7 +3,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { Header } from '../header';
 import { Footer } from '../footer';
 import { Socials } from '../socials';
-import { SiteProvider } from '../../utils/context';
+import { SiteProvider } from '../context';
 import { mdxComponents } from '../../utils/wrap-root-element';
 import { GlobalStyles } from '../../styles/global';
 import { Container } from './layout.style';

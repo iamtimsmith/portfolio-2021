@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { getIcon } from '../../utils/social';
-import { SiteContext } from '../../utils/context';
+import { SiteContext } from '../context';
 import { ToggleButton, ToggleIcon } from './toggle.style';
 declare const window: any;
 

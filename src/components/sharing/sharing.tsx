@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from '@reach/router';
-import { SiteContext } from '../../utils/context';
+import { SiteContext } from '../context';
 import { getIcon, getSharingData } from '../../utils/social';
 import { SharingBar, Label, Button, Site } from './sharing.style';
 import { SharingProps, SocialSite } from './sharing.i';

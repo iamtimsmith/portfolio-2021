@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { getImage } from 'gatsby-plugin-image';
-import { SiteContext } from '../../utils/context';
+import { SiteContext } from '../context';
 import { BioSection, BioImage, BioContent, BioAuthor } from './bio.style';
 
 export const Bio = ({ showAuthor = false }) => {

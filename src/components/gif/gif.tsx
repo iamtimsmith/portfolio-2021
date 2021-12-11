@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Figure } from './gif.style';
 import { GifProps } from './gif.i';
 

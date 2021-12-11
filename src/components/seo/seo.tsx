@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { SiteContext } from '../../utils/context';
+import { SiteContext } from '../context';
 import { SeoProps } from './seo.i';
 
 export const Seo = ({

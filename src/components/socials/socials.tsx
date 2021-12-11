@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { SiteContext } from '../../utils/context';
+import { SiteContext } from '../context';
 import { getIcon } from '../../utils/social';
 import { SocialContainer, SocialNav, BackToTopButton } from './socials.style';
 import { SocialItem } from './socials.i';
