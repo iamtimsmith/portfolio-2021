@@ -22,13 +22,13 @@ export const Socials = () => {
         <BackToTopButton show={show} onClick={handleClick}>
           &uarr;
         </BackToTopButton>
-        {site.socials.map((social: SocialItem) => (
+        {site.socials.map((social: SocialItem, key: number) => (
           <a
             href={social.url}
             target='_blank'
             rel='noreferrer nofollow'
             aria-label={social.name}
-            key={social.name}
+            key={key}
           >
             {getIcon(social.name.toLowerCase())}
           </a>

@@ -26,13 +26,13 @@ export const Footer = () => {
   return (
     <FooterSection>
       <nav>
-        {socials.map((social: SocialMenuItem) => (
+        {socials.map((social: SocialMenuItem, key: number) => (
           <a
             href={social.url}
             target='_blank'
             rel='noreferrer nofollow'
             aria-label={social.name}
-            key={social.name}
+            key={key}
           >
             {getIcon(social.name.toLowerCase())}
           </a>

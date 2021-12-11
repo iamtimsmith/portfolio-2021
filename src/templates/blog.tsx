@@ -37,7 +37,6 @@ export const query = graphql`
       skip: $skip
     ) {
       nodes {
-        id
         frontmatter {
           title
           published

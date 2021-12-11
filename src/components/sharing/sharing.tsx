@@ -3,7 +3,7 @@ import { useLocation } from '@reach/router';
 import { SiteContext } from '../../utils/context';
 import { getIcon, getSharingData } from '../../utils/social';
 import { SharingBar, Label, Button, Site } from './sharing.style';
-import { SharingProps } from './sharing.i';
+import { SharingProps, SocialSite } from './sharing.i';
 
 export const Sharing = ({ title }: SharingProps) => {
   const { site } = useContext(SiteContext);
@@ -25,19 +25,21 @@ export const Sharing = ({ title }: SharingProps) => {
   return (
     <SharingBar show={showing} aria-label='Sharing navigation'>
       <Label>Share:</Label>
-      {getSharingData(url, image, title).map(site => (
-        <Button
-          site={site.name.toLowerCase() as Site}
-          href={site.href}
-          target='_parent'
-          rel='noreferrer nofollow'
-          title={`Share to ${site.name}`}
-          aria-label={`Share to ${site.name}`}
-          key={site.name}
-        >
-          {getIcon(site.name.toLowerCase())}
-        </Button>
-      ))}
+      {getSharingData(url, image, title).map(
+        (site: SocialSite, key: number) => (
+          <Button
+            site={site.name.toLowerCase() as Site}
+            href={site.href}
+            target='_parent'
+            rel='noreferrer nofollow'
+            title={`Share to ${site.name}`}
+            aria-label={`Share to ${site.name}`}
+            key={key}
+          >
+            {getIcon(site.name.toLowerCase())}
+          </Button>
+        )
+      )}
     </SharingBar>
   );
 };

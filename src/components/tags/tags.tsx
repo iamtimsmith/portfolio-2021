@@ -6,8 +6,8 @@ export const Tags = ({ tags = [] }: TagsProps) => {
   return (
     <TagList aria-label='tags'>
       <span>Tags: </span>
-      {tags.map(tag => (
-        <Tag to={`/tags/${tag}`} key={tag}>
+      {tags.map((tag: string, key: number) => (
+        <Tag to={`/tags/${tag}`} key={key}>
           #{tag}
         </Tag>
       ))}

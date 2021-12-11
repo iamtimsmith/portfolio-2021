@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { BlogListItems, BlogPost, BlogPostTitle } from './blog-list.style';
-import { BlogListProps } from './blog-list.i';
+import { BlogListProps, PostTeaser } from './blog-list.i';
 
 export const BlogList = ({ posts }: BlogListProps) => {
   return (
     <BlogListItems>
-      {posts.map((node, id) => (
-        <BlogPost key={id}>
+      {posts.map((node: PostTeaser, key: number) => (
+        <BlogPost key={key}>
           <BlogPostTitle>
             <Link to={node.fields.slug}>{node.frontmatter.title}</Link>{' '}
           </BlogPostTitle>

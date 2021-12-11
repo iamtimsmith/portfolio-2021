@@ -12,8 +12,8 @@ export const Header = () => {
     <Navbar>
       <Logo to='/'>{site.title}</Logo>
       <Nav aria-label='Main menu'>
-        {site.menu.map((item: MenuItem, id: number) => (
-          <Link to={item.url} key={id}>
+        {site.menu.map((item: MenuItem, key: number) => (
+          <Link to={item.url} key={key}>
             {item.name}
           </Link>
         ))}

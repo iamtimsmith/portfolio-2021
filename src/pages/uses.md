@@ -3,12 +3,6 @@ title: Uses
 description: If you're interested in the various tools I use when developing, you can find a list of them here.
 ---
 
-<Seo
-	title='Uses'
-	description={`If you're interested in the various tools I use when developing, you can find a list of them here.`}
-	image='/timsmith-social.jpg'
-/>
-
 My set up changes every so often, but I'll try to keep an up-to-date list of the stuff I'm using. If you're interested in the various tools I use when developing, you can find a list of them here.
 
 ## Hardware
