@@ -280,7 +280,7 @@ module.exports = {
 
 Congratulations! You now have a working express application complete with routing, controllers, and views. You can add more items as you see fit to continue and build on your app. Next steps would be adding a database with models, setting up authorization for users, and setting up private routes. Now go forth and create great things!
 
-<Note>
+---
 
 This is the first in a series of posts about setting up a project with Express.
 
@@ -288,6 +288,5 @@ This is the first in a series of posts about setting up a project with Express.
 1. [Using MongoDB with an Express.js project](/blog/using-mongodb-with-express-js)
 <!-- 1. [Adding Authentication to an Express application with Passport.js](/blog/adding-auth-to-express-application-with-passport) -->
 
-</Note>
 
 Have thoughts or questions? You can reach me on Twitter at [@iam_timsmith](https://www.twitter.com/iam_timsmith).

@@ -28,7 +28,6 @@ export const query = graphql`
       sort: { fields: fileAbsolutePath, order: DESC }
     ) {
       nodes {
-        id
         frontmatter {
           title
           published

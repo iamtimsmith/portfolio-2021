@@ -122,11 +122,12 @@ In addition, you may notice that the date field is an object while the comments 
 
 Finally, you define the model for Post using the schema which makes it available to use when handling data in your application.
 
-<br />
-<br />
+---
 
 This is the second in a series of posts about setting up a project with Express.
 
 1. [Creating a Basic Server with Express.js](/blog/creating-a-basic-server-with-express-js)
 1. Using MongoDB with an Express.js project
 <!-- 1. [Adding Authentication to an Express application with Passport.js](/blog/adding-auth-to-express-application-with-passport) -->
+
+Have thoughts or questions? You can reach me on Twitter at [@iam_timsmith](https://www.twitter.com/iam_timsmith).
