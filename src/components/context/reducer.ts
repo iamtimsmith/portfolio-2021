@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { Action } from '../types/reducer.i';
+import { Action } from './reducer.i';
 declare const window: any;
 
 const isOctober = dayjs().month() === 9;
