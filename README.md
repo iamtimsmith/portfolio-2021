@@ -1,26 +1,21 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://www.iamtimsmith.com">
+    <img alt="Tim Smith" src="./src/images/timsmith-teal.png" width="200" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  iamtimsmith.com
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+This repo is the blog/portfolio website for Software Engineer Tim Smith. It is built using TypeScript, React, Gatsby, and Styled Components.
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+1.  **Clone this repo.**
 
     ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    git clone https://github.com/iamtimsmith/portfolio-2021.git
     ```
 
 1.  **Start developing.**
@@ -28,83 +23,53 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-default-starter/
-    gatsby develop
+    cd portfolio-2021/
+    yarn dev
     ```
 
 1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-default)
+    - Your site is now running at `http://localhost:1125`!
+    - Your GraphQL Playground is running at `http://localhost:1125/___graphql`
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the files and directories in the `src` folder.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+    src/
+    ├── api/
+    ├── components/
+    ├── images/
+    ├── pages/
+    ├── posts/
+    ├── styles/
+    ├── templates/
+    ├── types/
+    ├── utils/
+    └── modules.d.ts
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+1.  **`api/`**: This directory contains any api endpoints which should be used by Netlify like lambdas.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+2.  **`components/`**: This directory will contain all of the reusable components on the site.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+3.  **`images/`**: This folder contains all the images for the website. Images in this directory are processed and optimized by Gatsby.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+4.  **`pages/`**: This is a folder which holds all of the static pages on the site. These can be written as React components or using MDX in a `.md` file.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+5.  **`posts/`**: This folder contains all of the blog posts for the site. Blog posts are written using MDX in `.md` files.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+6.  **`styles/`**: This directory contains global styles for the site. It also holds any available themes for the sites.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+7.  **`templates/`**: This folder holds the templates which are used on the site. These are used for things like pages, posts, blog index, search, and tags pages.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+8.  **`types/`**: This folder contains types and interfaces for anything outside components. Types for components are contained within the component.
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+9.  **`utils/`**: This folder holds utility functions or tools used around the site.
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
-
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+10. **`modules.d.ts`** This is a file which declares libraries not included in `@types` as modules to prevent errors.
 
 ## Themes
 
-- For Theme color swatches, go to [Smart Swatch](https://smart-swatch.netlify.app/)
+This site uses themes which can be changed by the user. The variables for each theme can be found in the `/styles/themes` folder.
+
+- For color swatches, use [Smart Swatch](https://smart-swatch.netlify.app/)
 - To check colors for accessibility, use [ColorSafe](http://colorsafe.co/)
