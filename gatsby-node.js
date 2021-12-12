@@ -27,7 +27,7 @@ exports.onCreatePage = ({ page, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ node, getNode });
+    const value = createFilePath({ node, getNode, trailingSlash: false });
     /**
      * Add slug field for each post
      * - Provides slug without dates in path
