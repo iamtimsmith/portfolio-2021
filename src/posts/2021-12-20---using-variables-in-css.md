@@ -91,6 +91,8 @@ Since the variable is assigned to the root element, you can use it anywhere in t
 
 By using CSS variables in this way, you don't have to add styles for both light and dark themes on each element. Instead, you can use and reuse a variable with a different value based on the theme class assigned to a given element.
 
+<EmailSignup />
+
 ## Once my variables are created, how do I use them?
 Using variables is very quick and easy. To call a variable, you use the `var()` function which is now built in to the CSS language. The first parameter is the name of the variable you'd like to use. For instance, the example below shows how to use a variable called `--text-color`.
 

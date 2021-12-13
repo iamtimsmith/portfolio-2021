@@ -143,6 +143,8 @@ const App = ({ children }) => {
 
 Now that the provider is wrapped around everything else in your app, all of the things in your app know about the context. You're ready to start using your context!
 
+<EmailSignup />
+
 ## How do I use context?
 So you have your context created and your components inside the provider...now what? Now you can get the data from context and use it wherever you need it. There are a few different ways to do this, so I'll show you both.
 

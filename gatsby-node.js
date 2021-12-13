@@ -13,7 +13,16 @@ const postFilters =
 
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage } = actions;
+  // Add post filters to index context
+  if (page.path === '/') {
+    page.context = {
+      ...page.context,
+      filters: postFilters,
+    };
+  }
+  // Remove unpublished pages in production
   if (
+    process.env.NODE_ENV === `production` &&
     page.context.frontmatter &&
     page.context.frontmatter.published === false
   ) {

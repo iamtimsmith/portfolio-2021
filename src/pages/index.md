@@ -20,12 +20,9 @@ image: ../images/timsmith-social.jpg
 
 import {graphql} from 'gatsby';
 export const pageQuery = graphql`
-  query HomePageQuery {
+  query HomePageQuery($filters: MdxFilterInput!) {
     posts: allMdx(
-      filter: {
-        fileAbsolutePath: { regex: "src/posts/./i" }
-        frontmatter: { published: { eq: true } }
-      }
+      filter: $filters
       sort: { fields: fileAbsolutePath, order: DESC }
       limit: 6
     ) {

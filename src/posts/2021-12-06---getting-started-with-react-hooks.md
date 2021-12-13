@@ -187,6 +187,8 @@ const MyComponent = () => {
 
 Using this hook, you can get any piece of state contained in the context and passed into the provider. This makes it really easy to have a "single source of truth" in your project without any extra libraries and without a ton of unnecessary code.
 
+<EmailSignup />
+
 ## The useReducer hook
 What if you come from a Redux background or have a more complex application which requires you to track all of your state changes? For that, React provides a `useReducer` hook where you can use (you guessed it!) a reducer for your state.
 
