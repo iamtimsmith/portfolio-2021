@@ -19,7 +19,7 @@ export const elements = css`
     font-size: var(--font-size-md);
     color: var(--color-grey-800);
     background: var(--color-grey-50);
-    transition: all 0.3s;
+    transition: background 0.3s, color 0.3s;
   }
 
   footer {
